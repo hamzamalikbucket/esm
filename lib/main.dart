@@ -1,13 +1,13 @@
-import 'package:esm/Screens/AboutUs.dart';
-import 'package:esm/Screens/ContactUs.dart';
-import 'package:esm/Screens/Otp.dart';
-import 'package:esm/Screens/Register.dart';
-import 'package:esm/Screens/Splash.dart';
 import 'package:esm/utils/Constants.dart';
 import 'package:flutter/material.dart';
 
+import 'Screens/AboutUs.dart';
+import 'Screens/ContactUs.dart';
 import 'Screens/Login.dart';
-import 'utils/app_colors.dart';
+import 'Screens/Otp.dart';
+import 'Screens/Register.dart';
+import 'Screens/Splash.dart';
+import 'Screens/home/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,9 +21,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'esm App',
-      debugShowCheckedModeBanner: false,
       theme: ThemeData(
-
         // This is the theme of your application.
         //
         // TRY THIS: Try running your application with "flutter run". You'll see
@@ -39,7 +37,7 @@ class MyApp extends StatelessWidget {
         //
         // This works for code too, not just values: Most code changes can be
         // tested with just a hot reload.
-        colorScheme: ColorScheme.fromSeed(seedColor: AppColors.bluecolor),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
 
       ),
@@ -51,20 +49,9 @@ class MyApp extends StatelessWidget {
           Constants.loginscreen:(context)=>Login(),
           Constants.signUpScreen:(context)=>Register(),
           Constants.otpScreen:(context)=>Otp(),
+          Constants.homeScreen:(context)=>const HomeScreen(),
           Constants.aboutUsScreen:(context)=>AboutUs(),
           Constants.contactUsScreen:(context)=>ContactUs(),
-
-
-
-
-
-
-
-
-
-
-
-
 
         }
 

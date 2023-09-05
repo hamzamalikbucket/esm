@@ -31,23 +31,21 @@ class SplashState extends State<Splash> {
 
     });
     return Scaffold(
-      body: SafeArea(
-        child: Center(
-          child: Container(
-            width: MediaQuery.of(context).size.width,
-            height: MediaQuery.of(context).size.height,
-            color: AppColors.bluecolor,
+      body: Center(
+        child: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
+          color: AppColors.bluecolor,
 
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Image.asset(
-                    'assets/images/testesm.png'),
-
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Image.asset(
+                  'assets/images/testesm.png'),
 
 
-              ],
-            ),
+
+            ],
           ),
         ),
       ),
