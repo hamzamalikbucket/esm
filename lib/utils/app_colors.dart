@@ -4,12 +4,20 @@ class AppColors {
 
   static const primaryColor = Color(0xffFFFFFF);
   static const secondaryColor = Color(0xff282B42);
+  static const black = Color(0xff000000);
   static const lightthemeColor = Color(0xffF1F0F7);
   static const bluecolor = Color(0xff007BFF);
 
 
 
+
   static const greyColor = Color(0xff767676);
+  static const greyTextColor = Color(0xff838BA1);
+  static const greyHintColor = Color(0xffA7A8AA);
+  static const greybgColor = Color(0xffD3D3D3);
+  static const lightgreybgColor = Color(0xffDF9F9F9);
+
+
   static const appBarBackgroundColor = Color(0xfff0f0f0);
   static const lightGreyColor = Color(0xFFF4F4F4);
   static const yellowColor = Color(0xffF1BF38);
@@ -23,6 +31,7 @@ class AppColors {
   static const lightPinkColor = Color(0xffF5EFFF);
   static const highlightYellow = Color(0xffFAC145);
   static const dummytest = Color(0xff282b42);
+  static const noColor = Colors.transparent;
 
 
   /// Returns a shade of a [Color] from a double value
