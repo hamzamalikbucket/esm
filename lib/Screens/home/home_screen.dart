@@ -34,6 +34,7 @@ List<PostModel> postList = [
 ];
 
 class _HomeScreenState extends State<HomeScreen> {
+  bool afterJoining = true;
   @override
   Widget build(BuildContext context) {
     final GlobalKey<SliderDrawerState> _sliderDrawerKey =
@@ -57,7 +58,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 title = title;
               });
               print("jkadgfa");
-            },
+            }, afterJoining: afterJoining,
           ),
           child: _AuthorList()),
     );
