@@ -11,36 +11,30 @@ class HomeScreen extends StatefulWidget {
 }
 
 class _HomeScreenState extends State<HomeScreen> {
+  final GlobalKey<SliderDrawerState> sliderDrawerKey = GlobalKey<SliderDrawerState>();
+  String title = "Home";
+
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<SliderDrawerState> _sliderDrawerKey =
-    GlobalKey<SliderDrawerState>();
-    String title = "Home";
 
-    return MaterialApp(
-      theme: ThemeData(fontFamily: 'BalsamiqSans'),
-      debugShowCheckedModeBanner: false,
-      home: SafeArea(
-        child: Scaffold(
-          body: SliderDrawer(
-              appBar: SliderAppBar(
-                  appBarColor: Colors.white,
-                  title: Text(title,
-                      style: const TextStyle(
-                          fontSize: 22, fontWeight: FontWeight.w700))),
-              key: _sliderDrawerKey,
-              sliderOpenSize: 280,
-              slider: SliderView(
-                onItemClick: (title) {
-                  _sliderDrawerKey.currentState!.closeSlider();
-                  setState(() {
-                    title = title;
-                  });
-                  print("jkadgfa");
-                },
-              ),
-              child: _AuthorList()),
-        ),
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: SliderDrawer(
+            // appBar: SliderAppBar(
+            //     appBarColor: Colors.white,
+            //     title: Text(title,
+            //         style: const TextStyle(
+            //             fontSize: 22, fontWeight: FontWeight.w700))),
+            key: sliderDrawerKey,
+            sliderOpenSize: 300,
+            slider: SliderView(
+              onItemClick: (title) {
+                sliderDrawerKey.currentState!.closeSlider();
+              },
+              afterJoining: true,
+            ),
+            child: _AuthorList()),
       ),
     );
   }

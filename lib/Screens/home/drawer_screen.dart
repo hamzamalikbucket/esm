@@ -1,33 +1,61 @@
 import 'package:flutter/material.dart';
 
+import '../../utils/Constants.dart';
+
 class SliderView extends StatelessWidget {
   final Function(String) onItemClick;
+  bool afterJoining;
 
-  const SliderView({Key? key, required this.onItemClick}) : super(key: key);
+   SliderView({Key? key, required this.onItemClick, required this.afterJoining}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
       padding: const EdgeInsets.only(top: 30),
-      child: ListView(
+      child: afterJoining ? ListView(
         children: <Widget>[
-          const SizedBox(
-            height: 30,
-          ),
           Image.asset("assets/images/app_logo.png", height: 70, width: 70,),
           const SizedBox(
             height: 20,
           ),
           ...[
-            Menu('Home', ''),
-            Menu('Quick Meetings & Hologram', 'Free Unlimited, time & participents'),
-            Menu('Events & Hologram', 'Free Unlimited, time & participents'),
-            Menu('Join Event Workers', 'Get Paid'),
-            Menu('Join Hologram Engineers', 'Make Money'),
-            Menu('Join Sellers', ''),
-            Menu('About Us', ''),
-            Menu('FAQ', ''),
+            Menu('Home', '', (){}),
+            Menu('Quick Meetings & Hologram', 'Free Unlimited, time & participents', (){}),
+            Menu('Events & Hologram', 'Free Unlimited, time & participents', (){}),
+            Menu('Join Event Workers', 'Get Paid', (){}),
+            Menu('Join Hologram Engineers', 'Make Money', (){}),
+            Menu('Seller add used/new Products/Services', 'Make Sales', (){}),
+            Menu('Find any event In your area', 'Make GPS default in you present location', (){}),
+            Menu('Find any event by location', 'Search by address, city, state or country', (){}),
+            Menu('Tip eSM', 'All Free But You Can Tip Us', (){}),
+            Menu('Find Event', 'Worldwide & Attend', (){}),
+            Menu('Contact Us', '', (){Navigator.pushNamed(context, Constants.contactUsScreen);}),
+            Menu('About Us', '', (){Navigator.pushNamed(context, Constants.aboutUsScreen);}),
+            Menu('FAQ', '', (){}),
+            Menu('Start Shopping', '', (){}),
+          ]
+              .map((menu) => _SliderMenuItem(
+            title: menu.title,
+            subTitle: menu.subTitle,
+            onTap: onItemClick,))
+              .toList(),
+        ],
+      ) : ListView(
+        children: <Widget>[
+          Image.asset("assets/images/app_logo.png", height: 70, width: 70,),
+          const SizedBox(
+            height: 20,
+          ),
+          ...[
+            Menu('Home', '', (){}),
+            Menu('Quick Meetings & Hologram', 'Free Unlimited, time & participents', (){}),
+            Menu('Events & Hologram', 'Free Unlimited, time & participents', (){}),
+            Menu('Join Event Workers', 'Get Paid', (){}),
+            Menu('Join Hologram Engineers', 'Make Money', (){}),
+            Menu('Join Sellers', 'Make Sales', (){}),
+            Menu('About Us', '', (){Navigator.pushNamed(context, Constants.aboutUsScreen);}),
+            Menu('FAQ', '', (){}),
           ]
               .map((menu) => _SliderMenuItem(
             title: menu.title,
@@ -57,7 +85,7 @@ class _SliderMenuItem extends StatelessWidget {
     return Material(
       child: InkWell(
         onTap: (){onTap;},
-        splashColor: Colors.blue,
+        splashColor: Colors.lightBlue,
         child: Padding(
           padding: const EdgeInsets.only(top: 12.0),
           child: Column(
@@ -93,5 +121,6 @@ class _SliderMenuItem extends StatelessWidget {
 class Menu {
   final String title;
   final String subTitle;
-  Menu(this.title, this.subTitle);
+  final Function onTapp;
+  Menu(this.title, this.subTitle, this.onTapp);
 }
