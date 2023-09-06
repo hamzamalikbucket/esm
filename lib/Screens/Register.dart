@@ -71,180 +71,198 @@ class RegState extends State<Register> {
       padding: const EdgeInsets.all(30.0),
       child: Form(
         key: registerFormKey,
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
+        child: Container(
+          decoration: BoxDecoration(
+
+            color: AppColors.lightgreybgColor,
+            border: Border.all(color: Colors.transparent, width: 2),
+            borderRadius: BorderRadius.circular(10),
+
+
+            boxShadow: [
+              BoxShadow(
+                color: AppColors.lightgreybgColor,
+                offset: Offset(0, 10),
+                blurRadius: 10,
+              ),
+            ],
+
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
 /*            PhoneInputWidget(title: "Promo Code", isRequired: false, keyboardType: TextInputType.text,
-                icon: Icons.person_outline,
+                  icon: Icons.person_outline,
 
 
-                value: (val) {
-                  promo = val!;
-                },validate: true, isPassword: false, hintcolour: AppColors.greyHintColor),
-            SvgPicture.asset(
+                  value: (val) {
+                    promo = val!;
+                  },validate: true, isPassword: false, hintcolour: AppColors.greyHintColor),
+              SvgPicture.asset(
 
-              Constants.validate,
-            height: 64,
-                width: 64,
-            ),*/
-            InputWidget(
-                title: "First Name",
-                isRequired: true,
-                keyboardType: TextInputType.text,
-                icon: Icons.person_outline,
-                value: (val) {
-                  fName = val!;
-                },
-                validate: true,
-                isPassword: false,
-                hintcolour: AppColors.greyHintColor),
-            SizedBox(
-              height: 10,
-            ),
-            InputWidget(
-                title: "Last Name",
-                isRequired: true,
-                keyboardType: TextInputType.text,
-                icon: Icons.person_outline,
-                value: (val) {
-                  lName = val!;
-                },
-                validate: true,
-                isPassword: false,
-                hintcolour: AppColors.greyHintColor),
-            SizedBox(
-              height: 10,
-            ),
-            InputWidget(
-                title: "Mobile Number",
-                isRequired: true,
-                keyboardType: TextInputType.text,
-                icon: Icons.person_outline,
-                value: (val) {
-                  mobileNum = val!;
-                },
-                validate: true,
-                isPassword: false,
-                hintcolour: AppColors.greyHintColor),
-            SizedBox(
-              height: 10,
-            ),
-            InputWidget(
-                title: "Date of Birth",
-                isRequired: true,
-                keyboardType: TextInputType.text,
-                icon: Icons.person_outline,
-                value: (val) {
-                  dOb = val!;
-                },
-                validate: true,
-                isPassword: false,
-                hintcolour: AppColors.greyHintColor),
-            SizedBox(
-              height: 10,
-            ),
-            InputWidget(
-                title: "Marriage Date",
-                isRequired: true,
-                keyboardType: TextInputType.text,
-                icon: Icons.person_outline,
-                value: (val) {
-                  marriageDate = val!;
-                },
-                validate: true,
-                isPassword: false,
-                hintcolour: AppColors.greyHintColor),
-            SizedBox(
-              height: 10,
-            ),
-            InputWidget(
-                title: "Password",
-                isRequired: true,
-                keyboardType: TextInputType.text,
-                icon: Icons.person_outline,
-                maxline: 1,
-                value: (val) {
-                  pass = val!;
-                },
-                validate: true,
-                isPassword: true,
-                hintcolour: AppColors.greyHintColor),
-            SizedBox(
-              height: 10,
-            ),
-            InputWidget(
-                title: "Password Again",
-                isRequired: true,
-                keyboardType: TextInputType.text,
-                icon: Icons.person_outline,
-                maxline: 1,
-                value: (val) {
-                  conPass = val!;
-                },
-                validate: true,
-                isPassword: true,
-                hintcolour: AppColors.greyHintColor),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: [
-                Checkbox(
-                  value: boxVal,
-                  onChanged: (value) {
-                    setState(() {
-                      boxVal = !boxVal;
-                    });
+                Constants.validate,
+              height: 64,
+                  width: 64,
+              ),*/
+              InputWidget(
+                  title: "First Name",
+                  isRequired: true,
+                  keyboardType: TextInputType.text,
+                  icon: Icons.person_outline,
+                  value: (val) {
+                    fName = val!;
                   },
-                ),
-                NormalTextWidget(
-                  input: 'I agree to',
-                  fontsize: 16,
-                  fontWeight: FontWeight.w500,
-                  textcolor: AppColors.greyTextColor,
-                ),
-                NormalTextWidget(
-                  input: 'Terms and Conditions',
-                  fontsize: 16,
-                  fontWeight: FontWeight.w500,
-                  textcolor: AppColors.bluecolor,
-                ),
-              ],
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            SvgPicture.asset(
-              Constants.registerBtn,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                NormalTextWidget(
-                  input: 'Already have an account?',
-                  fontsize: 16,
-                  fontWeight: FontWeight.w500,
-                  textcolor: AppColors.greyTextColor,
-                ),
-                GestureDetector(
-                    onTap: () {
-                      Navigator.pop(context);
+                  validate: true,
+                  isPassword: false,
+                  hintcolour: AppColors.greyHintColor),
+              SizedBox(
+                height: 10,
+              ),
+              InputWidget(
+                  title: "Last Name",
+                  isRequired: true,
+                  keyboardType: TextInputType.text,
+                  icon: Icons.person_outline,
+                  value: (val) {
+                    lName = val!;
+                  },
+                  validate: true,
+                  isPassword: false,
+                  hintcolour: AppColors.greyHintColor),
+              SizedBox(
+                height: 10,
+              ),
+              InputWidget(
+                  title: "Mobile Number",
+                  isRequired: true,
+                  keyboardType: TextInputType.text,
+                  icon: Icons.person_outline,
+                  value: (val) {
+                    mobileNum = val!;
+                  },
+                  validate: true,
+                  isPassword: false,
+                  hintcolour: AppColors.greyHintColor),
+              SizedBox(
+                height: 10,
+              ),
+              InputWidget(
+                  title: "Date of Birth",
+                  isRequired: true,
+                  keyboardType: TextInputType.text,
+                  icon: Icons.person_outline,
+                  value: (val) {
+                    dOb = val!;
+                  },
+                  validate: true,
+                  isPassword: false,
+                  hintcolour: AppColors.greyHintColor),
+              SizedBox(
+                height: 10,
+              ),
+              InputWidget(
+                  title: "Marriage Date",
+                  isRequired: true,
+                  keyboardType: TextInputType.text,
+                  icon: Icons.person_outline,
+                  value: (val) {
+                    marriageDate = val!;
+                  },
+                  validate: true,
+                  isPassword: false,
+                  hintcolour: AppColors.greyHintColor),
+              SizedBox(
+                height: 10,
+              ),
+              InputWidget(
+                  title: "Password",
+                  isRequired: true,
+                  keyboardType: TextInputType.text,
+                  icon: Icons.person_outline,
+                  maxline: 1,
+                  value: (val) {
+                    pass = val!;
+                  },
+                  validate: true,
+                  isPassword: true,
+                  hintcolour: AppColors.greyHintColor),
+              SizedBox(
+                height: 10,
+              ),
+              InputWidget(
+                  title: "Password Again",
+                  isRequired: true,
+                  keyboardType: TextInputType.text,
+                  icon: Icons.person_outline,
+                  maxline: 1,
+                  value: (val) {
+                    conPass = val!;
+                  },
+                  validate: true,
+                  isPassword: true,
+                  hintcolour: AppColors.greyHintColor),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                children: [
+                  Checkbox(
+                    value: boxVal,
+                    onChanged: (value) {
+                      setState(() {
+                        boxVal = !boxVal;
+                      });
                     },
-                    child: NormalTextWidget(
-                      input: 'Login',
-                      fontsize: 16,
-                      fontWeight: FontWeight.w500,
-                      textcolor: AppColors.bluecolor,
-                    )),
-              ],
-            ),
-          ],
+                  ),
+                  NormalTextWidget(
+                    input: 'I agree to',
+                    fontsize: 16,
+                    fontWeight: FontWeight.w500,
+                    textcolor: AppColors.greyTextColor,
+                  ),
+                  NormalTextWidget(
+                    input: 'Terms and Conditions',
+                    fontsize: 16,
+                    fontWeight: FontWeight.w500,
+                    textcolor: AppColors.bluecolor,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              SvgPicture.asset(
+                Constants.registerBtn,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              SizedBox(
+                height: 10,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  NormalTextWidget(
+                    input: 'Already have an account?',
+                    fontsize: 16,
+                    fontWeight: FontWeight.w500,
+                    textcolor: AppColors.greyTextColor,
+                  ),
+                  GestureDetector(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: NormalTextWidget(
+                        input: 'Login',
+                        fontsize: 16,
+                        fontWeight: FontWeight.w500,
+                        textcolor: AppColors.bluecolor,
+                      )),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );
