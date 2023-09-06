@@ -13,22 +13,29 @@ class ToolbarImage extends StatelessWidget implements PreferredSizeWidget{
     return (
         AppBar(
           automaticallyImplyLeading: true,
-
           backgroundColor: AppColors.primaryColor,
-          title: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                'assets/images/image26.png',
-                fit: BoxFit.contain,
-                height: 50,
-              ),
+          title: Center(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
 
-            ],
+                Image.asset(
+                  'assets/images/app_logo.png',
+                  fit: BoxFit.contain,
+                  height: 50,
+                ),
+                SizedBox(width: 10,),
+                SizedBox(width: 10,),
+                SizedBox(width: 10,),
+
+
+
+              ],
+            ),
           ),
           iconTheme: IconThemeData(
             color:AppColors.black,
-
             //change your color here
           ),
         ));

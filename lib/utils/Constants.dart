@@ -21,6 +21,13 @@ class Constants{
   static const submitBtn ='assets/images/submitbtn.svg';
   static const enquiryBtn ='assets/images/enquirybtn.svg';
   static const contactFooterImg ='assets/images/contact.svg';
+  static const postImg ='assets/images/postImg.svg';
+  static const postImg2 ='assets/images/postImg2.svg';
+  static const favouriteIcon ='assets/images/favourite.svg';
+  static const commentIcon ='assets/images/comment.svg';
+  static const viewIcon ='assets/images/view.svg';
+  static const shareBtnBlue ='assets/images/shareBtn.svg';
+  static const profileImg ='assets/images/profile.svg';
 
 
 }

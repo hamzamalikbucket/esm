@@ -8,18 +8,17 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class ContactUs extends StatefulWidget{
+class ContactUs extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
     return ContactState();
   }
-
-
 }
-class ContactState extends State<ContactUs>{
+
+class ContactState extends State<ContactUs> {
   final GlobalKey<FormState> contactFormKey = GlobalKey<FormState>();
-  late String nAme, eMail,sUb,mSg;
+  late String nAme, eMail, sUb, mSg;
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
@@ -29,14 +28,13 @@ class ContactState extends State<ContactUs>{
         appBar: AppBar(),
       ),
       body: SafeArea(
-
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Padding(
-                padding: const EdgeInsets.fromLTRB(28.0,12,28,0),
+                padding: const EdgeInsets.fromLTRB(28.0, 12, 28, 0),
                 child: HeadingTextWidget(
                   input: 'Contact Us',
                   fontsize: 16,
@@ -45,40 +43,29 @@ class ContactState extends State<ContactUs>{
                 ),
               ),
               form(context),
-              SizedBox(height: 10,),
-
+              SizedBox(
+                height: 10,
+              ),
               SvgPicture.asset(
-
                 Constants.contactFooterImg,
                 width: MediaQuery.sizeOf(context).width,
               ),
-
-
-
             ],
-
-
           ),
         ),
-
-
       ),
     );
   }
-  Widget form(BuildContext context){
 
+  Widget form(BuildContext context) {
     return Form(
-
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(28.0,12,28,0),
+        padding: const EdgeInsets.fromLTRB(28.0, 12, 28, 0),
         child: Container(
           decoration: BoxDecoration(
-
-              color: AppColors.lightgreybgColor,
+            color: AppColors.lightgreybgColor,
             border: Border.all(color: Colors.transparent, width: 2),
             borderRadius: BorderRadius.circular(10),
-
-
             boxShadow: [
               BoxShadow(
                 color: AppColors.lightgreybgColor,
@@ -86,117 +73,116 @@ class ContactState extends State<ContactUs>{
                 blurRadius: 10,
               ),
             ],
-
           ),
-
           child: Padding(
-            padding: const EdgeInsets.fromLTRB(35.0,12,35,10),
+            padding: const EdgeInsets.fromLTRB(35.0, 12, 35, 10),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
-             crossAxisAlignment: CrossAxisAlignment.start,
-             children: [
-               Padding(
-                 padding: const EdgeInsets.only(left:20,bottom: 10),
-                 child: NormalTextWidget(
-                   input: 'Name ',
-                   fontsize: 10,
-                   fontWeight: FontWeight.w400,
-                   textcolor: AppColors.black,
-                 ),
-               ),
-               InputWidget(
-                   title: "",
-                   isRequired: true,
-                   keyboardType: TextInputType.text,
-
-                   value: (val) {
-                     nAme = val!;
-                   },
-                   validate: true,
-                   isPassword: false,
-                   hintcolour: AppColors.greyHintColor),
-               SizedBox(height: 10,),
-               Padding(
-                 padding: const EdgeInsets.only(left:20,bottom: 10),
-                 child: NormalTextWidget(
-                   input: 'Email',
-                   fontsize: 10,
-                   fontWeight: FontWeight.w400,
-                   textcolor: AppColors.black,
-                 ),
-               ),
-               InputWidget(
-                   title: "",
-                   isRequired: true,
-                   keyboardType: TextInputType.text,
-
-                   value: (val) {
-                     eMail = val!;
-                   },
-                   validate: true,
-                   isPassword: false,
-                   hintcolour: AppColors.greyHintColor),
-               SizedBox(height: 10,),
-               Padding(
-                 padding: const EdgeInsets.only(left:20,bottom: 10),
-                 child: NormalTextWidget(
-                   input: 'Subject',
-                   fontsize: 10,
-                   fontWeight: FontWeight.w400,
-                   textcolor: AppColors.black,
-                 ),
-               ),
-               InputWidget(
-                   title: "",
-                   isRequired: true,
-                   keyboardType: TextInputType.text,
-
-                   value: (val) {
-                     sUb = val!;
-                   },
-                   validate: true,
-                   isPassword: false,
-                   hintcolour: AppColors.greyHintColor),
-               SizedBox(height: 10,),
-               Padding(
-                 padding: const EdgeInsets.only(left:20,bottom: 10),
-                 child: NormalTextWidget(
-                   input: 'Message',
-                   fontsize: 10,
-                   fontWeight: FontWeight.w400,
-                   textcolor: AppColors.black,
-                 ),
-               ),
-               InputWidget(
-                   title: "",
-                   isRequired: true,
-                   keyboardType: TextInputType.text,
-                   maxline: 5,
-
-                   value: (val) {
-                     sUb = val!;
-                   },
-                   validate: true,
-                   isPassword: false,
-                   hintcolour: AppColors.greyHintColor),
-               SizedBox(height: 10,),
-               SizedBox(height: 10,),
-               SizedBox(height: 10,),
-               SvgPicture.asset(
-
-                 Constants.enquiryBtn,
-
-               ),
-             ],
-
-
-    ),
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(left: 20, bottom: 10),
+                  child: NormalTextWidget(
+                    input: 'Name ',
+                    fontsize: 10,
+                    fontWeight: FontWeight.w400,
+                    textcolor: AppColors.black,
+                  ),
+                ),
+                InputWidget(
+                    title: "",
+                    isRequired: true,
+                    keyboardType: TextInputType.text,
+                    value: (val) {
+                      nAme = val!;
+                    },
+                    validate: true,
+                    isPassword: false,
+                    hintcolour: AppColors.greyHintColor),
+                SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20, bottom: 10),
+                  child: NormalTextWidget(
+                    input: 'Email',
+                    fontsize: 10,
+                    fontWeight: FontWeight.w400,
+                    textcolor: AppColors.black,
+                  ),
+                ),
+                InputWidget(
+                    title: "",
+                    isRequired: true,
+                    keyboardType: TextInputType.text,
+                    value: (val) {
+                      eMail = val!;
+                    },
+                    validate: true,
+                    isPassword: false,
+                    hintcolour: AppColors.greyHintColor),
+                SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20, bottom: 10),
+                  child: NormalTextWidget(
+                    input: 'Subject',
+                    fontsize: 10,
+                    fontWeight: FontWeight.w400,
+                    textcolor: AppColors.black,
+                  ),
+                ),
+                InputWidget(
+                    title: "",
+                    isRequired: true,
+                    keyboardType: TextInputType.text,
+                    value: (val) {
+                      sUb = val!;
+                    },
+                    validate: true,
+                    isPassword: false,
+                    hintcolour: AppColors.greyHintColor),
+                SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(left: 20, bottom: 10),
+                  child: NormalTextWidget(
+                    input: 'Message',
+                    fontsize: 10,
+                    fontWeight: FontWeight.w400,
+                    textcolor: AppColors.black,
+                  ),
+                ),
+                InputWidget(
+                    title: "",
+                    isRequired: true,
+                    keyboardType: TextInputType.text,
+                    maxline: 5,
+                    value: (val) {
+                      sUb = val!;
+                    },
+                    validate: true,
+                    isPassword: false,
+                    hintcolour: AppColors.greyHintColor),
+                SizedBox(
+                  height: 10,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                SizedBox(
+                  height: 10,
+                ),
+                SvgPicture.asset(
+                  Constants.enquiryBtn,
+                ),
+              ],
+            ),
           ),
         ),
       ),
-
-
     );
   }
-
 }
