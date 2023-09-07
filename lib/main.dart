@@ -1,16 +1,13 @@
-import 'package:esm/Screens/Event/EventScreen.dart';
-import 'package:esm/utils/Constants.dart';
-import 'package:esm/utils/app_colors.dart';
+import 'package:esm/resources/utils/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 
-import 'Screens/AboutUs.dart';
-import 'Screens/ContactUs.dart';
-import 'Screens/Login.dart';
-import 'Screens/Otp.dart';
-import 'Screens/Register.dart';
-import 'Screens/Splash.dart';
-import 'Screens/home/home_screen.dart';
+import 'modules/Screens/splash_screen.dart';
+import 'modules/Screens/auth/login_screen.dart';
+import 'modules/Screens/auth/otp_screen.dart';
+import 'modules/Screens/auth/register_screen.dart';
+import 'modules/Screens/dashboard/home/about_us_screen.dart';
+import 'modules/Screens/dashboard/home/contact_us_screen.dart';
+import 'modules/Screens/dashboard/home/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,31 +20,25 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'esm App',
+        title: 'esm App',
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
-
-
-          // fontFamily: GoogleFonts.nunito().fontFamily,
-          colorScheme: ColorScheme.fromSeed(seedColor: AppColors.bluecolor),
-          useMaterial3: true,
+          primarySwatch: Colors.blue,
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+          useMaterial3: false,
+          cardColor: Colors.white,
         ),
         initialRoute: Constants.splash,
 
 //define routes here
         routes: {
-          Constants.splash: (context) =>const Splash(),
-          Constants.loginscreen:(context)=>Login(),
-          Constants.signUpScreen:(context)=>Register(),
-          Constants.otpScreen:(context)=>Otp(),
-          Constants.homeScreen:(context)=>const HomeScreen(),
-          Constants.aboutUsScreen:(context)=>AboutUs(),
-          Constants.contactUsScreen:(context)=>ContactUs(),
-          Constants.eventScreen:(context)=>EventScreen(),
-
-        }
-
-    );
+          Constants.splash: (context) => const SplashScreen(),
+          Constants.loginScreen: (context) => const LoginScreen(),
+          Constants.signUpScreen: (context) => const RegisterScreen(),
+          Constants.otpScreen: (context) => const OtpScreen(),
+          Constants.homeScreen: (context) => const HomeScreen(),
+          Constants.aboutUsScreen: (context) => const AboutUsScreen(),
+          Constants.contactUsScreen: (context) => const ContactUsScreen(),
+        });
   }
 }
-

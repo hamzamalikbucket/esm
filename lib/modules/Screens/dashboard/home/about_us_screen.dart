@@ -1,12 +1,14 @@
-import 'package:esm/Widgets/HeadingTextWidget.dart';
-import 'package:esm/Widgets/NormalTextWidget.dart';
-import 'package:esm/Widgets/ToolbarImage.dart';
-import 'package:esm/utils/app_colors.dart';
-import 'package:flutter/cupertino.dart';
+
+import 'package:esm/resources/Widgets/ToolbarImage.dart';
+import 'package:esm/resources/Widgets/app_text.dart';
+import 'package:esm/resources/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
-class AboutUs extends StatefulWidget {
+
+class AboutUsScreen extends StatefulWidget {
+  const AboutUsScreen({super.key});
+
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
@@ -14,14 +16,14 @@ class AboutUs extends StatefulWidget {
   }
 }
 
-class AboutState extends State<AboutUs> {
+class AboutState extends State<AboutUsScreen> {
   String data = '';
 
   fetchFileData() async {
-    String responsetext;
-    responsetext = await rootBundle.loadString("assets/doc/aboutus.txt");
+    String responseText;
+    responseText = await rootBundle.loadString("assets/doc/aboutus.txt");
     setState(() {
-      data = responsetext;
+      data = responseText;
     });
   }
 
@@ -47,17 +49,17 @@ class AboutState extends State<AboutUs> {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                HeadingTextWidget(
-                  input: 'About Us',
-                  fontsize: 22,
+                const AppHeadings(
+                  'About Us',
+                  size: 22,
                   fontWeight: FontWeight.w700,
-                  textcolor: AppColors.black,
+                  color: AppColors.black,
                 ),
-                NormalTextWidget(
-                  input: data,
-                  fontsize: 12,
+                AppText(
+                   data,
+                  size: 12,
                   fontWeight: FontWeight.w700,
-                  textcolor: AppColors.black,
+                 color: AppColors.black,
                 ),
               ],
             ),

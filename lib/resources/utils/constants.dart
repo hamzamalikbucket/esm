@@ -1,7 +1,7 @@
 class Constants{
   //screens
   static const splash='Splash';
-  static const loginscreen='login_screen';
+  static const loginScreen='login_screen';
   static const homeScreen='home_Screen';
   static const signUpScreen='SignUpScreen';
   static const otpScreen='otpScreen';
@@ -34,6 +34,11 @@ class Constants{
   static const locationImg ='assets/images/location.svg';
   static const freeIcon ='assets/images/freeStatus.svg';
   static const paidIcon ='assets/images/paidStatus.svg';
+  static const eye ='assets/images/eye.png';
+  static const slashEye ='assets/images/slash_eye.png';
+  static const phone ='assets/images/phone.png';
+  static const person ='assets/images/person.png';
+  static const lock ='assets/images/lock.png';
 
 
 }
