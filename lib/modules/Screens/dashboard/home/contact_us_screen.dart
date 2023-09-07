@@ -1,4 +1,3 @@
-import 'package:esm/resources/Widgets/HeadingTextWidget.dart';
 import 'package:esm/resources/Widgets/ToolbarImage.dart';
 import 'package:esm/resources/Widgets/app_button.dart';
 import 'package:esm/resources/Widgets/app_field.dart';
@@ -37,13 +36,13 @@ class ContactState extends State<ContactUsScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Padding(
-                padding: const EdgeInsets.fromLTRB(28.0, 12, 28, 0),
-                child: HeadingTextWidget(
-                  input: 'Contact Us',
-                  fontsize: 16,
+              const Padding(
+                padding: EdgeInsets.fromLTRB(28.0, 12, 28, 0),
+                child: AppText(
+                  'Contact Us',
+                 size: 16,
                   fontWeight: FontWeight.w700,
-                  textcolor: AppColors.black,
+                  color: AppColors.black,
                 ),
               ),
               form(context),
@@ -52,6 +51,7 @@ class ContactState extends State<ContactUsScreen> {
               ),
               SvgPicture.asset(
                 Constants.contactFooterImg,
+                fit: BoxFit.cover,
                 width: MediaQuery.sizeOf(context).width,
               ),
             ],
@@ -64,171 +64,152 @@ class ContactState extends State<ContactUsScreen> {
   Widget form(BuildContext context) {
     return Form(
       child: Padding(
-        padding: const EdgeInsets.fromLTRB(28.0, 12, 28, 0),
-        child: Container(
-          decoration: BoxDecoration(
-            color: AppColors.lightgreybgColor,
-            border: Border.all(color: Colors.transparent, width: 2),
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: const [
-              BoxShadow(
-                color: AppColors.lightgreybgColor,
-                offset: Offset(0, 10),
-                blurRadius: 10,
+        padding: const EdgeInsets.fromLTRB(20.0, 12, 35, 10),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Padding(
+              padding: EdgeInsets.only(left: 20, bottom: 10),
+              child: AppText(
+                'Name ',
+                size: 10,
+                fontWeight: FontWeight.w400,
+                color: AppColors.black,
               ),
-            ],
-          ),
-          child: Padding(
-            padding: const EdgeInsets.fromLTRB(35.0, 12, 35, 10),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                const Padding(
-                  padding: EdgeInsets.only(left: 20, bottom: 10),
-                  child: AppText(
-                    'Name ',
-                    size: 10,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.black,
-                  ),
-                ),
-                Card(
-                  elevation: 10,
-                  color: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50.0),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: AppIconField(
-                      controller: firstNameController,
-                      hint: 'Enter your first name',
-                      prefixIcon: Constants.person,
-                      keyboardType: TextInputType.phone,
-                      textInputAction: TextInputAction.next,
-                      validator: (val) {
-                        if (val == null || val.trim().isEmpty) {
-                          return "Last name is required";
-                        }
-                        return null;
-                      },
-                    ),
-                  ),
-                ),
-                const SizeBoxHeight16(),
-                const Padding(
-                  padding: EdgeInsets.only(left: 20, bottom: 10),
-                  child: AppText(
-                    'Email',
-                    size: 10,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.black,
-                  ),
-                ),
-                Card(
-                  elevation: 10,
-                  color: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50.0),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: AppIconField(
-                      controller: firstNameController,
-                      hint: 'Enter your first name',
-                      prefixIcon: Constants.person,
-                      keyboardType: TextInputType.phone,
-                      textInputAction: TextInputAction.next,
-                      validator: (val) {
-                        if (val == null || val.trim().isEmpty) {
-                          return "Last name is required";
-                        }
-                        return null;
-                      },
-                    ),
-                  ),
-                ),
-                const SizeBoxHeight16(),
-                const Padding(
-                  padding: EdgeInsets.only(left: 20, bottom: 10),
-                  child: AppText(
-                    'Subject',
-                    size: 10,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.black,
-                  ),
-                ),
-                Card(
-                  elevation: 10,
-                  color: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50.0),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: AppIconField(
-                      controller: firstNameController,
-                      hint: 'Enter your first name',
-                      prefixIcon: Constants.person,
-                      keyboardType: TextInputType.phone,
-                      textInputAction: TextInputAction.next,
-                      validator: (val) {
-                        if (val == null || val.trim().isEmpty) {
-                          return "Last name is required";
-                        }
-                        return null;
-                      },
-                    ),
-                  ),
-                ),
-                const SizeBoxHeight16(),
-                const Padding(
-                  padding: EdgeInsets.only(left: 20, bottom: 10),
-                  child: AppText(
-                    'Message',
-                    size: 10,
-                    fontWeight: FontWeight.w400,
-                    color: AppColors.black,
-                  ),
-                ),
-                Card(
-                  elevation: 10,
-                  color: Colors.white,
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(50.0),
-                  ),
-                  child: Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: AppIconField(
-                      controller: firstNameController,
-                      hint: 'Enter your first name',
-                      prefixIcon: Constants.person,
-                      keyboardType: TextInputType.phone,
-                      textInputAction: TextInputAction.next,
-                      validator: (val) {
-                        if (val == null || val.trim().isEmpty) {
-                          return "Last name is required";
-                        }
-                        return null;
-                      },
-                    ),
-                  ),
-                ),
-                const SizeBoxHeight16(),
-                const SizedBox(
-                  height: 10,
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                AppButton(
-                  onTap: () {},
-                  assetUrl: Constants.enquiryBtn,
-                )
-              ],
             ),
-          ),
+            Card(
+              elevation: 10,
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50.0),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: AppIconField(
+                  controller: firstNameController,
+                  hint: 'Enter your first name',
+                  prefixIcon: Constants.person,
+                  keyboardType: TextInputType.phone,
+                  textInputAction: TextInputAction.next,
+                  validator: (val) {
+                    if (val == null || val.trim().isEmpty) {
+                      return "Last name is required";
+                    }
+                    return null;
+                  },
+                ),
+              ),
+            ),
+            const SizeBoxHeight16(),
+            const Padding(
+              padding: EdgeInsets.only(left: 20, bottom: 10),
+              child: AppText(
+                'Email',
+                size: 10,
+                fontWeight: FontWeight.w400,
+                color: AppColors.black,
+              ),
+            ),
+            Card(
+              elevation: 10,
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50.0),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: AppIconField(
+                  controller: firstNameController,
+                  hint: 'Enter your first name',
+                  prefixIcon: Constants.person,
+                  keyboardType: TextInputType.phone,
+                  textInputAction: TextInputAction.next,
+                  validator: (val) {
+                    if (val == null || val.trim().isEmpty) {
+                      return "Last name is required";
+                    }
+                    return null;
+                  },
+                ),
+              ),
+            ),
+            const SizeBoxHeight16(),
+            const Padding(
+              padding: EdgeInsets.only(left: 20, bottom: 10),
+              child: AppText(
+                'Subject',
+                size: 10,
+                fontWeight: FontWeight.w400,
+                color: AppColors.black,
+              ),
+            ),
+            Card(
+              elevation: 10,
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50.0),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: AppIconField(
+                  controller: firstNameController,
+                  hint: 'Enter your first name',
+                  prefixIcon: Constants.person,
+                  keyboardType: TextInputType.phone,
+                  textInputAction: TextInputAction.next,
+                  validator: (val) {
+                    if (val == null || val.trim().isEmpty) {
+                      return "Last name is required";
+                    }
+                    return null;
+                  },
+                ),
+              ),
+            ),
+            const SizeBoxHeight16(),
+            const Padding(
+              padding: EdgeInsets.only(left: 20, bottom: 10),
+              child: AppText(
+                'Message',
+                size: 10,
+                fontWeight: FontWeight.w400,
+                color: AppColors.black,
+              ),
+            ),
+            Card(
+              elevation: 10,
+              color: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(50.0),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(4.0),
+                child: AppIconField(
+                  controller: firstNameController,
+                  hint: 'Enter your first name',
+                  prefixIcon: Constants.person,
+                  keyboardType: TextInputType.phone,
+                  textInputAction: TextInputAction.next,
+                  validator: (val) {
+                    if (val == null || val.trim().isEmpty) {
+                      return "Last name is required";
+                    }
+                    return null;
+                  },
+                ),
+              ),
+            ),
+            const SizeBoxHeight16(),
+
+            Align(
+              alignment: Alignment.center,
+              child: AppButton(
+                onTap: () {},
+                assetUrl: Constants.enquiryBtn,
+              ),
+            )
+          ],
         ),
       ),
     );

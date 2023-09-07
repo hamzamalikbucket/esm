@@ -8,6 +8,7 @@ class Constants{
   static const aboutUsScreen='aboutUsScreen';
   static const contactUsScreen='contactUsScreen';
   static const eventScreen='eventScreen';
+  static const bottomNavigationBar='bottomNavigationBarScreen';
 
 
 
@@ -39,6 +40,8 @@ class Constants{
   static const phone ='assets/images/phone.png';
   static const person ='assets/images/person.png';
   static const lock ='assets/images/lock.png';
+  static const worldMap ='assets/images/world_map.png';
+  static const search ='assets/images/search.png';
 
 
 }

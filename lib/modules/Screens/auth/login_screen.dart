@@ -121,9 +121,9 @@ class LoginScreenState extends State<LoginScreen> {
                           child: Container(
                             height: 76,
                             decoration: BoxDecoration(
-                              color: AppColors.lightgreybgColor,
+                              color: AppColors.lightGreyBgColor,
                               border: Border.all(
-                                color: AppColors.greybgColor,
+                                color: AppColors.greyBgColor,
                                 width: 1,
                               ),
                             ),
@@ -184,7 +184,7 @@ class LoginScreenState extends State<LoginScreen> {
                                 'Register ',
                                 size: 16,
                                 fontWeight: FontWeight.w500,
-                                color: AppColors.bluecolor,
+                                color: AppColors.bluColor,
                               ),
                             ),
                           ],

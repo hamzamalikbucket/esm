@@ -55,7 +55,7 @@ class VerifyState extends State<OtpScreen> {
                     ),
                     const SizeBoxHeight16(),
                     Container(
-                      color: AppColors.lightgreybgColor,
+                      color: AppColors.lightGreyBgColor,
                       child: Center(
                         child: Padding(
                           padding: const EdgeInsets.all(8.0),
@@ -131,14 +131,14 @@ class VerifyState extends State<OtpScreen> {
                       'Resend',
                       size: 16,
                       fontWeight: FontWeight.w500,
-                      color: AppColors.bluecolor,
+                      color: AppColors.bluColor,
                     ),
                   ],
                 ),
                 const SizeBoxHeight16(),
                 AppButton(
                   onTap: () {
-                    Navigator.pushNamed(context, Constants.homeScreen);
+                    Navigator.pushNamed(context, Constants.bottomNavigationBar);
                   },
                   assetUrl: Constants.submitBtn,
                 ),
