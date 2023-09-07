@@ -6,6 +6,7 @@ import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 import 'package:esm/utils/Constants.dart';
 import 'package:flutter_svg/svg.dart';
 import 'drawer_screen.dart';
+import 'package:badges/badges.dart' as badges;
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -28,7 +29,7 @@ List<PostModel> postList = [
       "Hello",
       "265",
       "assets/images/profile.png",
-      "Buland Khan",
+      "Martin Madan",
       "Lahore,Pakistan",
       "9 MINITUES AGO"),
 ];
@@ -58,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 title = title;
               });
               print("jkadgfa");
-            }, afterJoining: afterJoining,
+            }, //afterJoining: afterJoining,
           ),
           child: _AuthorList()),
     );
@@ -68,7 +69,9 @@ class _HomeScreenState extends State<HomeScreen> {
 class _AuthorList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
+    return
+
+      ListView.builder(
         itemCount: postList.length,
         addRepaintBoundaries: true,
         scrollDirection: Axis.vertical,
@@ -129,9 +132,23 @@ class _AuthorList extends StatelessWidget {
                   Container(
                     child: Row(
                       children: [
-                        SizedBox(width: 10),
-                        SvgPicture.asset(
-                          Constants.favouriteIcon,
+                        const SizedBox(width: 10),
+                        badges.Badge(
+                            position: badges.BadgePosition.topEnd(top: -12, end: -12),
+                          badgeStyle: badges.BadgeStyle(
+                              shape: badges.BadgeShape.circle,
+
+                              padding: EdgeInsets.all(5),
+                              borderRadius: BorderRadius.circular(2),
+                              borderSide: BorderSide(color: Colors.transparent, width: 1),
+
+
+          ),
+                          badgeContent: Text(pM.likeCounts,style: TextStyle(color:AppColors.primaryColor,fontSize:6.5,fontWeight: FontWeight.w300),),
+
+                          child: SvgPicture.asset(
+                            Constants.favouriteIcon,
+                          )
                         ),
                         SizedBox(width: 10),
                         SvgPicture.asset(

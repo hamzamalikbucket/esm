@@ -1,4 +1,6 @@
+import 'package:esm/Screens/Event/EventScreen.dart';
 import 'package:esm/utils/Constants.dart';
+import 'package:esm/utils/app_colors.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -22,10 +24,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'esm App',
+        debugShowCheckedModeBanner: false,
         theme: ThemeData(
-          primarySwatch: Colors.blue,
+
+
           // fontFamily: GoogleFonts.nunito().fontFamily,
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+          colorScheme: ColorScheme.fromSeed(seedColor: AppColors.bluecolor),
           useMaterial3: true,
         ),
         initialRoute: Constants.splash,
@@ -39,6 +43,7 @@ class MyApp extends StatelessWidget {
           Constants.homeScreen:(context)=>const HomeScreen(),
           Constants.aboutUsScreen:(context)=>AboutUs(),
           Constants.contactUsScreen:(context)=>ContactUs(),
+          Constants.eventScreen:(context)=>EventScreen(),
 
         }
 

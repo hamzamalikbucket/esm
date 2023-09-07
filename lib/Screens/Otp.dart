@@ -152,7 +152,7 @@ class VerifyState extends State<Otp> {
                     ),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, Constants.homeScreen);
+                        Navigator.pushNamed(context, Constants.eventScreen);
 
                       },
                       child: SvgPicture.asset(

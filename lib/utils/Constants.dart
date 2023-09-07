@@ -7,6 +7,7 @@ class Constants{
   static const otpScreen='otpScreen';
   static const aboutUsScreen='aboutUsScreen';
   static const contactUsScreen='contactUsScreen';
+  static const eventScreen='eventScreen';
 
 
 
@@ -28,6 +29,11 @@ class Constants{
   static const viewIcon ='assets/images/view.svg';
   static const shareBtnBlue ='assets/images/shareBtn.svg';
   static const profileImg ='assets/images/profile.svg';
+  static const calendarImg ='assets/images/calendar.svg';
+  static const clockImg ='assets/images/clock.svg';
+  static const locationImg ='assets/images/location.svg';
+  static const freeIcon ='assets/images/freeStatus.svg';
+  static const paidIcon ='assets/images/paidStatus.svg';
 
 
 }
