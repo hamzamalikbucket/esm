@@ -28,5 +28,5 @@ class ToolbarImage extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(appBar.preferredSize.height*1.5);
+  Size get preferredSize => Size.fromHeight(appBar.preferredSize.height);
 }

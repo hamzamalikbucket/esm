@@ -60,6 +60,7 @@ class BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
         items: List.generate(
           selectedImagePaths.length,
           (index) => BottomNavigationBarItem(
@@ -67,8 +68,8 @@ class BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
               _selectedIndex == index
                   ? selectedImagePaths[index]
                   : unselectedImagePaths[index],
-              width: index == 2 ? 48.0 : 24.0,
-              height: index == 2 ? 48.0 : 24.0,
+              width: index == 2 ? 35.0 : 24.0,
+              height: index == 2 ? 35.0 : 24.0,
             ),
             label: '',
           ),

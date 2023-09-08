@@ -17,6 +17,7 @@ class EventScreen extends StatefulWidget {
 }
 
 class EventState extends State<EventScreen> {
+  TextEditingController searchController = TextEditingController();
   List<EventModel> eventList = [
     EventModel(
         eventImg: "assets/images/eventImg.png",
@@ -48,7 +49,80 @@ class EventState extends State<EventScreen> {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
+        Row(
+          children: [
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Container(
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(50),
+                    border: Border.all(
+                      width: 1,
+                      color: AppColors.bluColor,
+                    ),
+                  ),
+                  child: TextFormField(
+                    controller: searchController,
+                    keyboardType: TextInputType.text,
+                    decoration: InputDecoration(
+                      hintText: 'Search.....',
+                      hintStyle: const TextStyle(
+                        color: AppColors.greyHintColor,
+                        fontSize: 14,
+                      ),
+                      suffixIcon: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: InkWell(
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: AppColors.bluColor,
+                              borderRadius: BorderRadius.circular(100),
+                            ),
+                            child: const ImageIcon(
+                              AssetImage(Constants.search),
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ),
+                      prefixIcon: InkWell(
+                        onTap: () {},
+                        child: const ImageIcon(
+                          AssetImage(Constants.worldMap),
+                        ),
+                      ),
+                      border: InputBorder.none,
+                      errorBorder: InputBorder.none,
+                      focusedBorder: InputBorder.none,
+                      focusedErrorBorder: InputBorder.none,
+                      disabledBorder: InputBorder.none,
+                      enabledBorder: InputBorder.none,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+            Container(
+              decoration: BoxDecoration(
+                color: AppColors.bluColor,
+                borderRadius: BorderRadius.circular(100),
+              ),
+              child: TextButton(
+                onPressed: () {},
+                child: const AppText(
+                  'Epose',
+                  size: 16,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+            const SizeBoxWidth8(),
+          ],
+        ),
+        const SizeBoxHeight8(),
         Expanded(
           child: ListView.builder(
             padding: EdgeInsets.zero,

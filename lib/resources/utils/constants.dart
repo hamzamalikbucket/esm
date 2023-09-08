@@ -42,6 +42,7 @@ class Constants{
   static const lock ='assets/images/lock.png';
   static const worldMap ='assets/images/world_map.png';
   static const search ='assets/images/search.png';
+  static const appImage ='assets/images/app_image.png';
 
 
 }
