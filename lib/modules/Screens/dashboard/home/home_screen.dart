@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
                       hintText: 'Search.....',
                       hintStyle: const TextStyle(
                         color: AppColors.greyHintColor,
-                        fontSize: 14,
+                        fontSize: 15,
                       ),
                       suffixIcon: Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -102,7 +102,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: () {},
                 child: const AppText(
                   'Epose',
-                  size: 16,
+                  size: 17,
                   color: Colors.white,
                 ),
               ),
