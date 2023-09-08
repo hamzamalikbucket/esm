@@ -4,7 +4,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 
-import 'Event/event_screen.dart';
+import 'home/event_screen.dart';
 import 'home/home_screen.dart';
 
 class BottomNavigationBarScreen extends StatefulWidget {
