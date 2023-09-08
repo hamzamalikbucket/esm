@@ -1,4 +1,3 @@
-
 import 'package:esm/resources/Widgets/ToolbarImage.dart';
 import 'package:esm/resources/Widgets/app_button.dart';
 import 'package:esm/resources/Widgets/app_field.dart';
@@ -54,15 +53,15 @@ class RegState extends State<RegisterScreen> {
                     ),
                     const AppText(
                       'Welcome',
-                     size: 20,
+                      size: 20,
                       fontWeight: FontWeight.w600,
-                     color: AppColors.black,
+                      color: AppColors.black,
                     ),
                     const AppText(
                       'Signup to your new account',
-                     size: 16,
+                      size: 16,
                       fontWeight: FontWeight.w500,
-                     color: AppColors.greyTextColor,
+                      color: AppColors.greyTextColor,
                     ),
                   ],
                 ),
@@ -308,8 +307,9 @@ class RegState extends State<RegisterScreen> {
             const SizeBoxHeight16(),
             AppButton(
               onTap: () {
-                if (registerFormKey.currentState!.validate()) {
-                }
+                Navigator.pushNamed(context, '/QuickMeetingScreen');
+                // if (registerFormKey.currentState!.validate()) {
+                // }
               },
               assetUrl: Constants.registerBtn,
             ),

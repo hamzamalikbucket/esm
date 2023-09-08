@@ -4,6 +4,7 @@ import 'package:esm/modules/Screens/auth/register_screen.dart';
 import 'package:esm/modules/Screens/dashboard/bottom_nav_bar.dart';
 import 'package:esm/modules/Screens/dashboard/home/about_us_screen.dart';
 import 'package:esm/modules/Screens/dashboard/home/contact_us_screen.dart';
+import 'package:esm/modules/Screens/meeting/quick_meeting_screen.dart';
 import 'package:esm/modules/Screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -12,7 +13,7 @@ class AppRoute {
     switch (routeArguments.name) {
       case '/':
         return MaterialPageRoute(builder: (context) => const SplashScreen());
-        case '/LoginScreen':
+      case '/LoginScreen':
         return MaterialPageRoute(builder: (context) => const LoginScreen());
 
       case '/RegisterScreen':
@@ -20,13 +21,15 @@ class AppRoute {
       case '/OtpScreen':
         return MaterialPageRoute(builder: (context) => const OtpScreen());
       case '/BottomNavigationBarScreen':
-        return MaterialPageRoute(builder: (context) => const BottomNavigationBarScreen());
+        return MaterialPageRoute(
+            builder: (context) => const BottomNavigationBarScreen());
       case '/AboutUsScreen':
         return MaterialPageRoute(builder: (context) => const AboutUsScreen());
       case '/ContactUsScreen':
         return MaterialPageRoute(builder: (context) => const ContactUsScreen());
-      // case '/MyChildren':
-      //   return MaterialPageRoute(builder: (context) => const MyChildren());
+      case '/QuickMeetingScreen':
+        return MaterialPageRoute(
+            builder: (context) => const QuickMeetingScreen());
       // case '/Profile':
       //   return MaterialPageRoute(builder: (context) => const Profile());
       // case '/EditProfile':
