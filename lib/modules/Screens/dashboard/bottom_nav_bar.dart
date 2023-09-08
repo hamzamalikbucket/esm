@@ -1,11 +1,10 @@
-import 'package:esm/modules/Screens/Event/event_screen.dart';
 import 'package:esm/resources/Widgets/app_text.dart';
 import 'package:esm/resources/Widgets/sized_boxes.dart';
-import 'package:esm/resources/utils/Constants.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
 
+import 'Event/event_screen.dart';
 import 'home/home_screen.dart';
 
 class BottomNavigationBarScreen extends StatefulWidget {
@@ -203,11 +202,11 @@ class SliderView extends StatelessWidget {
             Menu('Worldwide & Attend', '', () {}),
             Menu('Contact Us', '', () {
               onItemClick('Contact Us');
-              Navigator.of(context).pushNamed(Constants.contactUsScreen);
+              Navigator.pushNamed(context, '/ContactUsScreen');
             }),
             Menu('About Us', '', () {
               onItemClick('About Us');
-              Navigator.of(context).pushNamed(Constants.aboutUsScreen);
+              Navigator.pushNamed(context, '/AboutUsScreen');
             }),
             Menu('FAQ', '', () {}),
             Menu('Start Shopping', '', () {}),

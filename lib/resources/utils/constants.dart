@@ -1,18 +1,4 @@
 class Constants{
-  //screens
-  static const splash='Splash';
-  static const loginScreen='login_screen';
-  static const homeScreen='home_Screen';
-  static const signUpScreen='SignUpScreen';
-  static const otpScreen='otpScreen';
-  static const aboutUsScreen='aboutUsScreen';
-  static const contactUsScreen='contactUsScreen';
-  static const eventScreen='eventScreen';
-  static const bottomNavigationBar='bottomNavigationBarScreen';
-
-
-
- //images or icons
   static const esmLogo ='assets/images/logowhite.svg';
   static const authImg ='assets/images/group.svg';
   static const loginBTn ='assets/images/loginbtn.svg';

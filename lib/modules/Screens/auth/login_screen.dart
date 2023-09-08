@@ -158,7 +158,7 @@ class LoginScreenState extends State<LoginScreen> {
                         const SizeBoxHeight16(),
                         AppButton(
                           onTap: () {
-                            Navigator.pushNamed(context, Constants.otpScreen);
+                            Navigator.pushNamed(context, '/OtpScreen');
                             // if (loginFormKey.currentState!.validate()) {
                             //   String s = emailController.text;
                             // }
@@ -178,7 +178,7 @@ class LoginScreenState extends State<LoginScreen> {
                             GestureDetector(
                               onTap: () {
                                 Navigator.pushNamed(
-                                    context, Constants.signUpScreen);
+                                    context, '/RegisterScreen');
                               },
                               child: const AppText(
                                 'Register ',
