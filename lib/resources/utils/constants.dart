@@ -30,4 +30,16 @@ class Constants {
   static const search = 'assets/images/search.png';
   static const appImage = 'assets/images/app_image.png';
   static const meetings = 'assets/images/quick_meeting.png';
+  static const file = 'assets/images/file.png';
+  static const dialPhone = 'assets/images/dial_phone.png';
+  static const persons = 'assets/images/persons.png';
+  static const mike = 'assets/images/mike.png';
+  static const videos = 'assets/images/videos.png';
+  static const moveUp = 'assets/images/move_up.png';
+  static const message = 'assets/images/message.png';
+  static const hand = 'assets/images/hand.png';
+  static const dot = 'assets/images/dot.png';
+  static const shares = 'assets/images/shares.png';
+  static const open = 'assets/images/open.png';
+  static const videoAsset = 'assets/images/video_asset.png';
 }

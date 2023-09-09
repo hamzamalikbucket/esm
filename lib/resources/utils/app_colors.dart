@@ -7,6 +7,10 @@ class AppColors {
   static const black = Color(0xff000000);
   static const lightThemeColor = Color(0xffF1F0F7);
   static const bluColor = Color(0xff007BFF);
+  static const gradiantStartColor = Color(0xff007BFF);
+  static const gradiantEndColor = Color(0xff56a8ff);
+  static const redColors = Color(0xfffc6969);
+  static const setColors = Color(0xff424242);
 
 
 
