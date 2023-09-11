@@ -29,7 +29,13 @@ class Constants {
   static const worldMap = 'assets/images/world_map.png';
   static const search = 'assets/images/search.png';
   static const appImage = 'assets/images/app_image.png';
-  static const meetings = 'assets/images/quick_meeting.png';
+  static const meetings ='assets/images/quick_meeting.png';
+  static const advertBlueBtn ='assets/images/advert_blue_btn.svg';
+  static const advertWhiteBtn ='assets/images/advert_white_btn.svg';
+  static const myAdvertWhiteBtn ='assets/images/my_advert_white_btn.svg';
+  static const myAdvertBlueBtn ='assets/images/my_advert_blue_btn.svg';
+  static const payNowBtn ='assets/images/paynowbtn.svg';
+  static const calendarIcon ='assets/images/calendar_icon.png';
   static const file = 'assets/images/file.png';
   static const dialPhone = 'assets/images/dial_phone.png';
   static const persons = 'assets/images/persons.png';

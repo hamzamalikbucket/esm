@@ -1,17 +1,17 @@
-class PostModel {
+class CelebModel {
   String postImage;
   String postDescription;
-  String likeCounts;
+
   String userImg;
   String userName;
   String userLocation;
   String postTime;
   int? hostId;
 
-  PostModel({
+  CelebModel({
     required this.postImage,
     required this.postDescription,
-    required this.likeCounts,
+
     required this.userImg,
     required this.userName,
     required this.userLocation,

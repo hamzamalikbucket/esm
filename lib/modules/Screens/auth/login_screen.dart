@@ -1,10 +1,10 @@
 import 'package:esm/resources/Widgets/ToolbarImage.dart';
+import 'package:esm/resources/widgets/buttons/app_button.dart';
 import 'package:esm/resources/Widgets/app_field.dart';
 import 'package:esm/resources/Widgets/app_text.dart';
 import 'package:esm/resources/Widgets/sized_boxes.dart';
 import 'package:esm/resources/utils/app_colors.dart';
 import 'package:esm/resources/utils/constants.dart';
-import 'package:esm/resources/widgets/buttons/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -65,25 +65,15 @@ class LoginScreenState extends State<LoginScreen> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Stack(
-                          children: [
-                            Container(
-                              height: 60,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(30),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: AppColors.greyBgColor.withOpacity(1),
-                                    spreadRadius: 1,
-                                    blurRadius: 15,
-                                    // blur radius
-                                    offset: const Offset(5, 5),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            AppIconField(
+                        Card(
+                          elevation: 10,
+                          color: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: AppIconField(
                               controller: phoneNumberController,
                               hint: 'Enter your phone number',
                               prefixIcon: Constants.phone,
@@ -96,28 +86,18 @@ class LoginScreenState extends State<LoginScreen> {
                                 return null;
                               },
                             ),
-                          ],
+                          ),
                         ),
                         const SizeBoxHeight16(),
-                        Stack(
-                          children: [
-                            Container(
-                              height: 60,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(30),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: AppColors.greyBgColor.withOpacity(1),
-                                    spreadRadius: 1,
-                                    blurRadius: 15,
-                                    // blur radius
-                                    offset: const Offset(5, 5),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            AppPasswordField(
+                        Card(
+                          elevation: 10,
+                          color: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: AppPasswordField(
                               controller: passwordController,
                               hint: 'Enter your password',
                               prefixIcon: Constants.lock,
@@ -133,7 +113,7 @@ class LoginScreenState extends State<LoginScreen> {
                                 return null;
                               },
                             ),
-                          ],
+                          ),
                         ),
                         const SizeBoxHeight16(),
                         Padding(
@@ -141,7 +121,7 @@ class LoginScreenState extends State<LoginScreen> {
                           child: Container(
                             height: 76,
                             decoration: BoxDecoration(
-                              color: AppColors.lightGreyBgColor,
+                              color: AppColors.lightgreybgColor,
                               border: Border.all(
                                 color: AppColors.greyBgColor,
                                 width: 1,
@@ -164,7 +144,7 @@ class LoginScreenState extends State<LoginScreen> {
                                   fontWeight: FontWeight.w500,
                                   color: AppColors.greyTextColor,
                                 ),
-                                const SizedBox(height: 10, width: 20),
+                                SizedBox(height: 10, width: 20),
                                 Padding(
                                   padding: const EdgeInsets.only(right: 8),
                                   child: SvgPicture.asset(
@@ -180,6 +160,7 @@ class LoginScreenState extends State<LoginScreen> {
                           onTap: () {
                             Navigator.pushNamed(context, '/OtpScreen');
                             // if (loginFormKey.currentState!.validate()) {
+                            //   String s = emailController.text;
                             // }
                           },
                           assetUrl: Constants.loginBTn,
@@ -196,13 +177,14 @@ class LoginScreenState extends State<LoginScreen> {
                             ),
                             GestureDetector(
                               onTap: () {
-                                Navigator.pushNamed(context, '/RegisterScreen');
+                                Navigator.pushNamed(
+                                    context, '/RegisterScreen');
                               },
                               child: const AppText(
                                 'Register ',
                                 size: 16,
                                 fontWeight: FontWeight.w500,
-                                color: AppColors.bluColor,
+                                color: AppColors.bluecolor,
                               ),
                             ),
                           ],

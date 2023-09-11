@@ -1,4 +1,5 @@
-import 'package:esm/Models/EventModel.dart';
+
+import 'package:esm/Models/event_model.dart';
 import 'package:esm/resources/Widgets/app_text.dart';
 import 'package:esm/resources/Widgets/sized_boxes.dart';
 import 'package:esm/resources/utils/Constants.dart';
@@ -23,27 +24,33 @@ class EventState extends State<EventScreen> {
         eventImg: "assets/images/eventImg.png",
         eventStatus: "Live",
         eventDescription: "In publishing and graphic designing lorem ipsum ",
-        eventTime: "12:30 pm - 04:00 pm",
-        eventDate: "16-12-2023",
+        eventStartTime: "12:30 pm - 04:00 pm",
+        eventEndTime: "04:00 pm",
+        eventStartDate: "16-12-2023",
+        eventEndDate: "16-12-2023",
         eventLocation: "The University of World, USA",
         eventHostImg: "assets/images/profile.png",
         eventHostName: "Buland Khan",
         eventHostLocation: "Lahore,Pakistan",
         eventInvitationStatus: "Not responded",
-        eventPriceStatus: true),
+        eventPriceStatus: true, eventName: 'esm Workshop', eventTimeZone: 'USA', eventNature: 'Corporate',eventPrice: "50"),
     EventModel(
       eventImg: "assets/images/eventExmp.png",
       eventStatus: "Live",
       eventDescription: "In publishing and graphic designing lorem ipsum ",
-      eventTime: "12:30 pm - 04:00 pm",
-      eventDate: "16-12-2023",
+      eventStartTime: "12:30 pm - 04:00 pm",
+      eventEndTime: "04:00 pm",
+      eventStartDate: "16-12-2023",
+      eventEndDate: "16-12-2023",
       eventLocation: "The University of World, USA",
       eventHostImg: "assets/images/profile.png",
       eventHostName: "Buland Khan",
       eventHostLocation: "Lahore,Pakistan",
       eventInvitationStatus: "Not responded",
-      eventPriceStatus: false,
+      eventPriceStatus: false, eventName: 'esm Workshop', eventTimeZone: 'USA', eventNature: 'Corporate',eventPrice: "50",
     ),
+
+
   ];
 
   @override
@@ -61,7 +68,7 @@ class EventState extends State<EventScreen> {
                     borderRadius: BorderRadius.circular(50),
                     border: Border.all(
                       width: 1,
-                      color: AppColors.bluColor,
+                      color: AppColors.bluecolor,
                     ),
                   ),
                   child: TextFormField(
@@ -78,7 +85,7 @@ class EventState extends State<EventScreen> {
                         child: InkWell(
                           child: Container(
                             decoration: BoxDecoration(
-                              color: AppColors.bluColor,
+                              color: AppColors.bluecolor,
                               borderRadius: BorderRadius.circular(100),
                             ),
                             child: const ImageIcon(
@@ -107,7 +114,7 @@ class EventState extends State<EventScreen> {
             ),
             Container(
               decoration: BoxDecoration(
-                color: AppColors.bluColor,
+                color: AppColors.bluecolor,
                 borderRadius: BorderRadius.circular(100),
               ),
               child: TextButton(
@@ -191,12 +198,13 @@ class EventState extends State<EventScreen> {
                         Image.asset(
                           eVents.eventImg,
                           fit: BoxFit.cover,
+                          height: 299,
                         ),
                         Align(
                           alignment: Alignment.bottomCenter,
                           child: Padding(
                             padding: const EdgeInsets.only(
-                                left: 10, bottom: 16, right: 10),
+                                left: 10, bottom: 46, right: 10),
                             child: Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
@@ -208,7 +216,7 @@ class EventState extends State<EventScreen> {
                                     ),
                                     const SizedBox(width: 10),
                                     AppText(
-                                      eVents.eventDate,
+                                      eVents.eventStartDate,
                                       size: 10,
                                       fontWeight: FontWeight.w400,
                                       color: AppColors.primaryColor,
@@ -220,7 +228,7 @@ class EventState extends State<EventScreen> {
                                     ),
                                     const SizedBox(width: 10),
                                     AppText(
-                                      eVents.eventTime,
+                                      eVents.eventStartTime,
                                       size: 10,
                                       fontWeight: FontWeight.w400,
                                       color: AppColors.primaryColor,
@@ -268,7 +276,7 @@ class EventState extends State<EventScreen> {
                           eVents.eventLocation,
                           size: 14,
                           fontWeight: FontWeight.w400,
-                          color: AppColors.bluColor,
+                          color: AppColors.bluecolor,
                         ),
                       ],
                     ),

@@ -38,7 +38,7 @@ class SplashScreenState extends State<SplashScreen> {
         child: Container(
           width: MediaQuery.of(context).size.width,
           height: MediaQuery.of(context).size.height,
-          color: AppColors.bluColor,
+          color: AppColors.bluecolor,
           child: Image.asset('assets/images/testesm.png'),
         ),
       ),

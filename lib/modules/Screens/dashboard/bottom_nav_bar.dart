@@ -1,5 +1,7 @@
+import 'package:esm/modules/Screens/AdvertScreens/Adverts.dart';
 import 'package:esm/resources/Widgets/app_text.dart';
 import 'package:esm/resources/Widgets/sized_boxes.dart';
+import 'package:esm/resources/widgets/ToolbarImage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
@@ -27,7 +29,7 @@ class BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   final List<String> selectedImagePaths = [
     'assets/images/home_slected.png',
     'assets/images/fav_slected.png',
-    'assets/images/add.png',
+    'assets/images/Add.png',
     'assets/images/video-play_slected.png',
     'assets/images/person_slected.png',
   ];
@@ -35,7 +37,7 @@ class BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   final List<String> unselectedImagePaths = [
     'assets/images/home_unslwcted.png',
     'assets/images/fav_unslected.png',
-    'assets/images/add.png',
+    'assets/images/Add.png',
     'assets/images/video-play.png',
     'assets/images/profile_unslected.png',
   ];
@@ -44,13 +46,13 @@ class BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
     setState(() {
       _selectedIndex = index;
       if (_selectedIndex == 0) {
-        setState(() {
+       /* setState(() {
           home = 'Home';
-        });
+        });*/
       } else if (_selectedIndex == 1) {
-        setState(() {
+       /* setState(() {
           home = 'My Event';
-        });
+        });*/
       }
     });
   }
@@ -58,6 +60,7 @@ class BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: List.generate(
@@ -84,10 +87,10 @@ class BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
           appBar: SliderAppBar(
             isTitleCenter: true,
             appBarColor: Colors.white,
-            title: AppText(
-              home ?? '',
-              size: 22,
-              fontWeight: FontWeight.w700,
+            title: Image.asset(
+              'assets/images/app_logo.png',
+              fit: BoxFit.contain,
+              height: 50,
             ),
           ),
           key: sliderDrawerKey,
@@ -110,7 +113,7 @@ class BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
               HomeScreen(),
               EventScreen(),
               AddScreen(),
-              CartScreen(),
+              Adverts(),
               ProfileScreen(),
             ],
           ),
@@ -120,16 +123,7 @@ class BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   }
 }
 
-class SearchScreen extends StatelessWidget {
-  const SearchScreen({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Search Screen'),
-    );
-  }
-}
 
 class AddScreen extends StatelessWidget {
   const AddScreen({super.key});
@@ -142,16 +136,6 @@ class AddScreen extends StatelessWidget {
   }
 }
 
-class CartScreen extends StatelessWidget {
-  const CartScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Center(
-      child: Text('Cart Screen'),
-    );
-  }
-}
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});

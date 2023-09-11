@@ -79,7 +79,7 @@ class AppSimpleButton extends StatelessWidget {
             btnText,
             style: GoogleFonts.jost(
               color:
-                  disabled == false ? btnTextColor : AppColors.lightGreyBgColor,
+                  disabled == false ? btnTextColor : AppColors.lightgreybgColor,
               fontSize: btnTextSize,
             ),
           ),
@@ -135,7 +135,7 @@ class AppGradiantButton extends StatelessWidget {
             btnText,
             style: GoogleFonts.jost(
               color:
-                  disabled == false ? btnTextColor : AppColors.lightGreyBgColor,
+                  disabled == false ? btnTextColor : AppColors.lightgreybgColor,
               fontSize: btnTextSize,
             ),
           ),

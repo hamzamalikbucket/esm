@@ -32,207 +32,241 @@ class _HomeScreenState extends State<HomeScreen> {
         userName: "Buland Khan",
         userLocation: "Lahore,Pakistan",
         postTime: "9 MINITUES AGO"),
+    PostModel(
+        postImage: "assets/images/dummyPost2.png",
+        postDescription: "Hello",
+        likeCounts: "265",
+        userImg: "assets/images/profile.png",
+        userName: "Buland Khan",
+        userLocation: "Lahore,Pakistan",
+        postTime: "9 MINITUES AGO"),
+    PostModel(
+        postImage: "assets/images/dummyPost2.png",
+        postDescription: "Hello",
+        likeCounts: "265",
+        userImg: "assets/images/profile.png",
+        userName: "Buland Khan",
+        userLocation: "Lahore,Pakistan",
+        postTime: "9 MINITUES AGO"),
+    PostModel(
+        postImage: "assets/images/dummyPost2.png",
+        postDescription: "Hello",
+        likeCounts: "265",
+        userImg: "assets/images/profile.png",
+        userName: "Buland Khan",
+        userLocation: "Lahore,Pakistan",
+        postTime: "9 MINITUES AGO"),
   ];
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Row(
+    return Scaffold(
+      body: SafeArea(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Expanded(
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(50),
-                    border: Border.all(
-                      width: 1,
-                      color: AppColors.bluColor,
-                    ),
-                  ),
-                  child: TextFormField(
-                    controller: searchController,
-                    keyboardType: TextInputType.text,
-                    decoration: InputDecoration(
-                      hintText: 'Search.....',
-                      hintStyle: const TextStyle(
-                        color: AppColors.greyHintColor,
-                        fontSize: 15,
-                      ),
-                      suffixIcon: Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: InkWell(
-                          child: Container(
-                            decoration: BoxDecoration(
-                              color: AppColors.bluColor,
-                              borderRadius: BorderRadius.circular(100),
-                            ),
-                            child: const ImageIcon(
-                              AssetImage(Constants.search),
-                              color: Colors.white,
-                            ),
-                          ),
-                        ),
-                      ),
-                      prefixIcon: InkWell(
-                        onTap: () {},
-                        child: const ImageIcon(
-                          AssetImage(Constants.worldMap),
-                        ),
-                      ),
-                      border: InputBorder.none,
-                      errorBorder: InputBorder.none,
-                      focusedBorder: InputBorder.none,
-                      focusedErrorBorder: InputBorder.none,
-                      disabledBorder: InputBorder.none,
-                      enabledBorder: InputBorder.none,
-                    ),
-                  ),
-                ),
-              ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                color: AppColors.bluColor,
-                borderRadius: BorderRadius.circular(100),
-              ),
-              child: TextButton(
-                onPressed: () {},
-                child: const AppText(
-                  'Epose',
-                  size: 17,
-                  color: Colors.white,
-                ),
-              ),
-            ),
-            const SizeBoxWidth8(),
-          ],
-        ),
-        Expanded(
-          child: ListView.builder(
-            padding: EdgeInsets.zero,
-            itemCount: postList.length,
-            addRepaintBoundaries: true,
-            scrollDirection: Axis.vertical,
-            shrinkWrap: true,
-            physics: const AlwaysScrollableScrollPhysics(),
-            itemBuilder: (context, index) {
-              PostModel pM = postList[index];
-              return Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
+            Row(
+              children: [
+                Expanded(
+                  child: Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      children: [
-                        const CircleAvatar(
-                          radius: 30,
-                          backgroundImage: AssetImage(
-                            "assets/images/profile.png",
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        border: Border.all(
+                          width: 1,
+                          color: AppColors.bluecolor,
+                        ),
+                      ),
+                      child: TextFormField(
+                        controller: searchController,
+                        keyboardType: TextInputType.text,
+                        decoration: InputDecoration(
+                          hintText: 'Search.....',
+                          hintStyle: const TextStyle(
+                            color: AppColors.greyHintColor,
+                            fontSize: 15,
                           ),
-                        ),
-                        const SizeBoxWidth12(),
-                        Column(
-                          children: [
-                            const SizeBoxHeight4(),
-                            AppText(
-                              pM.userName,
-                              size: 16,
-                              fontWeight: FontWeight.w700,
-                              color: AppColors.black,
+                          suffixIcon: Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: InkWell(
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  color: AppColors.bluecolor,
+                                  borderRadius: BorderRadius.circular(100),
+                                ),
+                                child: const ImageIcon(
+                                  AssetImage(Constants.search),
+                                  color: Colors.white,
+                                ),
+                              ),
                             ),
-                            AppText(
-                              pM.userLocation,
-                              size: 12,
-                              fontWeight: FontWeight.w500,
-                              color: AppColors.greyHintColor,
+                          ),
+                          prefixIcon: InkWell(
+                            onTap: () {},
+                            child: const ImageIcon(
+                              AssetImage(Constants.worldMap),
                             ),
-                          ],
+                          ),
+                          border: InputBorder.none,
+                          errorBorder: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                          focusedErrorBorder: InputBorder.none,
+                          disabledBorder: InputBorder.none,
+                          enabledBorder: InputBorder.none,
                         ),
-                      ],
+                      ),
                     ),
                   ),
-                  Image.asset(
-                    pM.postImage,
-                    height: 299,
-                    fit: BoxFit.cover,
+                ),
+                Container(
+                  decoration: BoxDecoration(
+                    color: AppColors.bluecolor,
+                    borderRadius: BorderRadius.circular(37),
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: const AppText(
+                      'Expose',
+                      size: 17,
+                      color: Colors.white,
+                    ),
+                  ),
+                ),
+                const SizeBoxWidth8(),
+              ],
+            ),
+            Expanded(
+              child:
+              ListView.builder(
+                padding: EdgeInsets.zero,
+                itemCount: postList.length,
+                addRepaintBoundaries: true,
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                physics: const AlwaysScrollableScrollPhysics(),
+                itemBuilder: (context, index) {
+                  PostModel pM = postList[index];
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: GestureDetector(
+                          onTap:(){
+                  Navigator.pushNamed(context, '/HostDetailTabScreen');
+                  },
+                          child: Row(
+                            children: [
+                              const CircleAvatar(
+                                radius: 30,
+                                backgroundImage: AssetImage(
+                                  "assets/images/profile.png",
+                                ),
+                              ),
+                              const SizeBoxWidth12(),
+                              Column(
+                                children: [
+                                  const SizeBoxHeight4(),
+                                  AppText(
+                                    pM.userName,
+                                    size: 16,
+                                    fontWeight: FontWeight.w700,
+                                    color: AppColors.black,
+                                  ),
+                                  AppText(
+                                    pM.userLocation,
+                                    size: 12,
+                                    fontWeight: FontWeight.w500,
+                                    color: AppColors.greyHintColor,
+                                  ),
+                                ],
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                      Image.asset(
+                        pM.postImage,
+                        height: 299,
+                        fit: BoxFit.cover,
+                      ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          const SizeBoxWidth12(),
-                          SvgPicture.asset(
-                            Constants.favouriteIcon,
+                          Row(
+                            children: [
+                              const SizeBoxWidth12(),
+                              SvgPicture.asset(
+                                Constants.favouriteIcon,
+                              ),
+                              const SizeBoxWidth12(),
+                              SvgPicture.asset(
+                                Constants.commentIcon,
+                              ),
+                              const SizeBoxWidth12(),
+                              SvgPicture.asset(
+                                Constants.viewIcon,
+                              ),
+                            ],
                           ),
-                          const SizeBoxWidth12(),
-                          SvgPicture.asset(
-                            Constants.commentIcon,
-                          ),
-                          const SizeBoxWidth12(),
-                          SvgPicture.asset(
-                            Constants.viewIcon,
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: SvgPicture.asset(
+                              Constants.shareBtnBlue,
+                            ),
                           ),
                         ],
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: SvgPicture.asset(
-                          Constants.shareBtnBlue,
+                        padding: const EdgeInsets.only(left: 8.0),
+                        child: Row(
+                          children: [
+                            AppText(
+                              "${pM.likeCounts} Likes",
+                              size: 12,
+                              fontWeight: FontWeight.w500,
+                              color: AppColors.black,
+                            ),
+                          ],
                         ),
                       ),
-                    ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child: Row(
-                      children: [
-                        AppText(
-                          "${pM.likeCounts} Likes",
-                          size: 12,
-                          fontWeight: FontWeight.w500,
-                          color: AppColors.black,
+                      Row(
+                        children: [
+                          const SizeBoxWidth8(),
+                          AppText(
+                            pM.userName,
+                            size: 16,
+                            fontWeight: FontWeight.w700,
+                            color: AppColors.black,
+                          ),
+                          const SizeBoxWidth16(),
+                          AppText(
+                            pM.postDescription,
+                            size: 16,
+                            fontWeight: FontWeight.w500,
+                            color: AppColors.black,
+                          ),
+                        ],
+                      ),
+                      Padding(
+                        padding: const EdgeInsets.only(left: 8.0),
+                        child: AppText(
+                          pM.postTime,
+                          size: 10,
+                          fontWeight: FontWeight.w700,
+                          color: AppColors.greyHintColor,
                         ),
-                      ],
-                    ),
-                  ),
-                  Row(
-                    children: [
-                      const SizeBoxWidth8(),
-                      AppText(
-                        pM.userName,
-                        size: 16,
-                        fontWeight: FontWeight.w700,
-                        color: AppColors.black,
                       ),
-                      const SizeBoxWidth16(),
-                      AppText(
-                        pM.postDescription,
-                        size: 16,
-                        fontWeight: FontWeight.w500,
-                        color: AppColors.black,
-                      ),
+                      const SizeBoxHeight12(),
                     ],
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 8.0),
-                    child: AppText(
-                      pM.postTime,
-                      size: 10,
-                      fontWeight: FontWeight.w700,
-                      color: AppColors.greyHintColor,
-                    ),
-                  ),
-                  const SizeBoxHeight12(),
-                ],
-              );
-            },
-          ),
+                  );
+                },
+              ),
+            ),
+          ],
         ),
-      ],
+      ),
     );
   }
 }
