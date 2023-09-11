@@ -1,7 +1,9 @@
 import 'package:esm/resources/utils/routs.dart';
+import 'package:timezone/data/latest.dart' as tz;
 import 'package:flutter/material.dart';
 
 void main() {
+  tz.initializeTimeZones();
   runApp(MyApp());
 }
 

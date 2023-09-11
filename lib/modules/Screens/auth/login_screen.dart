@@ -1,10 +1,10 @@
 import 'package:esm/resources/Widgets/ToolbarImage.dart';
-import 'package:esm/resources/Widgets/app_button.dart';
 import 'package:esm/resources/Widgets/app_field.dart';
 import 'package:esm/resources/Widgets/app_text.dart';
 import 'package:esm/resources/Widgets/sized_boxes.dart';
 import 'package:esm/resources/utils/app_colors.dart';
 import 'package:esm/resources/utils/constants.dart';
+import 'package:esm/resources/widgets/buttons/app_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
@@ -65,15 +65,25 @@ class LoginScreenState extends State<LoginScreen> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Card(
-                          elevation: 10,
-                          color: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50.0),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: AppIconField(
+                        Stack(
+                          children: [
+                            Container(
+                              height: 60,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(30),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: AppColors.greyBgColor.withOpacity(1),
+                                    spreadRadius: 1,
+                                    blurRadius: 15,
+                                    // blur radius
+                                    offset: const Offset(5, 5),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            AppIconField(
                               controller: phoneNumberController,
                               hint: 'Enter your phone number',
                               prefixIcon: Constants.phone,
@@ -86,18 +96,28 @@ class LoginScreenState extends State<LoginScreen> {
                                 return null;
                               },
                             ),
-                          ),
+                          ],
                         ),
                         const SizeBoxHeight16(),
-                        Card(
-                          elevation: 10,
-                          color: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50.0),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: AppPasswordField(
+                        Stack(
+                          children: [
+                            Container(
+                              height: 60,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(30),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: AppColors.greyBgColor.withOpacity(1),
+                                    spreadRadius: 1,
+                                    blurRadius: 15,
+                                    // blur radius
+                                    offset: const Offset(5, 5),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            AppPasswordField(
                               controller: passwordController,
                               hint: 'Enter your password',
                               prefixIcon: Constants.lock,
@@ -113,7 +133,7 @@ class LoginScreenState extends State<LoginScreen> {
                                 return null;
                               },
                             ),
-                          ),
+                          ],
                         ),
                         const SizeBoxHeight16(),
                         Padding(
@@ -144,7 +164,7 @@ class LoginScreenState extends State<LoginScreen> {
                                   fontWeight: FontWeight.w500,
                                   color: AppColors.greyTextColor,
                                 ),
-                                SizedBox(height: 10, width: 20),
+                                const SizedBox(height: 10, width: 20),
                                 Padding(
                                   padding: const EdgeInsets.only(right: 8),
                                   child: SvgPicture.asset(
@@ -160,7 +180,6 @@ class LoginScreenState extends State<LoginScreen> {
                           onTap: () {
                             Navigator.pushNamed(context, '/OtpScreen');
                             // if (loginFormKey.currentState!.validate()) {
-                            //   String s = emailController.text;
                             // }
                           },
                           assetUrl: Constants.loginBTn,
@@ -177,8 +196,7 @@ class LoginScreenState extends State<LoginScreen> {
                             ),
                             GestureDetector(
                               onTap: () {
-                                Navigator.pushNamed(
-                                    context, '/RegisterScreen');
+                                Navigator.pushNamed(context, '/RegisterScreen');
                               },
                               child: const AppText(
                                 'Register ',

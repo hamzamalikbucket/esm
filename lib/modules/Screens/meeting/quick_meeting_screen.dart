@@ -1,8 +1,11 @@
+import 'package:esm/Models/hologram_model.dart';
+import 'package:esm/config/functions/app_date_picker.dart';
 import 'package:esm/resources/Widgets/app_text.dart';
 import 'package:esm/resources/Widgets/sized_boxes.dart';
 import 'package:esm/resources/utils/Constants.dart';
-import 'package:esm/resources/widgets/app_button.dart';
 import 'package:esm/resources/widgets/app_field.dart';
+import 'package:esm/resources/widgets/buttons/app_button.dart';
+import 'package:esm/resources/widgets/buttons/app_drop_down_button.dart';
 import 'package:esm/resources/widgets/dialogs/quick_meeting_dialog.dart';
 import 'package:flutter/material.dart';
 
@@ -22,6 +25,15 @@ class _QuickMeetingScreenState extends State<QuickMeetingScreen> {
   TextEditingController endTimeDateController = TextEditingController();
   TextEditingController timeZoneController = TextEditingController();
   TextEditingController hologramController = TextEditingController();
+  TextEditingController controller = TextEditingController();
+  Hologram? hologram;
+  HologramType? hologramType;
+  EventEngineer? eventEngineer;
+  TimeZone? timeZone;
+  bool validateHologram = false;
+  bool validateTimeZone = false;
+  bool validateHologramType = false;
+  bool validateEventEngineer = false;
 
   @override
   Widget build(BuildContext context) {
@@ -99,15 +111,16 @@ class _QuickMeetingScreenState extends State<QuickMeetingScreen> {
                       ),
                     ),
                     const SizeBoxHeight4(),
-                    Card(
-                      elevation: 10,
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: AppField(
+                    Stack(
+                      children: [
+                        Container(
+                          height: 60,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                        AppField(
                           controller: titleController,
                           hint: 'Enter Meeting Title',
                           validator: (val) {
@@ -117,7 +130,7 @@ class _QuickMeetingScreenState extends State<QuickMeetingScreen> {
                             return null;
                           },
                         ),
-                      ),
+                      ],
                     ),
                     const SizeBoxHeight16(),
                     const Padding(
@@ -128,17 +141,26 @@ class _QuickMeetingScreenState extends State<QuickMeetingScreen> {
                       ),
                     ),
                     const SizeBoxHeight4(),
-                    Card(
-                      elevation: 10,
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: AppField(
+                    Stack(
+                      children: [
+                        Container(
+                          height: 60,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                        AppField(
+                          onTap: () async {
+                            String date =
+                                await AppDateTimePicker.getDate(context);
+                            setState(() {
+                              startDateController.text = date;
+                            });
+                          },
+                          readOnly: true,
                           controller: startDateController,
-                          hint: 'Enter Meeting Start Date',
+                          hint: 'Select Meeting Start Date',
                           validator: (val) {
                             if (val == null || val.trim().isEmpty) {
                               return "Required";
@@ -146,7 +168,7 @@ class _QuickMeetingScreenState extends State<QuickMeetingScreen> {
                             return null;
                           },
                         ),
-                      ),
+                      ],
                     ),
                     const SizeBoxHeight16(),
                     const Padding(
@@ -157,17 +179,26 @@ class _QuickMeetingScreenState extends State<QuickMeetingScreen> {
                       ),
                     ),
                     const SizeBoxHeight4(),
-                    Card(
-                      elevation: 10,
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: AppField(
+                    Stack(
+                      children: [
+                        Container(
+                          height: 60,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                        AppField(
+                          onTap: () async {
+                            String date =
+                                await AppDateTimePicker.getDate(context);
+                            setState(() {
+                              endDateController.text = date;
+                            });
+                          },
+                          readOnly: true,
                           controller: endDateController,
-                          hint: 'Enter Meeting End Date',
+                          hint: 'Select Meeting End Date',
                           validator: (val) {
                             if (val == null || val.trim().isEmpty) {
                               return "Required";
@@ -175,7 +206,7 @@ class _QuickMeetingScreenState extends State<QuickMeetingScreen> {
                             return null;
                           },
                         ),
-                      ),
+                      ],
                     ),
                     const SizeBoxHeight16(),
                     const Padding(
@@ -186,17 +217,26 @@ class _QuickMeetingScreenState extends State<QuickMeetingScreen> {
                       ),
                     ),
                     const SizeBoxHeight4(),
-                    Card(
-                      elevation: 10,
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: AppField(
+                    Stack(
+                      children: [
+                        Container(
+                          height: 60,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                        AppField(
+                          onTap: () async {
+                            String time =
+                                await AppDateTimePicker.getTime(context);
+                            setState(() {
+                              startTimeController.text = time;
+                            });
+                          },
                           controller: startTimeController,
-                          hint: 'Enter Meeting Start Time',
+                          readOnly: true,
+                          hint: 'Select Meeting Start Time',
                           validator: (val) {
                             if (val == null || val.trim().isEmpty) {
                               return "Required";
@@ -204,7 +244,7 @@ class _QuickMeetingScreenState extends State<QuickMeetingScreen> {
                             return null;
                           },
                         ),
-                      ),
+                      ],
                     ),
                     const SizeBoxHeight16(),
                     const Padding(
@@ -215,17 +255,26 @@ class _QuickMeetingScreenState extends State<QuickMeetingScreen> {
                       ),
                     ),
                     const SizeBoxHeight4(),
-                    Card(
-                      elevation: 10,
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: AppField(
+                    Stack(
+                      children: [
+                        Container(
+                          height: 60,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(30),
+                          ),
+                        ),
+                        AppField(
+                          onTap: () async {
+                            String time =
+                                await AppDateTimePicker.getTime(context);
+                            setState(() {
+                              endTimeDateController.text = time;
+                            });
+                          },
                           controller: endTimeDateController,
-                          hint: 'Enter Meeting End Time',
+                          hint: 'Select Meeting End Time',
+                          readOnly: true,
                           validator: (val) {
                             if (val == null || val.trim().isEmpty) {
                               return "Required";
@@ -233,7 +282,7 @@ class _QuickMeetingScreenState extends State<QuickMeetingScreen> {
                             return null;
                           },
                         ),
-                      ),
+                      ],
                     ),
                     const SizeBoxHeight16(),
                     const Padding(
@@ -244,27 +293,17 @@ class _QuickMeetingScreenState extends State<QuickMeetingScreen> {
                       ),
                     ),
                     const SizeBoxHeight4(),
-                    Card(
-                      elevation: 10,
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: Center(
-                          child: AppField(
-                            controller: timeZoneController,
-                            hint: 'Enter Meeting Time Zone',
-                            validator: (val) {
-                              if (val == null || val.trim().isEmpty) {
-                                return "Required";
-                              }
-                              return null;
-                            },
-                          ),
-                        ),
-                      ),
+                    AppDropDownFields<TimeZone>(
+                      hint: "Select Time Zone",
+                      value: timeZone,
+                      items: TimeZone.timeZoneList,
+                      onChange: (v) {
+                        setState(() {
+                          timeZone = v;
+                        });
+                      },
+                      applyValidation: validateTimeZone,
+                      errorMessage: 'Required',
                     ),
                     const SizeBoxHeight16(),
                     const Padding(
@@ -275,33 +314,94 @@ class _QuickMeetingScreenState extends State<QuickMeetingScreen> {
                       ),
                     ),
                     const SizeBoxHeight4(),
-                    Card(
-                      elevation: 10,
-                      color: Colors.white,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(50.0),
-                      ),
-                      child: Padding(
-                        padding: const EdgeInsets.all(4.0),
-                        child: AppField(
-                          controller: hologramController,
-                          hint: 'Enter',
-                          validator: (val) {
-                            if (val == null || val.trim().isEmpty) {
-                              return "Password is required";
-                            }
-                            return null;
-                          },
+                    AppDropDownFields<Hologram>(
+                      hint: "Select hologram",
+                      value: hologram,
+                      items: Hologram.hologramList,
+                      onChange: (v) {
+                        setState(() {
+                          hologram = v;
+                        });
+                      },
+                      applyValidation: validateHologram,
+                      errorMessage: 'Required',
+                    ),
+                    if (hologram?.title == 'Yes') ...[
+                      const SizeBoxHeight16(),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 24.0),
+                        child: AppText(
+                          'Hologram Type',
+                          color: Colors.white,
                         ),
                       ),
-                    ),
+                      const SizeBoxHeight4(),
+                      AppDropDownFields<HologramType>(
+                        hint: "Select Hologram Type",
+                        value: hologramType,
+                        items: HologramType.hologramTypeList,
+                        onChange: (v) {
+                          setState(() {
+                            hologramType = v;
+                          });
+                        },
+                        applyValidation: validateHologramType,
+                        errorMessage: 'Required',
+                      ),
+                      const SizeBoxHeight16(),
+                      const Padding(
+                        padding: EdgeInsets.only(left: 24.0),
+                        child: AppText(
+                          'Event Engineer',
+                          color: Colors.white,
+                        ),
+                      ),
+                      const SizeBoxHeight4(),
+                      AppDropDownFields<EventEngineer>(
+                        hint: "Select Event Engineer",
+                        value: eventEngineer,
+                        items: EventEngineer.eventEngineerList,
+                        onChange: (v) {
+                          setState(() {
+                            eventEngineer = v;
+                          });
+                        },
+                        applyValidation: validateEventEngineer,
+                        errorMessage: 'Required',
+                      ),
+                    ],
                     const SizeBoxHeight16(),
                     Align(
                       alignment: Alignment.center,
                       child: AppGradiantButton(
                         width: 200,
                         onTap: () {
-                          Navigator.pushNamed(context, '/InstantMeetingScreen');
+                          if (formKey.currentState!.validate() && hologram != null && timeZone != null) {
+                            if (hologram?.title == 'Yes') {
+                              if (hologramType != null && eventEngineer != null) {
+                                setState(() {
+                                  validateHologramType = false;
+                                  validateEventEngineer = false;
+                                });
+
+                              } else {
+                                setState(() {
+                                  validateHologramType = true;
+                                  validateEventEngineer = true;
+                                });
+                              }
+                            }
+                            setState(() {
+                              validateHologram = false;
+                              validateTimeZone = false;
+                            });
+                          } else {
+                            setState(() {
+                              validateHologram = true;
+                              validateTimeZone = true;
+                            });
+                          }
+                          //Navigator.pushNamed(context, '/InstantMeetingScreen');
                         },
                         btnText: 'Schedule',
                       ),

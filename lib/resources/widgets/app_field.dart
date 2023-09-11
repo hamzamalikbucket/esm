@@ -110,7 +110,7 @@ class AppField extends StatelessWidget {
         disabledBorder: InputBorder.none,
         errorBorder: InputBorder.none,
         focusedErrorBorder: InputBorder.none,
-        contentPadding: const EdgeInsets.only(left: 24.0, top: 15),
+        contentPadding: const EdgeInsets.fromLTRB(24, 20, 20, 20),
         labelText: label,
         hintText: hint,
         labelStyle: TextStyle(
@@ -232,7 +232,7 @@ class AppIconField extends StatelessWidget {
         disabledBorder: InputBorder.none,
         errorBorder: InputBorder.none,
         focusedErrorBorder: InputBorder.none,
-        contentPadding: const EdgeInsets.only(left: 24.0, top: 15),
+        contentPadding: const EdgeInsets.fromLTRB(24, 20, 20, 20),
         prefixIcon: prefixIcon == null
             ? null
             : Padding(
@@ -379,7 +379,7 @@ class _AppPasswordFieldState extends State<AppPasswordField> {
         enabledBorder: InputBorder.none,
         focusedBorder: InputBorder.none,
         disabledBorder: InputBorder.none,
-        contentPadding: const EdgeInsets.only(left: 24.0, top: 15),
+        contentPadding: const EdgeInsets.fromLTRB(24, 20, 20, 20),
         prefixIcon: widget.prefixIcon == null
             ? null
             : Padding(

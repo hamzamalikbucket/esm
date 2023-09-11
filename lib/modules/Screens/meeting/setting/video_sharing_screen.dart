@@ -1,7 +1,7 @@
-import 'package:esm/resources/Widgets/app_button.dart';
 import 'package:esm/resources/Widgets/app_text.dart';
 import 'package:esm/resources/Widgets/sized_boxes.dart';
 import 'package:esm/resources/utils/app_colors.dart';
+import 'package:esm/resources/widgets/buttons/app_button.dart';
 import 'package:flutter/material.dart';
 
 class VideoSharingScreen extends StatefulWidget {
