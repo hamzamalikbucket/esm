@@ -26,21 +26,7 @@ class AllState extends State<Adverts> {
         title: "title",
         url: Uri.parse("https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4"),
     ),
-    AdvertModel(
-        id: 1,
-        title: "title",
-        url: Uri.parse("https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4"),
-    ),
-    AdvertModel(
-        id: 1,
-        title: "title",
-        url: Uri.parse("https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4"),
-    ),
-    AdvertModel(
-        id: 1,
-        title: "title",
-        url: Uri.parse("https://flutter.github.io/assets-for-api-docs/assets/videos/bee.mp4"),
-    ),
+
   ];
   @override
   Widget build(BuildContext context) {

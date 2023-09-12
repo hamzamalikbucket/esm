@@ -11,7 +11,6 @@ import 'device_profile_screen.dart';
 
 class TabScreen extends StatefulWidget {
   const TabScreen({super.key});
-
   @override
   State<TabScreen> createState() => _TabScreenState();
 }

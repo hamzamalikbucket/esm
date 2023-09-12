@@ -22,30 +22,77 @@ class DetailTab extends StatefulWidget{
 
 }
 class TabState extends State <DetailTab>{
+
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
   return  DefaultTabController(
     length: 4,
     child: Scaffold(
-      appBar: AppBar(
+      backgroundColor: AppColors.primaryColor,
+      appBar: ToolbarImage(
+        appBar: AppBar(),
+      ),
 
-        bottom: TabBar(
-          tabs: [
-            Tab(text: 'Details'),
-            Tab(text: 'Post'),
-            Tab(text: 'Events'),
-            Tab(text: 'Celebrations'),
+      body: SafeArea(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Container(
+                height: 50,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(70),
+                  color: AppColors.primaryColor,
+                  border: Border.all(
+                    width: 1,
+                    color: AppColors.bluecolor,
+                  ),
+                ),
+                child: TabBar(
+                  indicator: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: [AppColors.gradiantStartColor, AppColors.gradiantEndColor],
+                      begin: Alignment.topCenter,
+                      end: Alignment.bottomCenter,
+                    ),
+
+                    borderRadius: BorderRadius.circular(70),
+                  ),
+                  isScrollable: true,
+                  unselectedLabelColor: AppColors.secondaryColor,
+                  labelColor: Colors.white,
+
+                  tabs: const [
+                    Tab(
+                      text: "Details",
+                    ),
+                    Tab(
+                      text: "Post",
+                    ),
+                    Tab(
+                      text: "Events",
+                    ),
+                    Tab(
+                      text: "Celebrations",
+                    ),
+
+                  ],
+                ),
+              ),
+            ),
+            Expanded(
+              child: TabBarView(
+                children: [
+                  HostProfile(),
+                  HostPost(),
+                  HostEvents(),
+                  CelerbationsScreen(),
+                ],
+              ),
+            ),
           ],
         ),
-      ),
-      body: TabBarView(
-        children: [
-          HostProfile(),
-          HostPost(),
-          HostEvents(),
-          CelerbationsScreen(),
-        ],
       ),
     ),
   );

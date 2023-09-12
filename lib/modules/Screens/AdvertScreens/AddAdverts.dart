@@ -63,7 +63,7 @@ class AddState extends State<AddAdverts>{
                     child: Padding(
                       padding: const EdgeInsets.all(18.0),
                       child: Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         crossAxisAlignment: CrossAxisAlignment.start,
 
                         children: [
@@ -359,14 +359,19 @@ class AddState extends State<AddAdverts>{
                             ),
                           ),
                           SizeBoxHeight16(),
-                          AppButton(
-                            onTap: () {
-                              Navigator.pop(context);
-                              // if (loginFormKey.currentState!.validate()) {
-                              //   String s = emailController.text;
-                              // }
-                            },
-                            assetUrl: Constants.payNowBtn,
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              AppButton(
+                                onTap: () {
+                                  Navigator.pop(context);
+                                  // if (loginFormKey.currentState!.validate()) {
+                                  //   String s = emailController.text;
+                                  // }
+                                },
+                                assetUrl: Constants.payNowBtn,
+                              ),
+                            ],
                           ),
 
                         ],

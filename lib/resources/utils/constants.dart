@@ -48,4 +48,7 @@ class Constants {
   static const shares = 'assets/images/shares.png';
   static const open = 'assets/images/open.png';
   static const videoAsset = 'assets/images/video_asset.png';
+  static const sendRequestBtn = 'assets/images/send_req_btn.svg';
+  static const editIcon = 'assets/images/editicon.svg';
+  static const dummyProduct = 'assets/images/product_dummy_img.png';
 }

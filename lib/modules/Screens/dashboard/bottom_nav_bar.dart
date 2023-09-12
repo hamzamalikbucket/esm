@@ -174,7 +174,11 @@ class SliderView extends StatelessWidget {
             Menu('Events & Hologram', 'Free Unlimited, time & participents',
                 () {}),
             Menu('Join Event Workers', 'Get Paid', () {}),
-            Menu('Join Hologram Engineers', 'Make Money', () {}),
+            Menu('Join Hologram Engineers', 'Make Money', () {
+              onItemClick('Join Hologram Engineers Us');
+              Navigator.pushNamed(context, '/HologramJoin');
+
+            }),
             Menu('Seller add used/new Products/Services', 'Make Money', () {}),
             Menu('Find any event In your area',
                 'Make GPS default in you present location', () {}),
@@ -191,7 +195,11 @@ class SliderView extends StatelessWidget {
               Navigator.pushNamed(context, '/AboutUsScreen');
             }),
             Menu('FAQ', '', () {}),
-            Menu('Start Shopping', '', () {}),
+            Menu('Start Shopping', '', () {
+              onItemClick('Start Shopping');
+              Navigator.pushNamed(context, '/ShopScreen');
+
+            }),
           ]
               .map((menu) => _SliderMenuItem(
                     title: menu.title,
