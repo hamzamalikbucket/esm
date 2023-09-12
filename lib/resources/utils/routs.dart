@@ -1,3 +1,7 @@
+import 'package:esm/modules/Screens/AdvertScreens/add_adverts_screen.dart';
+import 'package:esm/modules/Screens/HostDetails/details_tab_screen.dart';
+import 'package:esm/modules/Screens/join_hologram_screen.dart';
+import 'package:esm/modules/Screens/ShoppingScreens/shop_screen.dart';
 import 'package:esm/modules/Screens/auth/login_screen.dart';
 import 'package:esm/modules/Screens/auth/otp_screen.dart';
 import 'package:esm/modules/Screens/auth/register_screen.dart';
@@ -30,6 +34,18 @@ class AppRoute {
       case '/QuickMeetingScreen':
         return MaterialPageRoute(
             builder: (context) => const QuickMeetingScreen());
+      case '/HostDetailTabScreen':
+        return MaterialPageRoute(
+            builder: (context) => DetailTab());
+      case '/AddAdverts':
+        return MaterialPageRoute(
+            builder: (context) => AddAdverts());
+      case '/HologramJoin':
+        return MaterialPageRoute(
+            builder: (context) => JoinHologramEngineer());
+      case '/ShopScreen':
+        return MaterialPageRoute(
+            builder: (context) => ShopScreen());
       // case '/Profile':
       //   return MaterialPageRoute(builder: (context) => const Profile());
       // case '/EditProfile':

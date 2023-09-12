@@ -1,8 +1,8 @@
 import 'package:esm/Models/post_model.dart';
 import 'package:esm/modules/Screens/HostDetails/Events/HostEvents.dart';
 
-import 'package:esm/modules/Screens/HostDetails/HostPosts.dart';
-import 'package:esm/modules/Screens/HostDetails/HostProfile.dart';
+import 'package:esm/modules/Screens/HostDetails/host_post_screen.dart';
+import 'package:esm/modules/Screens/HostDetails/host_profile_screen.dart';
 import 'package:esm/modules/Screens/HostDetails/celeberations_screen.dart';
 import 'package:esm/resources/Widgets/app_text.dart';
 import 'package:esm/resources/utils/Constants.dart';
