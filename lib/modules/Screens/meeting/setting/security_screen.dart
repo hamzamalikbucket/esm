@@ -75,7 +75,7 @@ class _SecurityScreenState extends State<SecurityScreen> {
                           });
                         },
                         trackColor: AppColors.greyBgColor,
-                        activeColor: AppColors.bluColor,
+                        activeColor: AppColors.bluecolor,
                         thumbColor: AppColors.greyBgColor,
                         focusColor: AppColors.black,
                       )
@@ -100,7 +100,7 @@ class _SecurityScreenState extends State<SecurityScreen> {
                         onPressed: () {},
                         child: const AppText(
                           'Remove',
-                          color: AppColors.bluColor,
+                          color: AppColors.bluecolor,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
@@ -108,7 +108,7 @@ class _SecurityScreenState extends State<SecurityScreen> {
                         onPressed: () {},
                         child: const AppText(
                           'Copy',
-                          color: AppColors.bluColor,
+                          color: AppColors.bluecolor,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
@@ -116,7 +116,7 @@ class _SecurityScreenState extends State<SecurityScreen> {
                         onPressed: () {},
                         child: const AppText(
                           'Show',
-                          color: AppColors.bluColor,
+                          color: AppColors.bluecolor,
                           fontWeight: FontWeight.w700,
                         ),
                       ),
@@ -146,7 +146,7 @@ class _SecurityScreenState extends State<SecurityScreen> {
                           });
                         },
                         trackColor: AppColors.greyBgColor,
-                        activeColor: AppColors.bluColor,
+                        activeColor: AppColors.bluecolor,
                         thumbColor: AppColors.greyBgColor,
                         focusColor: AppColors.black,
                       )

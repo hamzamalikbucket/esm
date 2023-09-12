@@ -1,12 +1,11 @@
 import 'package:esm/resources/Widgets/app_text.dart';
-import 'package:esm/resources/utils/Constants.dart';
 import 'package:esm/resources/utils/app_colors.dart';
 import 'package:esm/resources/widgets/sized_boxes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:flutter/cupertino.dart';
 
 class HostProfile extends StatefulWidget{
+  const HostProfile({super.key});
+
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState

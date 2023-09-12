@@ -1,7 +1,5 @@
 import 'package:esm/modules/Screens/AdvertScreens/Adverts.dart';
-import 'package:esm/resources/Widgets/app_text.dart';
 import 'package:esm/resources/Widgets/sized_boxes.dart';
-import 'package:esm/resources/widgets/ToolbarImage.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
@@ -29,7 +27,7 @@ class BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   final List<String> selectedImagePaths = [
     'assets/images/home_slected.png',
     'assets/images/fav_slected.png',
-    'assets/images/Add.png',
+    'assets/images/add.png',
     'assets/images/video-play_slected.png',
     'assets/images/person_slected.png',
   ];
@@ -37,7 +35,7 @@ class BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   final List<String> unselectedImagePaths = [
     'assets/images/home_unslwcted.png',
     'assets/images/fav_unslected.png',
-    'assets/images/Add.png',
+    'assets/images/add.png',
     'assets/images/video-play.png',
     'assets/images/profile_unslected.png',
   ];

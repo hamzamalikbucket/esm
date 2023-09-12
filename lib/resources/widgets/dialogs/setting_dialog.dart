@@ -5,7 +5,6 @@ import 'package:google_fonts/google_fonts.dart';
 
 class SettingDialog extends StatelessWidget {
   final Function? onTapSetting;
-
   final Function? onTapSecurity;
   final Function? onTapRecording;
   final Function? onTapVideoShare;
@@ -33,7 +32,7 @@ class SettingDialog extends StatelessWidget {
           color: Colors.white,
           border: Border.all(
             width: 1,
-            color: AppColors.bluColor,
+            color: AppColors.bluecolor,
           ),
           borderRadius: BorderRadius.circular(20.0),
           boxShadow: [

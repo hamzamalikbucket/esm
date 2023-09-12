@@ -35,7 +35,7 @@ class _VideoMeetingScreenState extends State<VideoMeetingScreen> {
                 width: 120,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: AppColors.bluColor,
+                  color: AppColors.bluecolor,
                   borderRadius: BorderRadius.circular(100),
                 ),
                 child: const AppText(

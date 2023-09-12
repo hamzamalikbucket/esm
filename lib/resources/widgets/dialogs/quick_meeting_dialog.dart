@@ -22,7 +22,7 @@ class QuickMeetingDialog extends StatelessWidget {
           color: Colors.white,
           border: Border.all(
             width: 1,
-            color: AppColors.bluColor,
+            color: AppColors.bluecolor,
           ),
           borderRadius: BorderRadius.circular(20.0),
           boxShadow: [
@@ -69,7 +69,7 @@ class QuickMeetingDialog extends StatelessWidget {
                       child: Text(
                         'https://staging.esprayme.com/instant-meeting?slug=1692109650605',
                         style: TextStyle(
-                          color: AppColors.bluColor,
+                          color: AppColors.bluecolor,
                           fontSize: 12.0,
                           fontWeight: FontWeight.w700,
                           decoration: TextDecoration.underline,

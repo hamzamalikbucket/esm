@@ -376,32 +376,32 @@ class _QuickMeetingScreenState extends State<QuickMeetingScreen> {
                       child: AppGradiantButton(
                         width: 200,
                         onTap: () {
-                          if (formKey.currentState!.validate() && hologram != null && timeZone != null) {
-                            if (hologram?.title == 'Yes') {
-                              if (hologramType != null && eventEngineer != null) {
-                                setState(() {
-                                  validateHologramType = false;
-                                  validateEventEngineer = false;
-                                });
-
-                              } else {
-                                setState(() {
-                                  validateHologramType = true;
-                                  validateEventEngineer = true;
-                                });
-                              }
-                            }
-                            setState(() {
-                              validateHologram = false;
-                              validateTimeZone = false;
-                            });
-                          } else {
-                            setState(() {
-                              validateHologram = true;
-                              validateTimeZone = true;
-                            });
-                          }
-                          //Navigator.pushNamed(context, '/InstantMeetingScreen');
+                          // if (formKey.currentState!.validate() && hologram != null && timeZone != null) {
+                          //   if (hologram?.title == 'Yes') {
+                          //     if (hologramType != null && eventEngineer != null) {
+                          //       setState(() {
+                          //         validateHologramType = false;
+                          //         validateEventEngineer = false;
+                          //       });
+                          //
+                          //     } else {
+                          //       setState(() {
+                          //         validateHologramType = true;
+                          //         validateEventEngineer = true;
+                          //       });
+                          //     }
+                          //   }
+                          //   setState(() {
+                          //     validateHologram = false;
+                          //     validateTimeZone = false;
+                          //   });
+                          // } else {
+                          //   setState(() {
+                          //     validateHologram = true;
+                          //     validateTimeZone = true;
+                          //   });
+                          // }
+                          Navigator.pushNamed(context, '/AudioMeetingScreen');
                         },
                         btnText: 'Schedule',
                       ),

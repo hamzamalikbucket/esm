@@ -2,10 +2,7 @@ import 'package:esm/Models/HostDetailModels/advert_model.dart';
 import 'package:esm/resources/Widgets/sized_boxes.dart';
 import 'package:esm/resources/utils/app_colors.dart';
 import 'package:esm/resources/utils/constants.dart';
-import 'package:esm/resources/widgets/BtnNullHeightWidth.dart';
-import 'package:esm/resources/widgets/buttons/app_button.dart';
 import 'package:esm/resources/widgets/app_text.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
 

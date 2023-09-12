@@ -29,7 +29,7 @@ class _AudioMeetingScreenState extends State<AudioMeetingScreen> {
                 width: 120,
                 alignment: Alignment.center,
                 decoration: BoxDecoration(
-                  color: AppColors.bluColor,
+                  color: AppColors.bluecolor,
                   borderRadius: BorderRadius.circular(100),
                 ),
                 child: const AppText(
@@ -158,18 +158,15 @@ class _AudioMeetingScreenState extends State<AudioMeetingScreen> {
                                   },
                                   onTapSecurity: () {
                                     Navigator.pop(context);
-                                    Navigator.pushNamed(
-                                        context, '/SecurityScreen');
+                                    Navigator.pushNamed(context, '/SecurityScreen');
                                   },
                                   onTapRecording: () {
                                     Navigator.pop(context);
-                                    Navigator.pushNamed(
-                                        context, '/RecordingScreen');
+                                    Navigator.pushNamed(context, '/RecordingScreen');
                                   },
                                   onTapVideoShare: () {
                                     Navigator.pop(context);
-                                    Navigator.pushNamed(
-                                        context, '/VideoSharingScreen');
+                                    Navigator.pushNamed(context, '/VideoSharingScreen');
                                   },
                                 );
                               },

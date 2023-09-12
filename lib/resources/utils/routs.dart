@@ -4,7 +4,13 @@ import 'package:esm/modules/Screens/auth/register_screen.dart';
 import 'package:esm/modules/Screens/dashboard/bottom_nav_bar.dart';
 import 'package:esm/modules/Screens/dashboard/home/about_us_screen.dart';
 import 'package:esm/modules/Screens/dashboard/home/contact_us_screen.dart';
+import 'package:esm/modules/Screens/meeting/audio_meeting_screen.dart';
 import 'package:esm/modules/Screens/meeting/quick_meeting_screen.dart';
+import 'package:esm/modules/Screens/meeting/setting/recording_screen.dart';
+import 'package:esm/modules/Screens/meeting/setting/security_screen.dart';
+import 'package:esm/modules/Screens/meeting/setting/tab/tab_screen.dart';
+import 'package:esm/modules/Screens/meeting/setting/video_sharing_screen.dart';
+import 'package:esm/modules/Screens/meeting/video_meeting_screen.dart';
 import 'package:esm/modules/Screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -30,6 +36,24 @@ class AppRoute {
       case '/QuickMeetingScreen':
         return MaterialPageRoute(
             builder: (context) => const QuickMeetingScreen());
+        case '/AudioMeetingScreen':
+        return MaterialPageRoute(
+            builder: (context) => const AudioMeetingScreen());
+      case '/VideoMeetingScreen':
+        return MaterialPageRoute(
+            builder: (context) => const VideoMeetingScreen());
+      case '/TabScreen':
+        return MaterialPageRoute(
+            builder: (context) => const TabScreen());
+      case '/SecurityScreen':
+        return MaterialPageRoute(
+            builder: (context) => const SecurityScreen());
+      case '/RecordingScreen':
+        return MaterialPageRoute(
+            builder: (context) => const RecordingScreen());
+        case '/VideoSharingScreen':
+        return MaterialPageRoute(
+            builder: (context) => const VideoSharingScreen());
       // case '/Profile':
       //   return MaterialPageRoute(builder: (context) => const Profile());
       // case '/EditProfile':

@@ -74,7 +74,7 @@ class _TabScreenState extends State<TabScreen>
                   ),
                   child: TabBar(
                     indicator: BoxDecoration(
-                      color: AppColors.bluColor,
+                      color: AppColors.bluecolor,
                       borderRadius: BorderRadius.circular(10),
                     ),
                     isScrollable: true,
