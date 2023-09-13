@@ -45,6 +45,7 @@ class AppSimpleButton extends StatelessWidget {
   final Color btnTextColor;
   final Color btnColor;
   final double btnTextSize;
+  final FontWeight? fontWeight;
   final bool disabled;
 
   const AppSimpleButton({
@@ -57,6 +58,7 @@ class AppSimpleButton extends StatelessWidget {
     this.btnTextColor = AppColors.greyHintColor,
     this.btnColor = Colors.white,
     this.btnTextSize = 16,
+    this.fontWeight = FontWeight.normal,
   }) : super(key: key);
 
   @override
@@ -81,6 +83,7 @@ class AppSimpleButton extends StatelessWidget {
               color:
                   disabled == false ? btnTextColor : AppColors.lightgreybgColor,
               fontSize: btnTextSize,
+              fontWeight: fontWeight,
             ),
           ),
         ),

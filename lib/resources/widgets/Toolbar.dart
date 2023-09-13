@@ -1,10 +1,6 @@
-import 'dart:io';
-
-import 'package:flutter/material.dart';
-
 import 'package:esm/resources/Widgets/app_text.dart';
-
 import 'package:esm/resources/utils/app_colors.dart';
+import 'package:flutter/material.dart';
 
 class ToolbarBack extends StatelessWidget implements PreferredSizeWidget {
   final String title;
@@ -18,11 +14,9 @@ class ToolbarBack extends StatelessWidget implements PreferredSizeWidget {
     return (
         AppBar(
           backgroundColor: AppColors.primaryColor,
-//`true` if you want Flutter to automatically add Back Button when needed,
           automaticallyImplyLeading: true,
             centerTitle: true,
           title:Column(
-
             children: [
               AppText(
                 title,
@@ -30,14 +24,9 @@ class ToolbarBack extends StatelessWidget implements PreferredSizeWidget {
                 fontWeight: FontWeight.w400,
                 color: AppColors.black,
               ),
-
-
-
-
-
             ],
           ),
-          iconTheme: IconThemeData(
+          iconTheme: const IconThemeData(
             color: AppColors.black,
 
             //change your color here
@@ -46,5 +35,5 @@ class ToolbarBack extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  Size get preferredSize => new Size.fromHeight(appBar.preferredSize.height);
+  Size get preferredSize => Size.fromHeight(appBar.preferredSize.height);
 }

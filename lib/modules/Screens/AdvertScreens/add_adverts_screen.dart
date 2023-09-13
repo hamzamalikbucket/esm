@@ -11,6 +11,8 @@ import 'package:esm/resources/widgets/app_text.dart';
 import 'package:intl/intl.dart';
 
 class AddAdverts extends StatefulWidget{
+  const AddAdverts({super.key});
+
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
@@ -43,7 +45,7 @@ class AddState extends State<AddAdverts>{
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              SizeBoxHeight128(),
+              const SizeBoxHeight128(),
               Padding(
                 padding: const EdgeInsets.all(28.0),
                 child: Form(
@@ -67,25 +69,25 @@ class AddState extends State<AddAdverts>{
                         crossAxisAlignment: CrossAxisAlignment.start,
 
                         children: [
-                          AppText(
+                          const AppText(
                             'Add Advertisement ',
                             size: 10,
                             fontWeight: FontWeight.w400,
                             color: AppColors.black,
                           ),
-                          SizeBoxHeight8(),
+                          const SizeBoxHeight8(),
                           SizedBox(
 
                             child: DropdownButtonHideUnderline(
                               child:
                               DropdownButtonFormField(
                                 value: adType,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   enabled: false,
                                   filled: true,
                                   fillColor: AppColors.primaryColor,
                                   contentPadding: EdgeInsets.all(10),
-                                  border: const OutlineInputBorder(
+                                  border: OutlineInputBorder(
                                     borderSide: BorderSide(
                                         width: 0.0,
                                         style: BorderStyle.none),
@@ -100,7 +102,7 @@ class AddState extends State<AddAdverts>{
                                 validator: (value) => value == null
                                     ? 'Choose type'
                                     : null,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color:AppColors.greyHintColor,
                                     fontSize: 12,
                                     fontWeight: FontWeight.w400),
@@ -126,14 +128,14 @@ class AddState extends State<AddAdverts>{
                               ),
                             ),
                           ),
-                          SizeBoxHeight16(),
-                          AppText(
+                          const SizeBoxHeight16(),
+                          const AppText(
                             'How many days',
                             size: 10,
                             fontWeight: FontWeight.w400,
                             color: AppColors.black,
                           ),
-                          SizeBoxHeight8(),
+                          const SizeBoxHeight8(),
                           Card(
 
                             color: Colors.white,
@@ -157,14 +159,14 @@ class AddState extends State<AddAdverts>{
                               ),
                             ),
                           ),
-                          SizeBoxHeight16(),
-                          AppText(
+                          const SizeBoxHeight16(),
+                          const AppText(
                             'Total dues in Dollars',
                             size: 10,
                             fontWeight: FontWeight.w400,
                             color: AppColors.black,
                           ),
-                          SizeBoxHeight8(),
+                          const SizeBoxHeight8(),
                           Card(
 
                             color: Colors.white,
@@ -188,26 +190,26 @@ class AddState extends State<AddAdverts>{
                               ),
                             ),
                           ),
-                          SizeBoxHeight16(),
-                          AppText(
+                          const SizeBoxHeight16(),
+                          const AppText(
                             'Choose Currency ',
                             size: 10,
                             fontWeight: FontWeight.w400,
                             color: AppColors.black,
                           ),
-                          SizeBoxHeight8(),
+                          const SizeBoxHeight8(),
                           SizedBox(
 
                             child: DropdownButtonHideUnderline(
                               child:
                               DropdownButtonFormField(
                                 value: currencyType,
-                                decoration: InputDecoration(
+                                decoration: const InputDecoration(
                                   enabled: false,
                                   filled: true,
                                   fillColor: AppColors.primaryColor,
                                   contentPadding: EdgeInsets.all(10),
-                                  border: const OutlineInputBorder(
+                                  border: OutlineInputBorder(
                                     borderSide: BorderSide(
                                         width: 0.0,
                                         style: BorderStyle.none),
@@ -222,7 +224,7 @@ class AddState extends State<AddAdverts>{
                                 validator: (value) => value == null
                                     ? 'Choose type'
                                     : null,
-                                style: TextStyle(
+                                style: const TextStyle(
                                     color:AppColors.greyHintColor,
                                     fontSize: 12,
                                     fontWeight: FontWeight.w400),
@@ -248,16 +250,15 @@ class AddState extends State<AddAdverts>{
                               ),
                             ),
                           ),
-                          SizeBoxHeight16(),
-                          AppText(
+                          const SizeBoxHeight16(),
+                          const AppText(
                             'Description',
                             size: 10,
                             fontWeight: FontWeight.w400,
                             color: AppColors.black,
                           ),
-                          SizeBoxHeight8(),
+                          const SizeBoxHeight8(),
                           Card(
-
                             color: Colors.white,
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30.0),
@@ -279,14 +280,14 @@ class AddState extends State<AddAdverts>{
                               ),
                             ),
                           ),
-                          SizeBoxHeight16(),
-                          AppText(
+                          const SizeBoxHeight16(),
+                          const AppText(
                             'Upload Media',
                             size: 10,
                             fontWeight: FontWeight.w400,
                             color: AppColors.black,
                           ),
-                          SizeBoxHeight8(),
+                          const SizeBoxHeight8(),
                           Card(
 
                             color: Colors.white,
@@ -312,14 +313,14 @@ class AddState extends State<AddAdverts>{
                               ),
                             ),
                           ),
-                          SizeBoxHeight16(),
-                          AppText(
+                          const SizeBoxHeight16(),
+                          const AppText(
                             'Select Start Date',
                             size: 10,
                             fontWeight: FontWeight.w400,
                             color: AppColors.black,
                           ),
-                          SizeBoxHeight8(),
+                          const SizeBoxHeight8(),
                           Card(
 
                             color: Colors.white,

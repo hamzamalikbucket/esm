@@ -1,0 +1,83 @@
+import 'package:esm/resources/Widgets/app_text.dart';
+import 'package:esm/resources/Widgets/sized_boxes.dart';
+import 'package:esm/resources/utils/app_colors.dart';
+import 'package:esm/resources/widgets/buttons/app_button.dart';
+import 'package:flutter/material.dart';
+
+class CreateEventDialog extends StatelessWidget {
+  final Function liveOnTap;
+  final Function recordedOnTap;
+
+  const CreateEventDialog({
+    super.key,
+    required this.liveOnTap,
+    required this.recordedOnTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(32.0),
+      child: Dialog(
+        shape: RoundedRectangleBorder(
+          borderRadius:
+              BorderRadius.circular(20.0), // Adjust the radius as needed
+        ),
+        elevation: 0,
+        backgroundColor: Colors.transparent,
+        child: Container(
+          decoration: BoxDecoration(
+            shape: BoxShape.rectangle,
+            color: Colors.white,
+            border: Border.all(
+              width: 1,
+              color: AppColors.bluecolor,
+            ),
+            borderRadius: BorderRadius.circular(20.0),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.3),
+                blurRadius: 10.0,
+                offset: const Offset(0, 10),
+              ),
+            ],
+          ),
+          child: Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                const AppHeadings(
+                  'Create Event',
+                  size: 20,
+                  fontWeight: FontWeight.w700,
+                ),
+                const SizeBoxHeight16(),
+                AppSimpleButton(
+                  onTap: () {
+                    liveOnTap();
+                  },
+                  btnText: 'Live Event',
+                  fontWeight: FontWeight.w600,
+                  btnColor: AppColors.greenColors,
+                  btnTextColor: AppColors.primaryColor,
+                ),
+                const SizeBoxHeight16(),
+                AppSimpleButton(
+                  onTap: () {
+                    recordedOnTap();
+                  },
+                  btnText: 'Pre Recorded Event',
+                  btnColor: AppColors.greenColors,
+                  fontWeight: FontWeight.w600,
+                  btnTextColor: AppColors.primaryColor,
+                ),
+                const SizeBoxHeight16(),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}

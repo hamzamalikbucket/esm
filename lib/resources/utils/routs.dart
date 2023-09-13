@@ -12,6 +12,16 @@ import 'package:esm/modules/Screens/meeting/quick_meeting_screen.dart';
 import 'package:esm/modules/Screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
+import '../../modules/Screens/meeting/audio_meeting_screen.dart';
+import '../../modules/Screens/meeting/setting/recording_screen.dart';
+import '../../modules/Screens/meeting/setting/security_screen.dart';
+import '../../modules/Screens/meeting/setting/tab/tab_screen.dart';
+import '../../modules/Screens/meeting/setting/video_sharing_screen.dart';
+import '../../modules/Screens/meeting/video_meeting_screen.dart';
+import '../../modules/Screens/my_events/my_event/live_event_screen.dart';
+import '../../modules/Screens/my_events/my_event/pre_recorded_event_screen.dart';
+import '../../modules/Screens/my_events/my_event_tab_screen.dart';
+
 class AppRoute {
   Route onGenerateRoute(RouteSettings routeArguments) {
     switch (routeArguments.name) {
@@ -35,17 +45,38 @@ class AppRoute {
         return MaterialPageRoute(
             builder: (context) => const QuickMeetingScreen());
       case '/HostDetailTabScreen':
-        return MaterialPageRoute(
-            builder: (context) => DetailTab());
+        return MaterialPageRoute(builder: (context) => DetailTab());
       case '/AddAdverts':
-        return MaterialPageRoute(
-            builder: (context) => AddAdverts());
+        return MaterialPageRoute(builder: (context) => const AddAdverts());
       case '/HologramJoin':
         return MaterialPageRoute(
-            builder: (context) => JoinHologramEngineer());
+            builder: (context) => const JoinHologramEngineer());
       case '/ShopScreen':
+        return MaterialPageRoute(builder: (context) => const ShopScreen());
+      case '/AudioMeetingScreen':
         return MaterialPageRoute(
-            builder: (context) => ShopScreen());
+            builder: (context) => const AudioMeetingScreen());
+      case '/VideoMeetingScreen':
+        return MaterialPageRoute(
+            builder: (context) => const VideoMeetingScreen());
+      case '/SecurityScreen':
+        return MaterialPageRoute(builder: (context) => const SecurityScreen());
+      case '/RecordingScreen':
+        return MaterialPageRoute(builder: (context) => const RecordingScreen());
+      case '/TabScreen':
+        return MaterialPageRoute(builder: (context) => const TabScreen());
+      case '/VideoSharingScreen':
+        return MaterialPageRoute(
+            builder: (context) => const VideoSharingScreen());
+      case '/MyEventTabScreen':
+        return MaterialPageRoute(
+            builder: (context) => const MyEventTabScreen());
+      case '/LiveEventScreen':
+        return MaterialPageRoute(
+            builder: (context) => const LiveEventScreen());
+        case '/PreRecordedEventScreen':
+        return MaterialPageRoute(
+            builder: (context) => const PreRecordedEventScreen());
       // case '/Profile':
       //   return MaterialPageRoute(builder: (context) => const Profile());
       // case '/EditProfile':

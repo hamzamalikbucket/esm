@@ -79,6 +79,32 @@ class EventEngineer {
 
   ];
 }
+class EventWorker {
+  String id;
+  String title;
+
+  EventWorker({
+    required this.id,
+    required this.title,
+  });
+
+  factory EventWorker.fromJson(Map<String, dynamic> json) {
+    return EventWorker(
+      id: json['id'].toString(),
+      title: json['title'],
+    );
+  }
+
+  @override
+  String toString() {
+    return title;
+  }
+
+  static List<EventWorker> eventWorkerList = [
+    EventWorker(id: '1', title: 'Cock'),
+
+  ];
+}
 
 class TimeZone {
   String id;

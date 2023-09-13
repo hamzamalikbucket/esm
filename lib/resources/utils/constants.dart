@@ -51,4 +51,8 @@ class Constants {
   static const sendRequestBtn = 'assets/images/send_req_btn.svg';
   static const editIcon = 'assets/images/editicon.svg';
   static const dummyProduct = 'assets/images/product_dummy_img.png';
+  static const delete = 'assets/images/delete.png';
+  static const calendar = 'assets/images/calendar.png';
+  static const clock = 'assets/images/clock.png';
+  static const eventPic = 'assets/images/dummypost.png';
 }

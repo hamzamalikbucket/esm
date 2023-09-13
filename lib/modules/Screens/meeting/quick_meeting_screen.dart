@@ -85,7 +85,9 @@ class _QuickMeetingScreenState extends State<QuickMeetingScreen> {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         AppSimpleButton(
-                          onTap: () {},
+                          onTap: () {
+                            Navigator.pushNamed(context, '/MyEventTabScreen');
+                          },
                           btnText: 'Instant Meeting',
                         ),
                         const SizeBoxWidth12(),

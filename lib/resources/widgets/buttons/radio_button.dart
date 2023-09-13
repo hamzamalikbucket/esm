@@ -94,7 +94,7 @@ class AppRadioButtonList extends StatelessWidget {
             value: value,
             onChanged: enabled ? onChanged : null,
             groupValue: groupValue,
-            activeColor: Colors.black,
+            activeColor: AppColors.bluecolor,
           ),
           AppText(
             text,
