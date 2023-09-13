@@ -180,7 +180,6 @@ class LoginScreenState extends State<LoginScreen> {
                           onTap: () {
                             Navigator.pushNamed(context, '/OtpScreen');
                             // if (loginFormKey.currentState!.validate()) {
-                            //   String s = emailController.text;
                             // }
                           },
                           assetUrl: Constants.loginBTn,

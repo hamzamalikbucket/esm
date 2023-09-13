@@ -6,12 +6,14 @@ import 'package:esm/resources/Widgets/ToolbarImage.dart';
 import 'package:esm/resources/Widgets/app_field.dart';
 import 'package:esm/resources/Widgets/app_text.dart';
 import 'package:esm/resources/Widgets/sized_boxes.dart';
+import 'package:esm/resources/utils/Constants.dart';
 import 'package:esm/resources/utils/app_colors.dart';
 import 'package:esm/resources/widgets/buttons/app_button.dart';
 import 'package:esm/resources/widgets/buttons/app_drop_down_button.dart';
 import 'package:esm/resources/widgets/buttons/radio_button.dart';
 import 'package:esm/resources/widgets/profile_image.dart';
 import 'package:fialogs/fialogs.dart';
+import 'package:file_picker/file_picker.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -48,7 +50,7 @@ class _PreRecordedEventScreenState extends State<PreRecordedEventScreen> {
   int groupValueAccount = 0;
   String address = "null";
   String autocompletePlace = "null";
-  File? selectedImage;
+  String? selectedImage;
 
   @override
   Widget build(BuildContext context) {
@@ -65,7 +67,7 @@ class _PreRecordedEventScreenState extends State<PreRecordedEventScreen> {
               const Align(
                 alignment: Alignment.center,
                 child: AppProfileImage(
-                  title: 'profile',
+                  title: 'Pick Pre Recorded Profile',
                   height: 100,
                   width: 100,
                   imagePicker: true,
@@ -100,7 +102,7 @@ class _PreRecordedEventScreenState extends State<PreRecordedEventScreen> {
                   ),
                   AppIconField(
                     onTap: () async {
-                      selectImageFrom(context);
+                      getVideoFile(context);
                     },
                     controller: uploadMediaController,
                     hint: 'Select Media',
@@ -616,6 +618,149 @@ class _PreRecordedEventScreenState extends State<PreRecordedEventScreen> {
               const Padding(
                 padding: EdgeInsets.only(left: 24.0),
                 child: AppText(
+                  'Pick Images',
+                  color: Colors.black,
+                ),
+              ),
+              const SizeBoxHeight8(),
+              Stack(
+                children: [
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30),
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.greyBgColor.withOpacity(1),
+                              spreadRadius: 1,
+                              blurRadius: 15,
+                              // blur radius
+                              offset: const Offset(5, 5),
+                            ),
+                          ],
+                        ),
+                        child: IconButton(
+                          onPressed: () {
+                            selectImageFrom(context);
+                          },
+                          icon: const ImageIcon(
+                            AssetImage(
+                              Constants.pick,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30),
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.greyBgColor.withOpacity(1),
+                              spreadRadius: 1,
+                              blurRadius: 15,
+                              // blur radius
+                              offset: const Offset(5, 5),
+                            ),
+                          ],
+                        ),
+                        child: IconButton(
+                          onPressed: () {
+                            selectImageFrom(context);
+                          },
+                          icon: const ImageIcon(
+                            AssetImage(
+                              Constants.pick,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30),
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.greyBgColor.withOpacity(1),
+                              spreadRadius: 1,
+                              blurRadius: 15,
+                              // blur radius
+                              offset: const Offset(5, 5),
+                            ),
+                          ],
+                        ),
+                        child: IconButton(
+                          onPressed: () {
+                            selectImageFrom(context);
+                          },
+                          icon: const ImageIcon(
+                            AssetImage(
+                              Constants.pick,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30),
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.greyBgColor.withOpacity(1),
+                              spreadRadius: 1,
+                              blurRadius: 15,
+                              // blur radius
+                              offset: const Offset(5, 5),
+                            ),
+                          ],
+                        ),
+                        child: IconButton(
+                          onPressed: () {
+                            selectImageFrom(context);
+                          },
+                          icon: const ImageIcon(
+                            AssetImage(
+                              Constants.pick,
+                            ),
+                          ),
+                        ),
+                      ),
+                      Container(
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30),
+                          boxShadow: [
+                            BoxShadow(
+                              color: AppColors.greyBgColor.withOpacity(1),
+                              spreadRadius: 1,
+                              blurRadius: 15,
+                              // blur radius
+                              offset: const Offset(5, 5),
+                            ),
+                          ],
+                        ),
+                        child: IconButton(
+                          onPressed: () {
+                            selectImageFrom(context);
+                          },
+                          icon: const ImageIcon(
+                            AssetImage(
+                              Constants.pick,
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ],
+              ),
+              const SizeBoxHeight16(),
+              const Padding(
+                padding: EdgeInsets.only(left: 24.0),
+                child: AppText(
                   'Note',
                   color: Colors.black,
                 ),
@@ -807,8 +952,11 @@ class _PreRecordedEventScreenState extends State<PreRecordedEventScreen> {
   selectImageFrom(context) {
     var selectImageOption = CupertinoActionSheet(
       title: const Text(
-        'select',
-        style: TextStyle(fontSize: 20.0),
+        'Pick Image',
+        style: TextStyle(
+          fontSize: 20.0,
+          fontWeight: FontWeight.bold,
+        ),
       ),
       message: const Text("Select image from"),
       actions: <Widget>[
@@ -905,8 +1053,23 @@ class _PreRecordedEventScreenState extends State<PreRecordedEventScreen> {
     if (croppedFile != null) {
       File file = File(croppedFile.path);
       setState(() {
-        uploadMediaController.text = file.path;
+        selectedImage = file.path;
       });
+    }
+  }
+  Future getVideoFile(context) async {
+    FilePickerResult? result = await FilePicker.platform.pickFiles(
+      type: FileType.custom,
+      allowedExtensions: ['mp4'],
+    );
+
+    if (result != null) {
+      setState(() {
+        uploadMediaController.text = result.files.single.path ?? '';
+      });
+
+    } else {
+      warningDialog(context, 'Warning', 'Something went wrong');
     }
   }
 }

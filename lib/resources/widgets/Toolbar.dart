@@ -5,27 +5,31 @@ import 'package:flutter/material.dart';
 class ToolbarBack extends StatelessWidget implements PreferredSizeWidget {
   final String title;
   final AppBar appBar;
+  final List<Widget>? action;
 
-  const ToolbarBack({Key? key, required this.title,required  this.appBar})
+  const ToolbarBack({Key? key, required this.title,required  this.appBar, this.action})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return (
         AppBar(
-          backgroundColor: AppColors.primaryColor,
+          backgroundColor: Colors.transparent,
           automaticallyImplyLeading: true,
             centerTitle: true,
+          elevation: 0,
+
           title:Column(
             children: [
               AppText(
                 title,
-                size: 15,
-                fontWeight: FontWeight.w400,
+                size: 17,
+                fontWeight: FontWeight.bold,
                 color: AppColors.black,
               ),
             ],
           ),
+          actions: action ?? [],
           iconTheme: const IconThemeData(
             color: AppColors.black,
 

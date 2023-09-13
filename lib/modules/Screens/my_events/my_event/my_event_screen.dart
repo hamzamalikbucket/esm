@@ -28,7 +28,13 @@ class _MyEventScreenState extends State<MyEventScreen> {
         itemBuilder: (BuildContext context, int index) {
           MyEventModel myEvent = MyEventModel.myEventList[index];
           return InkWell(
-            onTap: () {},
+            onTap: () {
+              Navigator.pushNamed(
+                context,
+                '/MyEventDetailScreen',
+                arguments: myEvent,
+              );
+            },
             child: Stack(
               children: [
                 ClipRRect(
@@ -116,7 +122,7 @@ class _MyEventScreenState extends State<MyEventScreen> {
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(bottom: 14.0,left: 4.0),
+                  padding: const EdgeInsets.only(bottom: 14.0, left: 4.0),
                   child: Align(
                     alignment: Alignment.bottomLeft,
                     child: Row(

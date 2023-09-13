@@ -14,6 +14,7 @@ class AppColors {
   static const setColors = Color(0xff424242);
   static const liveColors = Color(0xff17a2b8);
   static const greenColors = Color(0xff00c12b);
+  static const otherColors = Color(0xff2790b1);
 
 
 

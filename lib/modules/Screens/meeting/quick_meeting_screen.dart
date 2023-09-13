@@ -1,5 +1,6 @@
 import 'package:esm/Models/hologram_model.dart';
 import 'package:esm/config/functions/app_date_picker.dart';
+import 'package:esm/resources/Widgets/ToolbarImage.dart';
 import 'package:esm/resources/Widgets/app_text.dart';
 import 'package:esm/resources/Widgets/sized_boxes.dart';
 import 'package:esm/resources/utils/Constants.dart';
@@ -38,6 +39,7 @@ class _QuickMeetingScreenState extends State<QuickMeetingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: ToolbarImage(appBar: AppBar(),),
       body: Stack(
         children: [
           Image.asset(
@@ -55,32 +57,9 @@ class _QuickMeetingScreenState extends State<QuickMeetingScreen> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const SizeBoxHeight16(),
-                    const SizeBoxHeight16(),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        IconButton(
-                          onPressed: () {
-                            Navigator.pop(context);
-                          },
-                          icon: const Icon(
-                            Icons.arrow_back,
-                            color: Colors.white,
-                          ),
-                        ),
-                        Image.asset(
-                          'assets/images/app_logo.png',
-                          fit: BoxFit.contain,
-                          height: 50,
-                        ),
-                        const IconButton(
-                          onPressed: null,
-                          icon: SizedBox(),
-                        ),
-                      ],
-                    ),
-                    const SizeBoxHeight16(),
+                    // const SizeBoxHeight16(),
+                    // const SizeBoxHeight16(),
+                    // const SizeBoxHeight16(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [

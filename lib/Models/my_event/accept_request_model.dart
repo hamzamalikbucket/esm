@@ -1,6 +1,6 @@
 import 'package:esm/resources/utils/Constants.dart';
 
-class MyEventModel {
+class AcceptRequestModel {
   String id;
   String myEventTitle;
   String myEventDate;
@@ -32,7 +32,7 @@ class MyEventModel {
   String workerContactNumber;
   bool eventPriceStatus;
 
-  MyEventModel({
+  AcceptRequestModel({
     required this.id,
     required this.myEventTitle,
     required this.myEventDate,
@@ -64,8 +64,8 @@ class MyEventModel {
     required this.workerContactNumber,
   });
 
-  factory MyEventModel.fromJson(Map<String, dynamic> json) {
-    return MyEventModel(
+  factory AcceptRequestModel.fromJson(Map<String, dynamic> json) {
+    return AcceptRequestModel(
       id: json['id'].toString(),
       myEventTitle: json['myEventTitle'],
       myEventDate: json['myEventDate'],
@@ -98,8 +98,8 @@ class MyEventModel {
     );
   }
 
-  static List<MyEventModel> myEventList = [
-    MyEventModel(
+  static List<AcceptRequestModel> acceptRequestList = [
+    AcceptRequestModel(
       id: '1',
       myEventTitle: 'My Birtday',
       myEventDate: '16-12-2023',
@@ -130,7 +130,7 @@ class MyEventModel {
       workerName: 'Frank Williams',
       workerContactNumber: '+18325800666',
     ),
-    MyEventModel(
+    AcceptRequestModel(
       id: '1',
       myEventTitle: 'My Birtday',
       myEventDate: '16-12-2023',
@@ -161,7 +161,7 @@ class MyEventModel {
       workerName: 'Frank Williams',
       workerContactNumber: '+18325800666',
     ),
-    MyEventModel(
+    AcceptRequestModel(
       id: '1',
       myEventTitle: 'My Birtday',
       myEventDate: '16-12-2023',
@@ -192,7 +192,7 @@ class MyEventModel {
       workerName: 'Frank Williams',
       workerContactNumber: '+18325800666',
     ),
-    MyEventModel(
+    AcceptRequestModel(
       id: '1',
       myEventTitle: 'My Birtday',
       myEventDate: '16-12-2023',
@@ -223,7 +223,7 @@ class MyEventModel {
       workerName: 'Frank Williams',
       workerContactNumber: '+18325800666',
     ),
-    MyEventModel(
+    AcceptRequestModel(
       id: '1',
       myEventTitle: 'My Birtday',
       myEventDate: '16-12-2023',
@@ -254,7 +254,7 @@ class MyEventModel {
       workerName: 'Frank Williams',
       workerContactNumber: '+18325800666',
     ),
-    MyEventModel(
+    AcceptRequestModel(
       id: '1',
       myEventTitle: 'My Birtday',
       myEventDate: '16-12-2023',
