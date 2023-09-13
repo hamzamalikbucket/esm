@@ -236,7 +236,7 @@ class AppIconField extends StatelessWidget {
         prefixIcon: prefixIcon == null
             ? null
             : Padding(
-                padding: const EdgeInsets.all(12.0),
+                padding: const EdgeInsets.all(5.0),
                 child:
                     ImageIcon(color: Colors.grey, AssetImage(prefixIcon ?? '')),
               ),

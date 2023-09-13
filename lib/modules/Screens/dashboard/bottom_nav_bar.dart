@@ -179,11 +179,22 @@ class SliderView extends StatelessWidget {
               Navigator.pushNamed(context, '/HologramJoin');
 
             }),
-            Menu('Seller add used/new Products/Services', 'Make Money', () {}),
+            Menu('Seller add used/new Products/Services', 'Make Money', () {
+              onItemClick('Seller add used/new Products/Services');
+              Navigator.pushNamed(context, '/ServiceScreen');
+
+            }),
             Menu('Find any event In your area',
-                'Make GPS default in you present location', () {}),
+                'Make GPS default in you present location', () {
+                  onItemClick('Find any event In your area');
+                  Navigator.pushNamed(context, '/EventByLocationScreen');
+                }),
             Menu('Find any event by location',
-                'Search by address, city, state or country', () {}),
+                'Search by address, city, state or country', () {
+                  onItemClick('Find any event by location');
+                  Navigator.pushNamed(context, '/EventByLocationScreen');
+
+                }),
             Menu('All Free But You Can Tip Us', '', () {}),
             Menu('Worldwide & Attend', '', () {}),
             Menu('Contact Us', '', () {

@@ -1,4 +1,3 @@
-
 import 'package:esm/Models/event_model.dart';
 import 'package:esm/resources/Widgets/app_text.dart';
 import 'package:esm/resources/utils/Constants.dart';
@@ -9,20 +8,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter/cupertino.dart';
 
-class HostEventsDetails extends StatefulWidget{
+class HostEventsDetails extends StatefulWidget {
   @override
   State<StatefulWidget> createState() {
     // TODO: implement createState
     return DetailState();
   }
-
-
 }
-class DetailState extends State<HostEventsDetails>{
+
+class DetailState extends State<HostEventsDetails> {
   late EventModel eventsModel;
+  final List<String> dressImages = [
+    'assets/images/product_dummy_img.png',
+    'assets/images/product_dummy_img.png',
+    'assets/images/product_dummy_img.png',
+    'assets/images/dummy_dress_code.png',
+
+  ];
   @override
   Widget build(BuildContext context) {
-    eventsModel=ModalRoute.of(context)!.settings.arguments as EventModel;
+    eventsModel = ModalRoute.of(context)!.settings.arguments as EventModel;
     print(eventsModel.eventName);
     // TODO: implement build
     return Scaffold(
@@ -45,11 +50,11 @@ class DetailState extends State<HostEventsDetails>{
                     ),
                     (eventsModel.eventPriceStatus)
                         ? SvgPicture.asset(
-                      Constants.paidIcon,
-                    )
+                            Constants.paidIcon,
+                          )
                         : SvgPicture.asset(
-                      Constants.freeIcon,
-                    ),
+                            Constants.freeIcon,
+                          ),
                   ],
                 ),
                 const SizeBoxHeight12(),
@@ -152,8 +157,41 @@ class DetailState extends State<HostEventsDetails>{
                   fontWeight: FontWeight.w500,
                   color: AppColors.black,
                 ),
-
-
+                const SizeBoxHeight8(),
+                const AppText(
+                  "Event Dress Code",
+                  size: 15,
+                  fontWeight: FontWeight.w400,
+                  color: AppColors.greyHintColor,
+                ),
+                const SizeBoxHeight4(),
+                const AppText(
+                  "All Types",
+                  size: 20,
+                  fontWeight: FontWeight.w500,
+                  color: AppColors.black,
+                ),
+                Container(
+                  width: MediaQuery.sizeOf(context).width,
+                  height: 100,
+                  child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      itemCount: 5,
+                      shrinkWrap: true,
+                      physics: const NeverScrollableScrollPhysics(),
+                      itemBuilder: (context, index) {
+                        return Container(
+                          margin: EdgeInsets.all(8.0),
+                          width: 50.0,
+                          height: 50,// Adjust the width as needed
+                          child: Image.asset(
+                            dressImages[index],
+                            fit: BoxFit
+                                .cover, // You can use other BoxFit values as needed
+                          ),
+                        );
+                      }),
+                ),
               ],
             ),
           ),
@@ -161,6 +199,4 @@ class DetailState extends State<HostEventsDetails>{
       ),
     );
   }
-
-
 }

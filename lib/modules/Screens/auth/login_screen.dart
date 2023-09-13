@@ -65,25 +65,15 @@ class LoginScreenState extends State<LoginScreen> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Stack(
-                          children: [
-                            Container(
-                              height: 60,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(30),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: AppColors.greyBgColor.withOpacity(1),
-                                    spreadRadius: 1,
-                                    blurRadius: 15,
-                                    // blur radius
-                                    offset: const Offset(5, 5),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            AppIconField(
+                        Card(
+                          elevation: 10,
+                          color: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: AppIconField(
                               controller: phoneNumberController,
                               hint: 'Enter your phone number',
                               prefixIcon: Constants.phone,
@@ -96,34 +86,24 @@ class LoginScreenState extends State<LoginScreen> {
                                 return null;
                               },
                             ),
-                          ],
+                          ),
                         ),
                         const SizeBoxHeight16(),
-                        Stack(
-                          children: [
-                            Container(
-                              height: 60,
-                              decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(30),
-                                boxShadow: [
-                                  BoxShadow(
-                                    color: AppColors.greyBgColor.withOpacity(1),
-                                    spreadRadius: 1,
-                                    blurRadius: 15,
-                                    // blur radius
-                                    offset: const Offset(5, 5),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            AppPasswordField(
+                        Card(
+                          elevation: 10,
+                          color: Colors.white,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(50.0),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsets.all(4.0),
+                            child: AppPasswordField(
                               controller: passwordController,
                               hint: 'Enter your password',
                               prefixIcon: Constants.lock,
                               suffixIcon: Constants.eye,
                               keyboardType: TextInputType.visiblePassword,
-                              textInputAction: TextInputAction.next,
+                              textInputAction: TextInputAction.done,
                               validator: (val) {
                                 if (val == null || val.trim().isEmpty) {
                                   return "Password is required";
@@ -133,7 +113,7 @@ class LoginScreenState extends State<LoginScreen> {
                                 return null;
                               },
                             ),
-                          ],
+                          ),
                         ),
                         const SizeBoxHeight16(),
                         Padding(
@@ -180,6 +160,7 @@ class LoginScreenState extends State<LoginScreen> {
                           onTap: () {
                             Navigator.pushNamed(context, '/OtpScreen');
                             // if (loginFormKey.currentState!.validate()) {
+                            //   String s = emailController.text;
                             // }
                           },
                           assetUrl: Constants.loginBTn,
