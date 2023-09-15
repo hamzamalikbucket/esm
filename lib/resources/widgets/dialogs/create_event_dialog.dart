@@ -5,6 +5,9 @@ import 'package:esm/resources/widgets/buttons/app_button.dart';
 import 'package:flutter/material.dart';
 
 class CreateEventDialog extends StatelessWidget {
+  final String? dialogTitle;
+  final String? btnTextOne;
+  final String? btnTextTwo;
   final Function liveOnTap;
   final Function recordedOnTap;
 
@@ -12,6 +15,9 @@ class CreateEventDialog extends StatelessWidget {
     super.key,
     required this.liveOnTap,
     required this.recordedOnTap,
+    this.dialogTitle,
+    this.btnTextOne,
+    this.btnTextTwo,
   });
 
   @override
@@ -47,8 +53,8 @@ class CreateEventDialog extends StatelessWidget {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: <Widget>[
-                const AppHeadings(
-                  'Create Event',
+                AppHeadings(
+                  dialogTitle ?? '',
                   size: 20,
                   fontWeight: FontWeight.w700,
                 ),
@@ -57,7 +63,7 @@ class CreateEventDialog extends StatelessWidget {
                   onTap: () {
                     liveOnTap();
                   },
-                  btnText: 'Live Event',
+                  btnText: btnTextOne ?? '',
                   fontWeight: FontWeight.w600,
                   btnColor: AppColors.greenColors,
                   btnTextColor: AppColors.primaryColor,
@@ -67,7 +73,7 @@ class CreateEventDialog extends StatelessWidget {
                   onTap: () {
                     recordedOnTap();
                   },
-                  btnText: 'Pre Recorded Event',
+                  btnText: btnTextTwo ?? "",
                   btnColor: AppColors.greenColors,
                   fontWeight: FontWeight.w600,
                   btnTextColor: AppColors.primaryColor,

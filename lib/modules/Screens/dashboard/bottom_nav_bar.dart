@@ -1,5 +1,8 @@
 import 'package:esm/modules/Screens/AdvertScreens/adverts_screen.dart';
 import 'package:esm/resources/Widgets/sized_boxes.dart';
+import 'package:esm/resources/utils/app_colors.dart';
+import 'package:esm/resources/widgets/app_text.dart';
+import 'package:esm/resources/widgets/dialogs/create_event_dialog.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_slider_drawer/flutter_slider_drawer.dart';
@@ -44,11 +47,11 @@ class BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
     setState(() {
       _selectedIndex = index;
       if (_selectedIndex == 0) {
-       /* setState(() {
+        /* setState(() {
           home = 'Home';
         });*/
       } else if (_selectedIndex == 1) {
-       /* setState(() {
+        /* setState(() {
           home = 'My Event';
         });*/
       }
@@ -58,7 +61,18 @@ class BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-
+      floatingActionButton: Container(
+        decoration: BoxDecoration(
+            color: AppColors.bluecolor,
+            borderRadius: BorderRadius.circular(50)),
+        child: const Padding(
+          padding: EdgeInsets.all(8.0),
+          child: AppText(
+            'Tip eSM',
+            color: AppColors.primaryColor,
+          ),
+        ),
+      ),
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
         items: List.generate(
@@ -80,7 +94,7 @@ class BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
         onTap: _onItemTapped,
       ),
       body: Padding(
-        padding: const EdgeInsets.only(top: 16.0),
+        padding: const EdgeInsets.only(top: 32.0),
         child: SliderDrawer(
           appBar: SliderAppBar(
             isTitleCenter: true,
@@ -89,6 +103,13 @@ class BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
               'assets/images/app_logo.png',
               fit: BoxFit.contain,
               height: 50,
+            ),
+            trailing: const Padding(
+              padding: EdgeInsets.only(right: 8.0),
+              child: AppText(
+                'Find Event',
+                size: 14,
+              ),
             ),
           ),
           key: sliderDrawerKey,
@@ -108,8 +129,8 @@ class BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
             index: _selectedIndex,
             children: const [
               // Replace these with your content screens
-              HomeScreen(),
               EventScreen(),
+              HomeScreen(),
               AddScreen(),
               Adverts(),
               ProfileScreen(),
@@ -121,8 +142,6 @@ class BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
   }
 }
 
-
-
 class AddScreen extends StatelessWidget {
   const AddScreen({super.key});
 
@@ -133,7 +152,6 @@ class AddScreen extends StatelessWidget {
     );
   }
 }
-
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
@@ -168,33 +186,55 @@ class SliderView extends StatelessWidget {
           ),
           const SizeBoxHeight32(),
           ...[
-            Menu('Home', '', () {}),
             Menu('Quick Meetings & Hologram',
-                'Free Unlimited, time & participents', () {}),
+                'Free Unlimited, time & participents', () {
+              onItemClick('Quick Meetings & Hologram');
+              Navigator.pushNamed(context, '/QuickMeetingScreen');
+            }),
             Menu('Events & Hologram', 'Free Unlimited, time & participents',
-                () {}),
-            Menu('Join Event Workers', 'Get Paid', () {}),
+                () {
+              onItemClick('Join Hologram Engineers Us');
+              Navigator.pushNamed(context, '/MyEventTabScreen');
+            }),
+            Menu('Join Event Workers', 'Get Paid', () {
+              onItemClick('Join Event Workers');
+              showDialog(
+                context: context,
+                builder: (BuildContext context) {
+                  return CreateEventDialog(
+                    liveOnTap: () {
+                      Navigator.pop(context);
+                      Navigator.pushNamed(context, '/WorkerScreen');
+                    },
+                    recordedOnTap: () {
+                      Navigator.pop(context);
+                      Navigator.pushNamed(context, '/BankAccountScreen');
+                    },
+                    dialogTitle: 'Join Event Workers',
+                    btnTextOne: 'General',
+                    btnTextTwo: 'Bank Account',
+                  );
+                },
+              );
+            }),
             Menu('Join Hologram Engineers', 'Make Money', () {
               onItemClick('Join Hologram Engineers Us');
               Navigator.pushNamed(context, '/HologramJoin');
-
             }),
             Menu('Seller add used/new Products/Services', 'Make Money', () {
               onItemClick('Seller add used/new Products/Services');
               Navigator.pushNamed(context, '/ServiceScreen');
-
             }),
             Menu('Find any event In your area',
                 'Make GPS default in you present location', () {
-                  onItemClick('Find any event In your area');
-                  Navigator.pushNamed(context, '/EventByLocationScreen');
-                }),
+              onItemClick('Find any event In your area');
+              Navigator.pushNamed(context, '/EventByLocationScreen');
+            }),
             Menu('Find any event by location',
                 'Search by address, city, state or country', () {
-                  onItemClick('Find any event by location');
-                  Navigator.pushNamed(context, '/EventByLocationScreen');
-
-                }),
+              onItemClick('Find any event by location');
+              Navigator.pushNamed(context, '/EventByLocationScreen');
+            }),
             Menu('All Free But You Can Tip Us', '', () {}),
             Menu('Worldwide & Attend', '', () {}),
             Menu('Contact Us', '', () {
@@ -209,7 +249,6 @@ class SliderView extends StatelessWidget {
             Menu('Start Shopping', '', () {
               onItemClick('Start Shopping');
               Navigator.pushNamed(context, '/ShopScreen');
-
             }),
           ]
               .map((menu) => _SliderMenuItem(

@@ -53,7 +53,7 @@ class LoginScreenState extends State<LoginScreen> {
                         color: AppColors.black,
                       ),
                       const AppText(
-                        'Login to your existence account',
+                        'Login to your existing account',
                         size: 16,
                         fontWeight: FontWeight.w500,
                         color: AppColors.greyTextColor,
@@ -65,19 +65,29 @@ class LoginScreenState extends State<LoginScreen> {
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
-                        Card(
-                          elevation: 10,
-                          color: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50.0),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: AppIconField(
+                        Stack(
+                          children: [
+                            Container(
+                              height: 60,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(30),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: AppColors.greyBgColor.withOpacity(1),
+                                    spreadRadius: 1,
+                                    blurRadius: 15,
+                                    // blur radius
+                                    offset: const Offset(5, 5),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            AppIconField(
                               controller: phoneNumberController,
-                              hint: 'Enter your phone number',
+                              hint: 'Enter your Email/Phone Number',
                               prefixIcon: Constants.phone,
-                              keyboardType: TextInputType.phone,
+                              keyboardType: TextInputType.emailAddress,
                               textInputAction: TextInputAction.next,
                               validator: (val) {
                                 if (val == null || val.trim().isEmpty) {
@@ -86,24 +96,34 @@ class LoginScreenState extends State<LoginScreen> {
                                 return null;
                               },
                             ),
-                          ),
+                          ],
                         ),
                         const SizeBoxHeight16(),
-                        Card(
-                          elevation: 10,
-                          color: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(50.0),
-                          ),
-                          child: Padding(
-                            padding: const EdgeInsets.all(4.0),
-                            child: AppPasswordField(
+                        Stack(
+                          children: [
+                            Container(
+                              height: 60,
+                              decoration: BoxDecoration(
+                                color: Colors.white,
+                                borderRadius: BorderRadius.circular(30),
+                                boxShadow: [
+                                  BoxShadow(
+                                    color: AppColors.greyBgColor.withOpacity(1),
+                                    spreadRadius: 1,
+                                    blurRadius: 15,
+                                    // blur radius
+                                    offset: const Offset(5, 5),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            AppPasswordField(
                               controller: passwordController,
                               hint: 'Enter your password',
                               prefixIcon: Constants.lock,
                               suffixIcon: Constants.eye,
                               keyboardType: TextInputType.visiblePassword,
-                              textInputAction: TextInputAction.done,
+                              textInputAction: TextInputAction.next,
                               validator: (val) {
                                 if (val == null || val.trim().isEmpty) {
                                   return "Password is required";
@@ -113,7 +133,7 @@ class LoginScreenState extends State<LoginScreen> {
                                 return null;
                               },
                             ),
-                          ),
+                          ],
                         ),
                         const SizeBoxHeight16(),
                         Padding(

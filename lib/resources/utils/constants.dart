@@ -53,4 +53,10 @@ class Constants {
   static const dummyProduct = 'assets/images/product_dummy_img.png';
   static const redBag = 'assets/images/red_cart_svg';
   static const shareIcon = 'assets/images/share_icon.svg';
+  static const delete = 'assets/images/delete.png';
+  static const calendar = 'assets/images/calendar.png';
+  static const clock = 'assets/images/clock.png';
+  static const eventPic = 'assets/images/dummypost.png';
+  static const pick = 'assets/images/pick.png';
+  static const birthDayImage = 'assets/images/birth_day_image.png';
 }

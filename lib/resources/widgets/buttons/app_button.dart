@@ -76,7 +76,63 @@ class AppSimpleButton extends StatelessWidget {
           borderRadius: BorderRadius.circular(50),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(12.0),
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            btnText,
+            style: GoogleFonts.jost(
+              color:
+                  disabled == false ? btnTextColor : AppColors.lightgreybgColor,
+              fontSize: btnTextSize,
+              fontWeight: fontWeight,
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class AppBorderButton extends StatelessWidget {
+  final Function? onTap;
+  final double? width;
+  final double? height;
+  final String btnText;
+  final Color btnTextColor;
+  final Color btnColor;
+  final double btnTextSize;
+  final FontWeight? fontWeight;
+  final bool disabled;
+
+  const AppBorderButton({
+    Key? key,
+    this.onTap,
+    this.width,
+    this.disabled = false,
+    this.height,
+    this.btnText = 'Button',
+    this.btnTextColor = AppColors.greyHintColor,
+    this.btnColor = Colors.white,
+    this.btnTextSize = 16,
+    this.fontWeight = FontWeight.normal,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        if (!disabled && onTap != null) onTap!();
+      },
+      child: Container(
+        width: width,
+        height: height,
+        alignment: Alignment.center,
+        decoration: BoxDecoration(
+          color: btnColor,
+          border: Border.all(width: 1, color: AppColors.greyBgColor),
+          borderRadius: BorderRadius.circular(50),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
           child: Text(
             btnText,
             style: GoogleFonts.jost(
@@ -133,7 +189,7 @@ class AppGradiantButton extends StatelessWidget {
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(12.0),
+          padding: const EdgeInsets.all(8.0),
           child: Text(
             btnText,
             style: GoogleFonts.jost(

@@ -75,7 +75,7 @@ class EventState extends State<EventScreen> {
                     controller: searchController,
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
-                      hintText: 'Search.....',
+                      hintText: 'Search by Name or Location or Event',
                       hintStyle: const TextStyle(
                         color: AppColors.greyHintColor,
                         fontSize: 14,
@@ -112,20 +112,20 @@ class EventState extends State<EventScreen> {
                 ),
               ),
             ),
-            Container(
-              decoration: BoxDecoration(
-                color: AppColors.bluecolor,
-                borderRadius: BorderRadius.circular(100),
-              ),
-              child: TextButton(
-                onPressed: () {},
-                child: const AppText(
-                  'Epose',
-                  size: 16,
-                  color: Colors.white,
-                ),
-              ),
-            ),
+            // Container(
+            //   decoration: BoxDecoration(
+            //     color: AppColors.bluecolor,
+            //     borderRadius: BorderRadius.circular(100),
+            //   ),
+            //   child: TextButton(
+            //     onPressed: () {},
+            //     child: const AppText(
+            //       'Find Event',
+            //       size: 16,
+            //       color: Colors.white,
+            //     ),
+            //   ),
+            // ),
             const SizeBoxWidth8(),
           ],
         ),

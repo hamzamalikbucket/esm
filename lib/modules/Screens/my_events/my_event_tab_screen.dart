@@ -119,6 +119,9 @@ class _MyEventTabScreenState extends State<MyEventTabScreen>
                               Navigator.pushNamed(
                                   context, '/PreRecordedEventScreen');
                             },
+                            dialogTitle: 'Create Event',
+                            btnTextOne: 'Live Event',
+                            btnTextTwo: 'Pre Recorded Event',
                           );
                         },
                       );

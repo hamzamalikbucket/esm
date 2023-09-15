@@ -439,7 +439,6 @@ class RegState extends State<RegisterScreen> {
             const SizeBoxHeight16(),
             AppButton(
               onTap: () {
-                Navigator.pushNamed(context, '/QuickMeetingScreen');
                 // if (registerFormKey.currentState!.validate()) {}
               },
               assetUrl: Constants.registerBtn,

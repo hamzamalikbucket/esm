@@ -39,7 +39,9 @@ class _QuickMeetingScreenState extends State<QuickMeetingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: ToolbarImage(appBar: AppBar(),),
+      appBar: ToolbarImage(
+        appBar: AppBar(),
+      ),
       body: Stack(
         children: [
           Image.asset(
@@ -65,7 +67,7 @@ class _QuickMeetingScreenState extends State<QuickMeetingScreen> {
                       children: [
                         AppSimpleButton(
                           onTap: () {
-                            Navigator.pushNamed(context, '/MyEventTabScreen');
+                            Navigator.pushNamed(context, '/AudioMeetingScreen');
                           },
                           btnText: 'Instant Meeting',
                         ),
