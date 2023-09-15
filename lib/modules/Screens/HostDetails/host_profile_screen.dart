@@ -1,7 +1,9 @@
 import 'package:esm/resources/Widgets/app_text.dart';
+import 'package:esm/resources/utils/Constants.dart';
 import 'package:esm/resources/utils/app_colors.dart';
 import 'package:esm/resources/widgets/sized_boxes.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 
 class HostProfile extends StatefulWidget{
   const HostProfile({super.key});
@@ -18,7 +20,7 @@ class ProfileState extends State<HostProfile>{
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return const Scaffold(
+    return Scaffold(
       backgroundColor: AppColors.primaryColor,
       body:SafeArea(
         child:Padding(
@@ -37,6 +39,15 @@ class ProfileState extends State<HostProfile>{
                 ),
               ),
               SizeBoxHeight64(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  SvgPicture.asset(
+                    Constants.shareIcon,
+                  ),
+                ],
+              ),
+
               AppText(
                 "Name",
                 size: 15,

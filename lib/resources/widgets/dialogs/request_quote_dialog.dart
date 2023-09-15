@@ -88,16 +88,25 @@ class RequestQuoteDialog extends StatelessWidget {
                           color: AppColors.black,
                         ),
                       ),
-                      Card(
-                        elevation: 5,
-                        shadowColor:AppColors.greyBgColor,
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50.0),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: AppIconField(
+                      Stack(
+                        children: [
+                          Container(
+                            height: 60,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(30),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: AppColors.greyBgColor,
+                                  spreadRadius: 1,
+                                  blurRadius: 15,
+                                  // blur radius
+                                  offset: const Offset(5, 5),
+                                ),
+                              ],
+                            ),
+                          ),
+                          AppIconField(
                             controller: emailController,
                             hint: 'Buland',
 
@@ -110,8 +119,10 @@ class RequestQuoteDialog extends StatelessWidget {
                               return null;
                             },
                           ),
-                        ),
+
+                        ],
                       ),
+
 
                       const SizeBoxHeight16(),
                       const Padding(
@@ -123,17 +134,25 @@ class RequestQuoteDialog extends StatelessWidget {
                           color: AppColors.black,
                         ),
                       ),
-                      Card(
-                        elevation: 5,
-                        shadowColor:AppColors.greyBgColor,
-
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50.0),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: AppIconField(
+                      Stack(
+                        children: [
+                          Container(
+                            height: 60,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(30),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: AppColors.greyBgColor.withOpacity(1),
+                                  spreadRadius: 1,
+                                  blurRadius: 15,
+                                  // blur radius
+                                  offset: const Offset(5, 5),
+                                ),
+                              ],
+                            ),
+                          ),
+                          AppIconField(
                             controller: emailController,
                             hint: 'johndoe@mail.com',
 
@@ -146,8 +165,10 @@ class RequestQuoteDialog extends StatelessWidget {
                               return null;
                             },
                           ),
-                        ),
+
+                        ],
                       ),
+
                       const SizeBoxHeight16(),
                       const Padding(
                         padding: EdgeInsets.only(left: 20, bottom: 10),
@@ -158,17 +179,25 @@ class RequestQuoteDialog extends StatelessWidget {
                           color: AppColors.black,
                         ),
                       ),
-                      Card(
-                        elevation: 5,
-                        shadowColor:AppColors.greyBgColor,
-
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50.0),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: AppIconField(
+                      Stack(
+                        children: [
+                          Container(
+                            height: 60,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(30),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: AppColors.greyBgColor.withOpacity(1),
+                                  spreadRadius: 1,
+                                  blurRadius: 15,
+                                  // blur radius
+                                  offset: const Offset(5, 5),
+                                ),
+                              ],
+                            ),
+                          ),
+                          AppIconField(
                             controller: phoneController,
                             hint: '+12 3440091',
 
@@ -181,8 +210,10 @@ class RequestQuoteDialog extends StatelessWidget {
                               return null;
                             },
                           ),
-                        ),
+
+                        ],
                       ),
+
                       const SizeBoxHeight16(),
                       const Padding(
                         padding: EdgeInsets.only(left: 20, bottom: 10),
@@ -193,17 +224,25 @@ class RequestQuoteDialog extends StatelessWidget {
                           color: AppColors.black,
                         ),
                       ),
-                      Card(
-                        elevation: 5,
-                        shadowColor:AppColors.greyBgColor,
-
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50.0),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: AppIconField(
+                      Stack(
+                        children: [
+                          Container(
+                            height: 60,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(30),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: AppColors.greyBgColor.withOpacity(1),
+                                  spreadRadius: 1,
+                                  blurRadius: 15,
+                                  // blur radius
+                                  offset: const Offset(5, 5),
+                                ),
+                              ],
+                            ),
+                          ),
+                          AppIconField(
                             controller: quantityController,
                             hint: '22',
 
@@ -216,8 +255,10 @@ class RequestQuoteDialog extends StatelessWidget {
                               return null;
                             },
                           ),
-                        ),
+
+                        ],
                       ),
+
                       const SizeBoxHeight16(),
                       const Padding(
                         padding: EdgeInsets.only(left: 20, bottom: 10),
@@ -228,16 +269,25 @@ class RequestQuoteDialog extends StatelessWidget {
                           color: AppColors.black,
                         ),
                       ),
-                      Card(
-                        elevation: 5,
-                        shadowColor:AppColors.greyBgColor,
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.0),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: AppIconField(
+                      Stack(
+                        children: [
+                          Container(
+                            height: 60,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(30),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: AppColors.greyBgColor.withOpacity(1),
+                                  spreadRadius: 1,
+                                  blurRadius: 15,
+                                  // blur radius
+                                  offset: const Offset(5, 5),
+                                ),
+                              ],
+                            ),
+                          ),
+                          AppIconField(
                             controller: sizeController,
                             hint: 'Large',
 
@@ -250,8 +300,10 @@ class RequestQuoteDialog extends StatelessWidget {
                               return null;
                             },
                           ),
-                        ),
+
+                        ],
                       ),
+
                       const SizeBoxHeight16(),
                       const Padding(
                         padding: EdgeInsets.only(left: 20, bottom: 10),
@@ -262,17 +314,25 @@ class RequestQuoteDialog extends StatelessWidget {
                           color: AppColors.black,
                         ),
                       ),
-                      Card(
-                        elevation: 5,
-                        shadowColor:AppColors.greyBgColor,
-
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.0),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: AppIconField(
+                      Stack(
+                        children: [
+                          Container(
+                            height: 60,
+                            decoration: BoxDecoration(
+                              color: Colors.white,
+                              borderRadius: BorderRadius.circular(30),
+                              boxShadow: [
+                                BoxShadow(
+                                  color: AppColors.greyBgColor.withOpacity(1),
+                                  spreadRadius: 1,
+                                  blurRadius: 15,
+                                  // blur radius
+                                  offset: const Offset(5, 5),
+                                ),
+                              ],
+                            ),
+                          ),
+                          AppIconField(
                             controller: noteController,
                             hint: 'note',
 
@@ -285,8 +345,10 @@ class RequestQuoteDialog extends StatelessWidget {
                               return null;
                             },
                           ),
-                        ),
+
+                        ],
                       ),
+
                       const SizeBoxHeight16(),
 
 

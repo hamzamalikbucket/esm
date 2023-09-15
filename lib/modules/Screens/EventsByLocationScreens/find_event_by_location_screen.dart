@@ -128,7 +128,7 @@ class EventState extends State<EventByLocationScreen> {
                   child: TextButton(
                     onPressed: () {},
                     child: const AppText(
-                      'Epose',
+                      'Expose',
                       size: 16,
                       color: Colors.white,
                     ),
@@ -139,7 +139,8 @@ class EventState extends State<EventByLocationScreen> {
             ),
             const SizeBoxHeight8(),
             Expanded(
-              child: ListView.builder(
+              child:
+              ListView.builder(
                 padding: EdgeInsets.zero,
                 itemCount: eventList.length,
                 addRepaintBoundaries: true,

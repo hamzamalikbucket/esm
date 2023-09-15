@@ -59,4 +59,5 @@ class Constants {
   static const eventPic = 'assets/images/dummypost.png';
   static const pick = 'assets/images/pick.png';
   static const birthDayImage = 'assets/images/birth_day_image.png';
+  static const redFavourite = 'assets/images/red_favourite.svg';
 }

@@ -1,3 +1,6 @@
+import 'package:esm/Models/my_event/accept_request_model.dart';
+import 'package:esm/Models/my_event/my_event_model.dart';
+import 'package:esm/Models/my_event/pending_request_model.dart';
 import 'package:esm/modules/Screens/AdvertScreens/add_adverts_screen.dart';
 import 'package:esm/modules/Screens/EventsByLocationScreens/find_event_by_location_screen.dart';
 import 'package:esm/modules/Screens/HostDetails/details_tab_screen.dart';
@@ -11,33 +14,30 @@ import 'package:esm/modules/Screens/auth/register_screen.dart';
 import 'package:esm/modules/Screens/dashboard/bottom_nav_bar.dart';
 import 'package:esm/modules/Screens/dashboard/home/about_us_screen.dart';
 import 'package:esm/modules/Screens/dashboard/home/contact_us_screen.dart';
+import 'package:esm/modules/Screens/likes_screen.dart';
+import 'package:esm/modules/Screens/meeting/audio_meeting_screen.dart';
 import 'package:esm/modules/Screens/meeting/quick_meeting_screen.dart';
+import 'package:esm/modules/Screens/meeting/setting/recording_screen.dart';
+import 'package:esm/modules/Screens/meeting/setting/security_screen.dart';
+import 'package:esm/modules/Screens/meeting/setting/tab/tab_screen.dart';
+import 'package:esm/modules/Screens/meeting/setting/video_sharing_screen.dart';
+import 'package:esm/modules/Screens/meeting/video_meeting_screen.dart';
+import 'package:esm/modules/Screens/my_events/accepted_request/accept_request_detail.screen.dart';
+import 'package:esm/modules/Screens/my_events/my_event/gift_sprayed_screen.dart';
+import 'package:esm/modules/Screens/my_events/my_event/live_event_screen.dart';
+import 'package:esm/modules/Screens/my_events/my_event/my_event_detail.screen.dart';
+import 'package:esm/modules/Screens/my_events/my_event/other_screen.dart';
+import 'package:esm/modules/Screens/my_events/my_event/participants_screen.dart';
+import 'package:esm/modules/Screens/my_events/my_event/pre_recorded_event_screen.dart';
+import 'package:esm/modules/Screens/my_events/my_event/request_screen.dart';
+import 'package:esm/modules/Screens/my_events/my_event_tab_screen.dart';
+import 'package:esm/modules/Screens/my_events/pending_request/pending_request_detail.screen.dart';
 import 'package:esm/modules/Screens/splash_screen.dart';
+import 'package:esm/modules/Screens/work/add_bank_account_screen.dart';
+import 'package:esm/modules/Screens/work/add_paypal_account_screen.dart';
+import 'package:esm/modules/Screens/work/bank_account_screen.dart';
+import 'package:esm/modules/Screens/work/worker_screen.dart';
 import 'package:flutter/material.dart';
-
-import '../../Models/my_event/accept_request_model.dart';
-import '../../Models/my_event/my_event_model.dart';
-import '../../Models/my_event/pending_request_model.dart';
-import '../../modules/Screens/meeting/audio_meeting_screen.dart';
-import '../../modules/Screens/meeting/setting/recording_screen.dart';
-import '../../modules/Screens/meeting/setting/security_screen.dart';
-import '../../modules/Screens/meeting/setting/tab/tab_screen.dart';
-import '../../modules/Screens/meeting/setting/video_sharing_screen.dart';
-import '../../modules/Screens/meeting/video_meeting_screen.dart';
-import '../../modules/Screens/my_events/accepted_request/accept_request_detail.screen.dart';
-import '../../modules/Screens/my_events/my_event/gift_sprayed_screen.dart';
-import '../../modules/Screens/my_events/my_event/live_event_screen.dart';
-import '../../modules/Screens/my_events/my_event/my_event_detail.screen.dart';
-import '../../modules/Screens/my_events/my_event/other_screen.dart';
-import '../../modules/Screens/my_events/my_event/participants_screen.dart';
-import '../../modules/Screens/my_events/my_event/pre_recorded_event_screen.dart';
-import '../../modules/Screens/my_events/my_event/request_screen.dart';
-import '../../modules/Screens/my_events/my_event_tab_screen.dart';
-import '../../modules/Screens/my_events/pending_request/pending_request_detail.screen.dart';
-import '../../modules/Screens/work/add_bank_account_screen.dart';
-import '../../modules/Screens/work/add_paypal_account_screen.dart';
-import '../../modules/Screens/work/bank_account_screen.dart';
-import '../../modules/Screens/work/worker_screen.dart';
 
 class AppRoute {
   Route onGenerateRoute(RouteSettings routeArguments) {
@@ -62,19 +62,29 @@ class AppRoute {
         return MaterialPageRoute(
             builder: (context) => const QuickMeetingScreen());
       case '/HostDetailTabScreen':
-        return MaterialPageRoute(builder: (context) => DetailTab());
+        return MaterialPageRoute(
+            builder: (context) => DetailTab());
       case '/AddAdverts':
-        return MaterialPageRoute(builder: (context) => const AddAdverts());
+        return MaterialPageRoute(
+            builder: (context) => AddAdverts());
       case '/HologramJoin':
         return MaterialPageRoute(
-            builder: (context) => const JoinHologramEngineer());
+            builder: (context) => JoinHologramEngineer());
       case '/ShopScreen':
-        return MaterialPageRoute(builder: (context) => const ShopScreen());
+        return MaterialPageRoute(
+            builder: (context) => ShopScreen());
       case '/EventByLocationScreen':
         return MaterialPageRoute(
-            builder: (context) => const EventByLocationScreen());
+            builder: (context) => EventByLocationScreen());
       case '/ServiceScreen':
-        return MaterialPageRoute(builder: (context) => ServiceMainScreen());
+        return MaterialPageRoute(
+            builder: (context) => ServiceMainScreen());
+      case '/AddServiceScreen':
+        return MaterialPageRoute(
+            builder: (context) => AddServiceScreen());
+      case '/LikeScreen':
+        return MaterialPageRoute(
+            builder: (context) => LikeScreen());
       case '/AddServiceScreen':
         return MaterialPageRoute(builder: (context) => AddServiceScreen());
       case '/AudioMeetingScreen':
@@ -153,7 +163,6 @@ class AppRoute {
       case '/AddBankAccountScreen':
         return MaterialPageRoute(
             builder: (context) => const AddBankAccountScreen());
-
       // case '/Profile':
       //   return MaterialPageRoute(builder: (context) => const Profile());
       // case '/EditProfile':

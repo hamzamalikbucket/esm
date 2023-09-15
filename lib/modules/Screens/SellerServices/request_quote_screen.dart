@@ -61,258 +61,303 @@ class ReqState extends State<RequestQuoteScreen>{
     return Form(
       key:reqFormKey,
       child: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Form(
+        padding: const EdgeInsets.all(38.0),
+        child:Column(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
 
-              child:Padding(
-                padding: const EdgeInsets.fromLTRB(20.0, 12, 20, 10),
-                child: Container(
-                  decoration: BoxDecoration(
+          const SizeBoxHeight8(),
 
-                    boxShadow: [
-                      BoxShadow(
-                        color: AppColors.greyBgColor.withOpacity(0.55),
-                        spreadRadius: 1,
-                        blurRadius: 15,
-                        // blur radius
-                        offset: const Offset(5, 5),
-                      ),
-                    ],
-                  ),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.only(left: 20, bottom: 10),
-                        child: AppText(
-                          'Full Name ',
-                          size: 10,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.black,
-                        ),
-                      ),
-                      Card(
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.0),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: AppIconField(
-                            controller: fullNameController,
-                            hint: 'Buland',
+          const Padding(
+            padding: EdgeInsets.only(left: 20, bottom: 10),
 
-                            keyboardType: TextInputType.text,
-                            textInputAction: TextInputAction.next,
-                            validator: (val) {
-                              if (val == null || val.trim().isEmpty) {
-                                return "Name is required";
-                              }
-                              return null;
-                            },
-                          ),
-                        ),
-                      ),
-                      const SizeBoxHeight16(),
-                      const Padding(
-                        padding: EdgeInsets.only(left: 20, bottom: 10),
-                        child: AppText(
-                          'Email ',
-                          size: 10,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.black,
-                        ),
-                      ),
-                      Card(
+            child:
 
-
-
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50.0),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: AppIconField(
-                            controller: emailController,
-                            hint: 'johndoe@mail.com',
-
-                            keyboardType: TextInputType.text,
-                            textInputAction: TextInputAction.next,
-                            validator: (val) {
-                              if (val == null || val.trim().isEmpty) {
-                                return "Email is required";
-                              }
-                              return null;
-                            },
-                          ),
-                        ),
-                      ),
-                      const SizeBoxHeight16(),
-                      const Padding(
-                        padding: EdgeInsets.only(left: 20, bottom: 10),
-                        child: AppText(
-                          'Phone No',
-                          size: 10,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.black,
-                        ),
-                      ),
-                      Card(
-
-
-
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50.0),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: AppIconField(
-                            controller: phoneController,
-                            hint: '+12 3440091',
-
-                            keyboardType: TextInputType.phone,
-                            textInputAction: TextInputAction.next,
-                            validator: (val) {
-                              if (val == null || val.trim().isEmpty||val!=11) {
-                                return "Number required";
-                              }
-                              return null;
-                            },
-                          ),
-                        ),
-                      ),
-                      const SizeBoxHeight16(),
-                      const Padding(
-                        padding: EdgeInsets.only(left: 20, bottom: 10),
-                        child: AppText(
-                          'Quantity',
-                          size: 10,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.black,
-                        ),
-                      ),
-                      Card(
-
-
-
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(50.0),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: AppIconField(
-                            controller: quantityController,
-                            hint: '22',
-
-                            keyboardType: TextInputType.phone,
-                            textInputAction: TextInputAction.next,
-                            validator: (val) {
-                              if (val == null || val.trim().isEmpty) {
-                                return "Required";
-                              }
-                              return null;
-                            },
-                          ),
-                        ),
-                      ),
-                      const SizeBoxHeight16(),
-                      const Padding(
-                        padding: EdgeInsets.only(left: 20, bottom: 10),
-                        child: AppText(
-                          'Size',
-                          size: 10,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.black,
-                        ),
-                      ),
-                      Card(
-
-
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.0),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: AppIconField(
-                            controller: sizeController,
-                            hint: 'Large',
-
-                            keyboardType: TextInputType.text,
-                            textInputAction: TextInputAction.done,
-                            validator: (val) {
-                              if (val == null || val.trim().isEmpty) {
-                                return "Required";
-                              }
-                              return null;
-                            },
-                          ),
-                        ),
-                      ),
-                      const SizeBoxHeight16(),
-                      const Padding(
-                        padding: EdgeInsets.only(left: 20, bottom: 10),
-                        child: AppText(
-                          'Note',
-                          size: 10,
-                          fontWeight: FontWeight.w400,
-                          color: AppColors.black,
-                        ),
-                      ),
-                      Card(
-
-
-                        color: Colors.white,
-                        shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(30.0),
-                        ),
-                        child: Padding(
-                          padding: const EdgeInsets.all(4.0),
-                          child: AppIconField(
-                            controller: noteController,
-                            hint: 'note',
-
-
-                            keyboardType: TextInputType.text,
-                            textInputAction: TextInputAction.done,
-                            validator: (val) {
-                              if (val == null || val.trim().isEmpty) {
-                                return "Required";
-                              }
-                              return null;
-                            },
-                          ),
-                        ),
-                      ),
-                      const SizeBoxHeight16(),
-                      const SizeBoxHeight8(),
-
-                      Center(
-                        child: AppGradiantButton(
-                            btnText: "Request Quote",
-                            width:250,
-                            onTap: (){
-                             Navigator.pop(context);
-
-                            }
-
-                        ),
-                      ),
-                    ],
-                  ),
+            AppText(
+              'Full Name ',
+              size: 10,
+              fontWeight: FontWeight.w400,
+              color: AppColors.black,
+            ),
+          ),
+          Stack(
+            children: [
+              Container(
+                height: 60,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(30),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.greyBgColor,
+                      spreadRadius: 1,
+                      blurRadius: 15,
+                      // blur radius
+                      offset: const Offset(5, 5),
+                    ),
+                  ],
                 ),
               ),
-            ),
+              AppIconField(
+                controller: emailController,
+                hint: 'Buland',
 
-          ],
-        ),
+                keyboardType: TextInputType.text,
+                textInputAction: TextInputAction.next,
+                validator: (val) {
+                  if (val == null || val.trim().isEmpty) {
+                    return "Required";
+                  }
+                  return null;
+                },
+              ),
+
+            ],
+          ),
+
+
+          const SizeBoxHeight16(),
+          const Padding(
+            padding: EdgeInsets.only(left: 20, bottom: 10),
+            child: AppText(
+              'Email ',
+              size: 10,
+              fontWeight: FontWeight.w400,
+              color: AppColors.black,
+            ),
+          ),
+          Stack(
+            children: [
+              Container(
+                height: 60,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(30),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.greyBgColor.withOpacity(1),
+                      spreadRadius: 1,
+                      blurRadius: 15,
+                      // blur radius
+                      offset: const Offset(5, 5),
+                    ),
+                  ],
+                ),
+              ),
+              AppIconField(
+                controller: emailController,
+                hint: 'johndoe@mail.com',
+
+                keyboardType: TextInputType.text,
+                textInputAction: TextInputAction.next,
+                validator: (val) {
+                  if (val == null || val.trim().isEmpty) {
+                    return "Email is required";
+                  }
+                  return null;
+                },
+              ),
+
+            ],
+          ),
+
+          const SizeBoxHeight16(),
+          const Padding(
+            padding: EdgeInsets.only(left: 20, bottom: 10),
+            child: AppText(
+              'Phone No',
+              size: 10,
+              fontWeight: FontWeight.w400,
+              color: AppColors.black,
+            ),
+          ),
+          Stack(
+            children: [
+              Container(
+                height: 60,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(30),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.greyBgColor.withOpacity(1),
+                      spreadRadius: 1,
+                      blurRadius: 15,
+                      // blur radius
+                      offset: const Offset(5, 5),
+                    ),
+                  ],
+                ),
+              ),
+              AppIconField(
+                controller: phoneController,
+                hint: '+12 3440091',
+
+                keyboardType: TextInputType.phone,
+                textInputAction: TextInputAction.next,
+                validator: (val) {
+                  if (val == null || val.trim().isEmpty||val!=11) {
+                    return "Number required";
+                  }
+                  return null;
+                },
+              ),
+
+            ],
+          ),
+
+          const SizeBoxHeight16(),
+          const Padding(
+            padding: EdgeInsets.only(left: 20, bottom: 10),
+            child: AppText(
+              'Quantity',
+              size: 10,
+              fontWeight: FontWeight.w400,
+              color: AppColors.black,
+            ),
+          ),
+          Stack(
+            children: [
+              Container(
+                height: 60,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(30),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.greyBgColor.withOpacity(1),
+                      spreadRadius: 1,
+                      blurRadius: 15,
+                      // blur radius
+                      offset: const Offset(5, 5),
+                    ),
+                  ],
+                ),
+              ),
+              AppIconField(
+                controller: quantityController,
+                hint: '22',
+
+                keyboardType: TextInputType.phone,
+                textInputAction: TextInputAction.next,
+                validator: (val) {
+                  if (val == null || val.trim().isEmpty) {
+                    return "Required";
+                  }
+                  return null;
+                },
+              ),
+
+            ],
+          ),
+
+          const SizeBoxHeight16(),
+          const Padding(
+            padding: EdgeInsets.only(left: 20, bottom: 10),
+            child: AppText(
+              'Size',
+              size: 10,
+              fontWeight: FontWeight.w400,
+              color: AppColors.black,
+            ),
+          ),
+          Stack(
+            children: [
+              Container(
+                height: 60,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(30),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.greyBgColor.withOpacity(1),
+                      spreadRadius: 1,
+                      blurRadius: 15,
+                      // blur radius
+                      offset: const Offset(5, 5),
+                    ),
+                  ],
+                ),
+              ),
+              AppIconField(
+                controller: sizeController,
+                hint: 'Large',
+
+                keyboardType: TextInputType.text,
+                textInputAction: TextInputAction.done,
+                validator: (val) {
+                  if (val == null || val.trim().isEmpty) {
+                    return "Required";
+                  }
+                  return null;
+                },
+              ),
+
+            ],
+          ),
+
+          const SizeBoxHeight16(),
+          const Padding(
+            padding: EdgeInsets.only(left: 20, bottom: 10),
+            child: AppText(
+              'Note',
+              size: 10,
+              fontWeight: FontWeight.w400,
+              color: AppColors.black,
+            ),
+          ),
+          Stack(
+            children: [
+              Container(
+                height: 60,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(30),
+                  boxShadow: [
+                    BoxShadow(
+                      color: AppColors.greyBgColor.withOpacity(1),
+                      spreadRadius: 1,
+                      blurRadius: 15,
+                      // blur radius
+                      offset: const Offset(5, 5),
+                    ),
+                  ],
+                ),
+              ),
+              AppIconField(
+                controller: noteController,
+                hint: 'note',
+
+                keyboardType: TextInputType.text,
+                textInputAction: TextInputAction.done,
+                validator: (val) {
+                  if (val == null || val.trim().isEmpty) {
+                    return "Required";
+                  }
+                  return null;
+                },
+              ),
+
+            ],
+          ),
+
+          const SizeBoxHeight16(),
+
+
+          Center(
+            child: AppGradiantButton(
+                btnText: "Send Request",
+                width:250,
+                onTap: (){
+                 Navigator.pop(context);
+
+                }
+
+            ),
+          ),
+        ],
+      )
       ),
     );
   }

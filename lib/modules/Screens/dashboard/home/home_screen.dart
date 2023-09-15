@@ -196,8 +196,14 @@ class _HomeScreenState extends State<HomeScreen> {
                         Row(
                           children: [
                             const SizeBoxWidth12(),
-                            SvgPicture.asset(
-                              Constants.favouriteIcon,
+                            InkWell(
+                              
+                              child: SvgPicture.asset(
+                                Constants.favouriteIcon,
+                              ),
+                              onTap: (){
+                                Navigator.pushNamed(context, "/LikeScreen");
+                              },
                             ),
                             const SizeBoxWidth12(),
                             SvgPicture.asset(
