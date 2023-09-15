@@ -32,6 +32,7 @@ class _LiveEventScreenState extends State<LiveEventScreen> {
   TextEditingController eventCategoryController = TextEditingController();
   TextEditingController eventTypeController = TextEditingController();
   TextEditingController dressCodeController = TextEditingController();
+  TextEditingController eventPriceCodeController = TextEditingController();
   TextEditingController startDateController = TextEditingController();
   TextEditingController endDateController = TextEditingController();
   TextEditingController startTimeController = TextEditingController();
@@ -39,8 +40,12 @@ class _LiveEventScreenState extends State<LiveEventScreen> {
   TextEditingController locationController = TextEditingController();
   TextEditingController noteController = TextEditingController();
   TimeZone? timeZone;
+  HologramType? hologramType;
+  EventEngineer? eventEngineer;
   EventWorker? eventWorker;
+  bool validateHologramType = false;
   bool validateTimeZone = false;
+  bool validateEventEngineer = false;
   bool validateEventWorker = false;
   int groupValueReceive = 0;
   int groupValueTicketing = 0;
@@ -811,6 +816,90 @@ class _LiveEventScreenState extends State<LiveEventScreen> {
                   ),
                 ],
               ),
+              if (groupValueTicketing == 1) ...[
+                const SizeBoxHeight16(),
+                const Padding(
+                  padding: EdgeInsets.only(left: 24.0),
+                  child: AppText(
+                    'Currency',
+                    color: Colors.black,
+                  ),
+                ),
+                const SizeBoxHeight4(),
+                Stack(
+                  children: [
+                    Container(
+                      height: 60,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.greyBgColor.withOpacity(1),
+                            spreadRadius: 1,
+                            blurRadius: 15,
+                            // blur radius
+                            offset: const Offset(5, 5),
+                          ),
+                        ],
+                      ),
+                    ),
+                    AppDropDownFields<HologramType>(
+                      hint: "Select Currency Type",
+                      value: hologramType,
+                      items: HologramType.hologramTypeList,
+                      onChange: (v) {
+                        setState(() {
+                          hologramType = v;
+                        });
+                      },
+                      applyValidation: validateHologramType,
+                      errorMessage: 'Required',
+                    ),
+                  ],
+                ),
+                const SizeBoxHeight16(),
+                const Padding(
+                  padding: EdgeInsets.only(left: 24.0),
+                  child: AppText(
+                    'Event Price',
+                    color: Colors.black,
+                  ),
+                ),
+                const SizeBoxHeight4(),
+                Stack(
+                  children: [
+                    Container(
+                      height: 60,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.greyBgColor.withOpacity(1),
+                            spreadRadius: 1,
+                            blurRadius: 15,
+                            // blur radius
+                            offset: const Offset(5, 5),
+                          ),
+                        ],
+                      ),
+                    ),
+                    AppIconField(
+                      controller: eventPriceCodeController,
+                      hint: 'Event Price',
+                      keyboardType: TextInputType.text,
+                      textInputAction: TextInputAction.next,
+                      validator: (val) {
+                        if (val == null || val.trim().isEmpty) {
+                          return "Required";
+                        }
+                        return null;
+                      },
+                    ),
+                  ],
+                ),
+              ],
               const SizeBoxHeight16(),
               const Padding(
                 padding: EdgeInsets.only(left: 16.0),
@@ -840,6 +929,90 @@ class _LiveEventScreenState extends State<LiveEventScreen> {
                   ),
                 ],
               ),
+              if (groupValueHologram == 1) ...[
+                const SizeBoxHeight16(),
+                const Padding(
+                  padding: EdgeInsets.only(left: 24.0),
+                  child: AppText(
+                    'Hologram Type',
+                    color: Colors.black,
+                  ),
+                ),
+                const SizeBoxHeight4(),
+                Stack(
+                  children: [
+                    Container(
+                      height: 60,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.greyBgColor.withOpacity(1),
+                            spreadRadius: 1,
+                            blurRadius: 15,
+                            // blur radius
+                            offset: const Offset(5, 5),
+                          ),
+                        ],
+                      ),
+                    ),
+                    AppDropDownFields<HologramType>(
+                      hint: "Select Hologram Type",
+                      value: hologramType,
+                      items: HologramType.hologramTypeList,
+                      onChange: (v) {
+                        setState(() {
+                          hologramType = v;
+                        });
+                      },
+                      applyValidation: validateHologramType,
+                      errorMessage: 'Required',
+                    ),
+                  ],
+                ),
+                const SizeBoxHeight16(),
+                const Padding(
+                  padding: EdgeInsets.only(left: 24.0),
+                  child: AppText(
+                    'Event Engineer',
+                    color: Colors.black,
+                  ),
+                ),
+                const SizeBoxHeight4(),
+                Stack(
+                  children: [
+                    Container(
+                      height: 60,
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(30),
+                        boxShadow: [
+                          BoxShadow(
+                            color: AppColors.greyBgColor.withOpacity(1),
+                            spreadRadius: 1,
+                            blurRadius: 15,
+                            // blur radius
+                            offset: const Offset(5, 5),
+                          ),
+                        ],
+                      ),
+                    ),
+                    AppDropDownFields<EventEngineer>(
+                      hint: "Select Event Engineer",
+                      value: eventEngineer,
+                      items: EventEngineer.eventEngineerList,
+                      onChange: (v) {
+                        setState(() {
+                          eventEngineer = v;
+                        });
+                      },
+                      applyValidation: validateEventEngineer,
+                      errorMessage: 'Required',
+                    ),
+                  ],
+                ),
+              ],
               const SizeBoxHeight16(),
               const Padding(
                 padding: EdgeInsets.only(left: 16.0),
@@ -883,10 +1056,11 @@ class _LiveEventScreenState extends State<LiveEventScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  AppGradiantButton(
+                  AppBorderButton(
                     onTap: () {},
                     btnText: 'Cancel',
                     width: 150,
+                    borderColor: AppColors.bluecolor,
                   ),
                   AppGradiantButton(
                     onTap: () {},
@@ -903,6 +1077,7 @@ class _LiveEventScreenState extends State<LiveEventScreen> {
       ),
     );
   }
+
   selectImageFrom(context) {
     var selectImageOption = CupertinoActionSheet(
       title: const Text(
@@ -972,22 +1147,22 @@ class _LiveEventScreenState extends State<LiveEventScreen> {
       sourcePath: imageFile.path,
       aspectRatioPresets: Platform.isAndroid
           ? [
-        CropAspectRatioPreset.square,
-        CropAspectRatioPreset.ratio3x2,
-        CropAspectRatioPreset.original,
-        CropAspectRatioPreset.ratio4x3,
-        CropAspectRatioPreset.ratio16x9
-      ]
+              CropAspectRatioPreset.square,
+              CropAspectRatioPreset.ratio3x2,
+              CropAspectRatioPreset.original,
+              CropAspectRatioPreset.ratio4x3,
+              CropAspectRatioPreset.ratio16x9
+            ]
           : [
-        CropAspectRatioPreset.original,
-        CropAspectRatioPreset.square,
-        CropAspectRatioPreset.ratio3x2,
-        CropAspectRatioPreset.ratio4x3,
-        CropAspectRatioPreset.ratio5x3,
-        CropAspectRatioPreset.ratio5x4,
-        CropAspectRatioPreset.ratio7x5,
-        CropAspectRatioPreset.ratio16x9
-      ],
+              CropAspectRatioPreset.original,
+              CropAspectRatioPreset.square,
+              CropAspectRatioPreset.ratio3x2,
+              CropAspectRatioPreset.ratio4x3,
+              CropAspectRatioPreset.ratio5x3,
+              CropAspectRatioPreset.ratio5x4,
+              CropAspectRatioPreset.ratio7x5,
+              CropAspectRatioPreset.ratio16x9
+            ],
       maxWidth: 512,
       maxHeight: 512,
       cropStyle: CropStyle.circle,

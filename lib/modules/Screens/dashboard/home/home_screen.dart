@@ -126,7 +126,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 child: TextButton(
                   onPressed: () {},
                   child: const AppText(
-                    'Expose',
+                    'Exposé',
                     size: 17,
                     color: Colors.white,
                   ),

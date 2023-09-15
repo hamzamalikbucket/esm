@@ -51,7 +51,7 @@ class Constants {
   static const sendRequestBtn = 'assets/images/send_req_btn.svg';
   static const editIcon = 'assets/images/editicon.svg';
   static const dummyProduct = 'assets/images/product_dummy_img.png';
-  static const redBag = 'assets/images/red_cart_svg';
+  static const redBag = 'assets/images/red_cart.svg';
   static const shareIcon = 'assets/images/share_icon.svg';
   static const delete = 'assets/images/delete.png';
   static const calendar = 'assets/images/calendar.png';

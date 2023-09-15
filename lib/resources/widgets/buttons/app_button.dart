@@ -99,6 +99,7 @@ class AppBorderButton extends StatelessWidget {
   final String btnText;
   final Color btnTextColor;
   final Color btnColor;
+  final Color borderColor;
   final double btnTextSize;
   final FontWeight? fontWeight;
   final bool disabled;
@@ -111,6 +112,7 @@ class AppBorderButton extends StatelessWidget {
     this.height,
     this.btnText = 'Button',
     this.btnTextColor = AppColors.greyHintColor,
+    this.borderColor = AppColors.bluecolor,
     this.btnColor = Colors.white,
     this.btnTextSize = 16,
     this.fontWeight = FontWeight.normal,
@@ -128,7 +130,7 @@ class AppBorderButton extends StatelessWidget {
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: btnColor,
-          border: Border.all(width: 1, color: AppColors.greyBgColor),
+          border: Border.all(width: 1, color: borderColor),
           borderRadius: BorderRadius.circular(50),
         ),
         child: Padding(

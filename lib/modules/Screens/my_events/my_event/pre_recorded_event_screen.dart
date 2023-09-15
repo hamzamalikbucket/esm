@@ -799,139 +799,15 @@ class _PreRecordedEventScreenState extends State<PreRecordedEventScreen> {
                 ],
               ),
               const SizeBoxHeight16(),
-              const Padding(
-                padding: EdgeInsets.only(left: 16.0),
-                child: AppText('Do You Want to Receive Money Gifts/Spray? *'),
-              ),
-              Row(
-                children: [
-                  AppRadioButtonList(
-                    groupValue: groupValueReceive,
-                    value: 1,
-                    onChanged: (v) {
-                      setState(() {
-                        groupValueReceive = v;
-                      });
-                    },
-                    text: "Yes",
-                  ),
-                  AppRadioButtonList(
-                    groupValue: groupValueReceive,
-                    value: 2,
-                    onChanged: (v) {
-                      setState(() {
-                        groupValueReceive = v;
-                      });
-                    },
-                    text: "No",
-                  ),
-                ],
-              ),
-              const SizeBoxHeight16(),
-              const Padding(
-                padding: EdgeInsets.only(left: 16.0),
-                child: AppText('Is this a ticketing or gate pass Event? *'),
-              ),
-              Row(
-                children: [
-                  AppRadioButtonList(
-                    groupValue: groupValueTicketing,
-                    value: 1,
-                    onChanged: (v) {
-                      setState(() {
-                        groupValueTicketing = v;
-                      });
-                    },
-                    text: "Yes",
-                  ),
-                  AppRadioButtonList(
-                    groupValue: groupValueTicketing,
-                    value: 2,
-                    onChanged: (v) {
-                      setState(() {
-                        groupValueTicketing = v;
-                      });
-                    },
-                    text: "No",
-                  ),
-                ],
-              ),
-              const SizeBoxHeight16(),
-              const Padding(
-                padding: EdgeInsets.only(left: 16.0),
-                child: AppText('Do you want to make Hologram? *'),
-              ),
-              Row(
-                children: [
-                  AppRadioButtonList(
-                    groupValue: groupValueHologram,
-                    value: 1,
-                    onChanged: (v) {
-                      setState(() {
-                        groupValueHologram = v;
-                      });
-                    },
-                    text: "Yes",
-                  ),
-                  AppRadioButtonList(
-                    groupValue: groupValueHologram,
-                    value: 2,
-                    onChanged: (v) {
-                      setState(() {
-                        groupValueHologram = v;
-                      });
-                    },
-                    text: "No",
-                  ),
-                ],
-              ),
-              const SizeBoxHeight16(),
-              const Padding(
-                padding: EdgeInsets.only(left: 16.0),
-                child: AppText('Select Account To Receive Gifts *'),
-              ),
-              Row(
-                children: [
-                  AppRadioButtonList(
-                    groupValue: groupValueAccount,
-                    value: 1,
-                    onChanged: (v) {
-                      setState(() {
-                        groupValueAccount = v;
-                      });
-                    },
-                    text: "Bank",
-                  ),
-                  AppRadioButtonList(
-                    groupValue: groupValueAccount,
-                    value: 2,
-                    onChanged: (v) {
-                      setState(() {
-                        groupValueAccount = v;
-                      });
-                    },
-                    text: "Paypal",
-                  ),
-                ],
-              ),
-              const SizeBoxHeight16(),
-              Align(
-                alignment: Alignment.center,
-                child: AppGradiantButton(
-                  onTap: () {},
-                  btnText: 'My Event',
-                  width: 150,
-                ),
-              ),
-              const SizeBoxHeight16(),
               const SizeBoxHeight16(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  AppGradiantButton(
+                  AppBorderButton(
                     onTap: () {},
                     btnText: 'Cancel',
                     width: 150,
+                    borderColor: AppColors.bluecolor,
                   ),
                   AppGradiantButton(
                     onTap: () {},
