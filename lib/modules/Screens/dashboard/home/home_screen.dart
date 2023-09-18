@@ -206,8 +206,13 @@ class _HomeScreenState extends State<HomeScreen> {
                               },
                             ),
                             const SizeBoxWidth12(),
-                            SvgPicture.asset(
-                              Constants.commentIcon,
+                            InkWell(
+                              onTap: (){
+                                Navigator.pushNamed(context, "/CommentScreen");
+                              },
+                              child: SvgPicture.asset(
+                                Constants.commentIcon,
+                              ),
                             ),
                             const SizeBoxWidth12(),
                             SvgPicture.asset(

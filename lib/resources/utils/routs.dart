@@ -6,6 +6,7 @@ import 'package:esm/modules/Screens/EventsByLocationScreens/find_event_by_locati
 import 'package:esm/modules/Screens/HostDetails/details_tab_screen.dart';
 import 'package:esm/modules/Screens/SellerServices/add_services_screen.dart';
 import 'package:esm/modules/Screens/SellerServices/service_main_screen.dart';
+import 'package:esm/modules/Screens/comments_screen.dart';
 import 'package:esm/modules/Screens/join_hologram_screen.dart';
 import 'package:esm/modules/Screens/ShoppingScreens/shop_screen.dart';
 import 'package:esm/modules/Screens/auth/login_screen.dart';
@@ -15,6 +16,7 @@ import 'package:esm/modules/Screens/dashboard/bottom_nav_bar.dart';
 import 'package:esm/modules/Screens/dashboard/home/about_us_screen.dart';
 import 'package:esm/modules/Screens/dashboard/home/contact_us_screen.dart';
 import 'package:esm/modules/Screens/likes_screen.dart';
+import 'package:esm/modules/Screens/live_user_tabs/tab_layout.dart';
 import 'package:esm/modules/Screens/meeting/audio_meeting_screen.dart';
 import 'package:esm/modules/Screens/meeting/quick_meeting_screen.dart';
 import 'package:esm/modules/Screens/meeting/setting/recording_screen.dart';
@@ -163,6 +165,12 @@ class AppRoute {
       case '/AddBankAccountScreen':
         return MaterialPageRoute(
             builder: (context) => const AddBankAccountScreen());
+      case '/LiveUserTab':
+        return MaterialPageRoute(
+            builder: (context) =>  LiveUserTab());
+      case '/CommentScreen':
+        return MaterialPageRoute(
+            builder: (context) =>  CommentsScreen());
       // case '/Profile':
       //   return MaterialPageRoute(builder: (context) => const Profile());
       // case '/EditProfile':

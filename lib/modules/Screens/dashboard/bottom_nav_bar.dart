@@ -1,4 +1,5 @@
 import 'package:esm/modules/Screens/AdvertScreens/adverts_screen.dart';
+import 'package:esm/modules/Screens/live_user_tabs/tab_layout.dart';
 import 'package:esm/resources/Widgets/sized_boxes.dart';
 import 'package:esm/resources/utils/app_colors.dart';
 import 'package:esm/resources/widgets/app_text.dart';
@@ -127,13 +128,13 @@ class BottomNavigationBarScreenState extends State<BottomNavigationBarScreen> {
           ),
           child: IndexedStack(
             index: _selectedIndex,
-            children: const [
+            children:  [
               // Replace these with your content screens
               EventScreen(),
               HomeScreen(),
               AddScreen(),
               Adverts(),
-              ProfileScreen(),
+              LiveUserTab(),
             ],
           ),
         ),

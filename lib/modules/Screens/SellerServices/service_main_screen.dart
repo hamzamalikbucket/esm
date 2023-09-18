@@ -116,7 +116,7 @@ class ServiceListState extends State<ServiceMainScreen>{
               child: GridView.builder(
                   itemCount: serviceList.length,
                   scrollDirection: Axis.vertical,
-                  physics: const NeverScrollableScrollPhysics(),
+                  physics: AlwaysScrollableScrollPhysics(),
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
                     ServicesModel shopping = serviceList[index];

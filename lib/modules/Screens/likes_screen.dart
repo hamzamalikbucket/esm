@@ -63,11 +63,11 @@ class _LikeScreenState extends State<LikeScreen> {
 
                           ),
 
-                          child:Image.asset(
-                            likes.userImg,
-                            width: 29,
-                            height: 29,
-                            fit: BoxFit.fill,
+                          child:CircleAvatar(
+                            radius: 16,
+                            backgroundImage: AssetImage(
+                             likes.userImg,
+                            ),
                           )
                       ),
 
